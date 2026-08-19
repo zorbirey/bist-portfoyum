@@ -19,11 +19,6 @@ jobs:
           java-version: '17'
       - uses: android-actions/setup-android@v3
 
-      - name: FFmpeg kur
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-
       - name: Gercek ikon ve Zeus gorsellerini hazirla
         run: |
           set -e
@@ -46,14 +41,6 @@ jobs:
               dst.write_bytes(data)
               print(f'{dst}: {len(data)} byte WebP hazır')
           PY
-
-          # Zeus kompozisyonunu yaklaşık %12 büyüt; ekranı daha dolu kullanır.
-          ffmpeg -loglevel error -y \
-            -i android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp \
-            -vf "scale=358:980,crop=320:875" \
-            -frames:v 1 android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash_large.webp
-          mv android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash_large.webp \
-             android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
 
           file android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
           file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
