@@ -1,0 +1,14 @@
+{
+  "name": "BIST Portföy",
+  "short_name": "BIST Portföy",
+  "description": "Kişisel BIST portföy ve net temettü takip uygulaması",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f5",
+  "theme_color": "#dbe9e3",
+  "lang": "tr-TR",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
