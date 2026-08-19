@@ -45,3 +45,24 @@ function dividendStats(){const rows=portfolioDividendRows();return{rows,forecast
 window.divTotal=divTotal=function(){return dividendStats().forecast};
 window.dividend=dividend;
 window.addEventListener('load',async()=>{await Promise.all([loadBistMap(),loadDividendFeed()]);persistScaleRepairIfNeeded();syncMynetPrices(false);setInterval(()=>syncMynetPrices(false),15*60*1000)});
+
+// 1.1.4: İlk kurulumda servis worker henüz sayfayı kontrol etmiyorsa kritik özellikleri ayrıca yükle.
+(function ensure114FeatureScripts(){
+  function loadScript(src){
+    return new Promise((resolve,reject)=>{
+      const s=document.createElement('script');
+      s.src=src+(src.includes('?')?'&':'?')+'v=1.1.4&t='+Date.now();
+      s.onload=resolve;
+      s.onerror=reject;
+      document.head.appendChild(s);
+    });
+  }
+  setTimeout(async()=>{
+    try{
+      if(typeof window.importPortfolioBackup!=='function')await loadScript('./restore-features.js');
+      if(typeof window.setTargetMilestone!=='function')await loadScript('./target-page.js');
+      if(typeof window.render==='function')window.render();
+      else if(typeof render==='function')render();
+    }catch(e){console.warn('1.1.4 ek özellikleri yüklenemedi:',e);}
+  },0);
+})();
