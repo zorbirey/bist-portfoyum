@@ -18,6 +18,14 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
+      - name: Gercek ikon ve Zeus gorsellerini hazirla
+        run: |
+          mkdir -p android-wrapper/app/src/main/res/drawable-nodpi
+          rm -f android-wrapper/app/src/main/res/drawable/zeus_splash.xml
+          base64 -d android-wrapper/assets-b64/app_icon.b64 > android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
+          base64 -d android-wrapper/assets-b64/zeus_splash.b64 > android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
+          file android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
+          file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
       - name: Gradle kur
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip
