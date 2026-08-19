@@ -15,6 +15,7 @@ import android.os.Looper;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -35,7 +36,16 @@ public class MainActivity extends Activity {
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         getWindow().setStatusBarColor(Color.rgb(219,233,227));
-        getWindow().setNavigationBarColor(Color.WHITE);
+        getWindow().setNavigationBarColor(Color.BLACK);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            WindowInsetsController controller = getWindow().getInsetsController();
+            if (controller != null) {
+                controller.setSystemBarsAppearance(
+                    0,
+                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                );
+            }
+        }
 
         root = new FrameLayout(this);
         root.setBackgroundColor(Color.rgb(5,7,6));
@@ -92,8 +102,6 @@ public class MainActivity extends Activity {
         FrameLayout.LayoutParams webLp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         root.addView(webView, webLp);
 
-        // Android 16 dahil edge-to-edge cihazlarda WebView'in gerçek boyutunu sistem
-        // çubuklarının dışına taşı. CSS fixed alt menü artık navigasyon tuşlarının üstünde kalır.
         root.setOnApplyWindowInsetsListener((v, insets) -> {
             int left = 0, top = 0, right = 0, bottom = 0;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
