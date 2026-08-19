@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bist-portfoy-v14';
+const CACHE_NAME = 'bist-portfoy-v15';
 const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon.svg','./prices-sync.js','./restore-features.js','./distribution-pie.js','./target-page.js','./splash.js','./backup-tools.js'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
@@ -14,7 +14,7 @@ self.addEventListener('fetch', event => {
     event.respondWith((async()=>{
       try {
         const files=['prices-sync.js','restore-features.js','distribution-pie.js','target-page.js','splash.js','backup-tools.js'];
-        const responses=await Promise.all(files.map(f=>fetch('./'+f+'?live='+Date.now(),{cache:'no-store'})));
+        const responses=await Promise.all(files.map(f=>fetch('./'+f+'?v=1.1.4&live='+Date.now(),{cache:'no-store'})));
         const texts=await Promise.all(responses.map(r=>r.text()));
         return new Response(texts.join('\n'),{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store'}});
       } catch(e) { return fetch(event.request,{cache:'no-store'}); }
