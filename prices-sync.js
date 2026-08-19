@@ -1,5 +1,29 @@
 let bistPriceMap = {};
 
+// Türkçe ve İngilizce sayı biçimlerini doğru okur.
+// 145,20 -> 145.20 | 145.20 -> 145.20 | 1.234,56 -> 1234.56 | 1,234.56 -> 1234.56
+window.cleanMoney = cleanMoney = function(value) {
+  let s = String(value ?? '').trim().replace(/\s/g, '').replace(/[^0-9,.-]/g, '');
+  if (!s) return 0;
+  const neg = s.startsWith('-');
+  s = s.replace(/-/g, '');
+  const c = s.lastIndexOf(',');
+  const d = s.lastIndexOf('.');
+  let normalized;
+  if (c >= 0 && d >= 0) {
+    if (c > d) normalized = s.replace(/\./g, '').replace(',', '.');
+    else normalized = s.replace(/,/g, '');
+  } else if (c >= 0) {
+    const decimals = s.length - c - 1;
+    normalized = decimals >= 1 && decimals <= 2 ? s.replace(/\./g, '').replace(',', '.') : s.replace(/,/g, '');
+  } else if (d >= 0) {
+    const decimals = s.length - d - 1;
+    normalized = decimals >= 1 && decimals <= 2 ? s.replace(/,/g, '') : s.replace(/\./g, '');
+  } else normalized = s;
+  const n = Number(normalized);
+  return Number.isFinite(n) ? (neg ? -n : n) : 0;
+};
+
 async function loadBistMap() {
   try {
     const res = await fetch('./prices.json?ts=' + Date.now(), { cache: 'no-store' });
@@ -11,6 +35,22 @@ async function loadBistMap() {
     console.error('BIST kod listesi alınamadı:', err);
     return null;
   }
+}
+
+function repairOldCostsOnce() {
+  if (localStorage.getItem('costRepairV2') === 'done') return;
+  let changed = false;
+  stocks.forEach(s => {
+    const price = Number(s.price) || 0;
+    const cost = Number(s.cost) || 0;
+    // Önceki hatada 145.20 -> 14520 gibi yaklaşık 100 kat şişmiş kayıtları düzelt.
+    if (price > 0 && cost > price * 20 && cost / 100 > 0) {
+      s.cost = cost / 100;
+      changed = true;
+    }
+  });
+  if (changed) save();
+  localStorage.setItem('costRepairV2', 'done');
 }
 
 async function syncMynetPrices(showStatus = false) {
@@ -31,6 +71,7 @@ async function syncMynetPrices(showStatus = false) {
         updated++;
       }
     });
+    repairOldCostsOnce();
     save();
     localStorage.setItem('priceFeedUpdatedAt', data.updatedAt || '');
     localStorage.setItem('priceFeedSource', data.source || 'Mynet Finans');
@@ -124,7 +165,6 @@ window.addStock = addStock = async function() {
   save(); render();
 };
 
-// Kâr/zarar için tek doğru kaynak: güncel toplam değer - toplam maliyet.
 window.totals = totals = function() {
   let totalCost = 0, totalValue = 0, daily = 0;
   stocks.forEach(s => {
@@ -166,6 +206,7 @@ window.settings = settings = function() {
 
 window.addEventListener('load', async () => {
   await loadBistMap();
+  repairOldCostsOnce();
   syncMynetPrices(false);
   setInterval(() => syncMynetPrices(false), 15 * 60 * 1000);
 });
