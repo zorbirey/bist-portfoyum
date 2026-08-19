@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-19T19:12:08.384811+00:00",
+  "updatedAt": "2026-08-19T19:15:37.951907+00:00",
   "year": 2026,
-  "source": "Geçmiş + gelecek temettü takvimi",
-  "count": 69,
+  "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
+  "count": 73,
   "dividends": [
     {
       "code": "FROTO",
@@ -73,6 +73,36 @@
       "sourceNetPerShare": 1.87,
       "withholdingRate": 15,
       "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "ISMEN",
+      "name": "İŞ YATIRIM MENKUL DEĞERLER",
+      "date": "03.04.2026",
+      "grossPerShare": 3.166667,
+      "netPerShare": 2.691667,
+      "sourceNetPerShare": 2.691667,
+      "withholdingRate": 15,
+      "source": "KAP doğrulanmış 2026 temettü kaydı"
+    },
+    {
+      "code": "ENJSA",
+      "name": "ENERJİSA ENERJİ",
+      "date": "15.04.2026",
+      "grossPerShare": 5.08,
+      "netPerShare": 4.318,
+      "sourceNetPerShare": 4.318,
+      "withholdingRate": 15,
+      "source": "KAP doğrulanmış 2026 temettü kaydı"
+    },
+    {
+      "code": "DOAS",
+      "name": "DOĞUŞ OTOMOTİV",
+      "date": "15.04.2026",
+      "grossPerShare": 15.0,
+      "netPerShare": 12.75,
+      "sourceNetPerShare": 12.75,
+      "withholdingRate": 15,
+      "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
       "code": "AYEN",
@@ -153,6 +183,16 @@
       "sourceNetPerShare": 3.4,
       "withholdingRate": 15,
       "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "DOAS",
+      "name": "DOĞUŞ OTOMOTİV",
+      "date": "17.08.2026",
+      "grossPerShare": 15.0,
+      "netPerShare": 12.75,
+      "sourceNetPerShare": 12.75,
+      "withholdingRate": 15,
+      "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
       "code": "BEGYO",
