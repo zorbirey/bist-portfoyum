@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.webkit.DownloadListener;
+import android.view.View;
+import android.view.WindowInsets;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -22,8 +25,28 @@ public class MainActivity extends Activity {
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
+        getWindow().setNavigationBarColor(Color.WHITE);
+
         webView = new WebView(this);
+        webView.setBackgroundColor(Color.rgb(245, 247, 245));
         setContentView(webView);
+
+        // Android 15 / API 35 edge-to-edge davranışında içerik sistem navigasyon
+        // çubuğunun altına taşmasın. Alt güvenli alan kadar WebView padding'i eklenir.
+        webView.setOnApplyWindowInsetsListener((v, insets) -> {
+            int bottom;
+            int top;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                bottom = insets.getInsets(WindowInsets.Type.navigationBars()).bottom;
+                top = insets.getInsets(WindowInsets.Type.statusBars()).top;
+            } else {
+                bottom = insets.getSystemWindowInsetBottom();
+                top = insets.getSystemWindowInsetTop();
+            }
+            v.setPadding(0, 0, 0, bottom);
+            return insets;
+        });
+        webView.requestApplyInsets();
 
         WebSettings s = webView.getSettings();
         s.setJavaScriptEnabled(true);
