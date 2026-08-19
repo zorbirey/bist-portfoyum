@@ -35,8 +35,7 @@ def main():
             continue
 
         code = m.group(1)
-        # Mynet tablosunda fiyat sütunu 'Son'. Satır yapısına göre ilk sayısal
-        # fiyat hücresini güvenli biçimde buluyoruz.
+        company_name = first[m.end():].strip(" -–—|/")
         price = None
         change_pct = None
         time_text = None
@@ -55,6 +54,7 @@ def main():
             continue
 
         prices[code] = {
+            "name": company_name,
             "price": price,
             "changePct": change_pct,
             "marketTime": time_text,
@@ -74,7 +74,7 @@ def main():
     with open("prices.json", "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    print(f"{len(prices)} hisse güncellendi")
+    print(f"{len(prices)} hisse ve şirket adı güncellendi")
 
 
 if __name__ == "__main__":
