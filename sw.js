@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bist-portfoy-v13';
+const CACHE_NAME = 'bist-portfoy-v14';
 const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon.svg','./prices-sync.js','./restore-features.js','./distribution-pie.js','./target-page.js','./splash.js','./backup-tools.js'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
