@@ -2,6 +2,11 @@ name: BIST fiyatlarını güncelle
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'update_prices.py'
+      - '.github/workflows/update-prices.yml'
   schedule:
     - cron: '*/15 5-16 * * 1-5'
 
