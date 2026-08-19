@@ -1,5 +1,5 @@
-const CACHE_NAME = 'bist-portfoy-v10';
-const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon.svg','./prices-sync.js','./distribution-pie.js','./target-page.js'];
+const CACHE_NAME = 'bist-portfoy-v11';
+const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon.svg','./prices-sync.js','./restore-features.js','./distribution-pie.js','./target-page.js'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
   self.skipWaiting();
@@ -14,15 +14,17 @@ self.addEventListener('fetch', event => {
   if (event.request.url.includes('prices-sync.js')) {
     event.respondWith((async()=>{
       try {
-        const [baseRes,pieRes,targetRes]=await Promise.all([
+        const [baseRes,restoreRes,pieRes,targetRes]=await Promise.all([
           fetch('./prices-sync.js?live='+Date.now(),{cache:'no-store'}),
+          fetch('./restore-features.js?live='+Date.now(),{cache:'no-store'}),
           fetch('./distribution-pie.js?live='+Date.now(),{cache:'no-store'}),
           fetch('./target-page.js?live='+Date.now(),{cache:'no-store'})
         ]);
         const base=await baseRes.text();
+        const restore=await restoreRes.text();
         const pie=await pieRes.text();
         const target=await targetRes.text();
-        return new Response(base+'\n'+pie+'\n'+target,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store'}});
+        return new Response(base+'\n'+restore+'\n'+pie+'\n'+target,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store'}});
       } catch(e) {
         return fetch(event.request,{cache:'no-store'});
       }
@@ -30,7 +32,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (event.request.url.includes('prices.json') || event.request.url.includes('dividends.json') || event.request.url.includes('distribution-pie.js') || event.request.url.includes('target-page.js')) {
+  if (event.request.url.includes('prices.json') || event.request.url.includes('dividends.json') || event.request.url.includes('restore-features.js') || event.request.url.includes('distribution-pie.js') || event.request.url.includes('target-page.js')) {
     event.respondWith(fetch(event.request, {cache:'no-store'}).catch(() => caches.match(event.request)));
     return;
   }
