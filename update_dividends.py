@@ -11,6 +11,14 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 
 MONTHS = {"ocak":1,"şubat":2,"subat":2,"mart":3,"nisan":4,"mayıs":5,"mayis":5,"haziran":6,"temmuz":7,"ağustos":8,"agustos":8,"eylül":9,"eylul":9,"ekim":10,"kasım":11,"kasim":11,"aralık":12,"aralik":12}
 
+# KAP'tan doğrulanmış, otomatik kaynaklarda eksik kalabilen 2026 kayıtları.
+KAP_VERIFIED = [
+    {"code":"ISMEN","name":"İŞ YATIRIM MENKUL DEĞERLER","date":"03.04.2026","gross":3.1666666,"net":2.6916666},
+    {"code":"ENJSA","name":"ENERJİSA ENERJİ","date":"15.04.2026","gross":5.08,"net":4.318},
+    {"code":"DOAS","name":"DOĞUŞ OTOMOTİV","date":"15.04.2026","gross":15.0,"net":12.75},
+    {"code":"DOAS","name":"DOĞUŞ OTOMOTİV","date":"17.08.2026","gross":15.0,"net":12.75},
+]
+
 def tr_number(text):
     s=(text or "").strip().replace("\xa0"," ")
     s=re.sub(r"[^0-9,.-]","",s)
@@ -61,22 +69,25 @@ def parse_history(rows, seen):
         if not m: continue
         date_text=next((normalize_date(c) for c in cells if normalize_date(c)),None)
         if not date_text or not date_text.endswith("2026"): continue
-        # Kaynak tabloda son sütun hisse başı net temettü.
         net=tr_number(cells[-1])
         if net<=0: continue
         name=cells[1].strip() if len(cells)>1 else first[m.end():].strip()
         add_row(rows,seen,m.group(1),name,date_text,net/0.85,net,"Temettuhisseleri.net 2026 geçmiş takvimi")
 
+def add_kap_verified(rows, seen):
+    for x in KAP_VERIFIED:
+        add_row(rows, seen, x["code"], x["name"], x["date"], x["gross"], x["net"], "KAP doğrulanmış 2026 temettü kaydı")
+
 def main():
-    rows=[]; seen=set()
-    errors=[]
+    rows=[]; seen=set(); errors=[]
     for fn in (parse_history,parse_future):
         try: fn(rows,seen)
         except Exception as e: errors.append(str(e))
+    add_kap_verified(rows, seen)
     if not rows: raise RuntimeError("Temettü kaynaklarından veri okunamadı: "+" | ".join(errors))
     rows=[x for x in rows if x["date"].endswith("2026")]
     rows.sort(key=lambda x: datetime.strptime(x["date"],"%d.%m.%Y"))
-    payload={"updatedAt":datetime.now(timezone.utc).isoformat(),"year":2026,"source":"Geçmiş + gelecek temettü takvimi","count":len(rows),"dividends":rows}
+    payload={"updatedAt":datetime.now(timezone.utc).isoformat(),"year":2026,"source":"Geçmiş + gelecek + KAP doğrulanmış temettü takvimi","count":len(rows),"dividends":rows}
     with open("dividends.json","w",encoding="utf-8") as f: json.dump(payload,f,ensure_ascii=False,indent=2)
     print(f"{len(rows)} temettü kaydı güncellendi")
     if errors: print("Uyarılar:",errors)
