@@ -1,0 +1,598 @@
+{
+  "updatedAt": "2026-08-19T19:07:24.172220+00:00",
+  "year": 2026,
+  "source": "Doviz.com temettü takvimi",
+  "count": 59,
+  "dividends": [
+    {
+      "code": "BEGYO",
+      "name": "BATI EGE GMYO",
+      "date": "20.08.2026",
+      "grossPerShare": 0.03,
+      "netPerShare": 0.0255,
+      "sourceNetPerShare": 0.03,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "AHGAZ",
+      "name": "AHLATCI DOGALGAZ",
+      "date": "24.08.2026",
+      "grossPerShare": 0.06,
+      "netPerShare": 0.051,
+      "sourceNetPerShare": 0.05,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "ENERY",
+      "name": "ENERYA ENERJI",
+      "date": "25.08.2026",
+      "grossPerShare": 0.02,
+      "netPerShare": 0.017,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TGSAS",
+      "name": "TGS DIS TICARET",
+      "date": "25.08.2026",
+      "grossPerShare": 0.3,
+      "netPerShare": 0.255,
+      "sourceNetPerShare": 0.26,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TURSG",
+      "name": "TURKIYE SIGORTA",
+      "date": "27.08.2026",
+      "grossPerShare": 0.15,
+      "netPerShare": 0.1275,
+      "sourceNetPerShare": 0.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "SUWEN",
+      "name": "SUWEN TEKSTIL",
+      "date": "31.08.2026",
+      "grossPerShare": 0.18,
+      "netPerShare": 0.153,
+      "sourceNetPerShare": 0.15,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TBORG",
+      "name": "T.TUBORG",
+      "date": "02.09.2026",
+      "grossPerShare": 9.52,
+      "netPerShare": 8.092,
+      "sourceNetPerShare": 8.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BRKSN",
+      "name": "BERKOSAN YALITIM",
+      "date": "04.09.2026",
+      "grossPerShare": 0.06,
+      "netPerShare": 0.051,
+      "sourceNetPerShare": 0.05,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "LIDER",
+      "name": "LDR TURIZM",
+      "date": "08.09.2026",
+      "grossPerShare": 0.04,
+      "netPerShare": 0.034,
+      "sourceNetPerShare": 0.03,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "PLTUR",
+      "name": "PLATFORM TURIZM",
+      "date": "10.09.2026",
+      "grossPerShare": 0.07,
+      "netPerShare": 0.0595,
+      "sourceNetPerShare": 0.52,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "AKFGY",
+      "name": "AKFEN GMYO",
+      "date": "15.09.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BULGS",
+      "name": "BULLS GSYO",
+      "date": "15.09.2026",
+      "grossPerShare": 0.09,
+      "netPerShare": 0.0765,
+      "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BIMAS",
+      "name": "BIM MAGAZALAR",
+      "date": "16.09.2026",
+      "grossPerShare": 2.5,
+      "netPerShare": 2.125,
+      "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BIGCH",
+      "name": "BUYUK SEFLER BIGCHEFS",
+      "date": "18.09.2026",
+      "grossPerShare": 0.1,
+      "netPerShare": 0.085,
+      "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "PETUN",
+      "name": "PINAR ET VE UN",
+      "date": "21.09.2026",
+      "grossPerShare": 0.25,
+      "netPerShare": 0.2125,
+      "sourceNetPerShare": 0.21,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GIPTA",
+      "name": "GIPTA OFIS KIRTASIYE",
+      "date": "22.09.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "MACKO",
+      "name": "MACKOLIK INTERNET HIZMETLERI",
+      "date": "22.09.2026",
+      "grossPerShare": 1.8,
+      "netPerShare": 1.53,
+      "sourceNetPerShare": 1.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TAVHL",
+      "name": "TAV HAVALIMANLARI",
+      "date": "22.09.2026",
+      "grossPerShare": 1.8,
+      "netPerShare": 1.53,
+      "sourceNetPerShare": 1.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "OFSYM",
+      "name": "OFIS YEM GIDA",
+      "date": "23.09.2026",
+      "grossPerShare": 0.42,
+      "netPerShare": 0.357,
+      "sourceNetPerShare": 0.36,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "MOPAS",
+      "name": "MOPAS MARKETCILIK",
+      "date": "25.09.2026",
+      "grossPerShare": 0.27,
+      "netPerShare": 0.2295,
+      "sourceNetPerShare": 0.23,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "LKMNH",
+      "name": "LOKMAN HEKIM SAGLIK",
+      "date": "28.09.2026",
+      "grossPerShare": 0.23,
+      "netPerShare": 0.1955,
+      "sourceNetPerShare": 0.2,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TUPRS",
+      "name": "TUPRAS",
+      "date": "30.09.2026",
+      "grossPerShare": 6.75,
+      "netPerShare": 5.7375,
+      "sourceNetPerShare": 5.73,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "DESA",
+      "name": "DESA DERI",
+      "date": "30.09.2026",
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.07,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "KIMMR",
+      "name": "KIM MARKET-ERSAN ALISVERIS",
+      "date": "30.09.2026",
+      "grossPerShare": 0.21,
+      "netPerShare": 0.1785,
+      "sourceNetPerShare": 0.18,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "AEFES",
+      "name": "ANADOLU EFES",
+      "date": "05.10.2026",
+      "grossPerShare": 0.17,
+      "netPerShare": 0.1445,
+      "sourceNetPerShare": 0.14,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TRALT",
+      "name": "TURK ALTIN ISLETMELERI",
+      "date": "06.10.2026",
+      "grossPerShare": 0.5,
+      "netPerShare": 0.425,
+      "sourceNetPerShare": 0.43,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "EBEBK",
+      "name": "EBEBEK MAGAZACILIK",
+      "date": "15.10.2026",
+      "grossPerShare": 0.63,
+      "netPerShare": 0.5355,
+      "sourceNetPerShare": 0.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "ASTOR",
+      "name": "ASTOR ENERJI",
+      "date": "15.10.2026",
+      "grossPerShare": 2.19,
+      "netPerShare": 1.8615,
+      "sourceNetPerShare": 1.86,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BEGYO",
+      "name": "BATI EGE GMYO",
+      "date": "20.10.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BASCM",
+      "name": "BASTAS BASKENT CIMENTO",
+      "date": "21.10.2026",
+      "grossPerShare": 1.06,
+      "netPerShare": 0.901,
+      "sourceNetPerShare": 0.9,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "OSMEN",
+      "name": "OSMANLI MENKUL",
+      "date": "26.10.2026",
+      "grossPerShare": 0.05,
+      "netPerShare": 0.0425,
+      "sourceNetPerShare": 0.04,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "SRVGY",
+      "name": "SERVET GMYO",
+      "date": "26.10.2026",
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "MEDTR",
+      "name": "MEDITERA TIBBI MALZEME",
+      "date": "27.10.2026",
+      "grossPerShare": 0.11,
+      "netPerShare": 0.0935,
+      "sourceNetPerShare": 0.1,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "MERIT",
+      "name": "MERIT TURIZM",
+      "date": "27.10.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "DESA",
+      "name": "DESA DERI",
+      "date": "30.10.2026",
+      "grossPerShare": 0.1,
+      "netPerShare": 0.085,
+      "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "LIDER",
+      "name": "LDR TURIZM",
+      "date": "06.11.2026",
+      "grossPerShare": 0.04,
+      "netPerShare": 0.034,
+      "sourceNetPerShare": 0.03,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GOKNR",
+      "name": "GOKNUR GIDA",
+      "date": "09.11.2026",
+      "grossPerShare": 0.31,
+      "netPerShare": 0.2635,
+      "sourceNetPerShare": 0.26,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "KBORU",
+      "name": "KUZEY BORU",
+      "date": "10.11.2026",
+      "grossPerShare": 0.02,
+      "netPerShare": 0.017,
+      "sourceNetPerShare": 0.02,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GIPTA",
+      "name": "GIPTA OFIS KIRTASIYE",
+      "date": "17.11.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "DURKN",
+      "name": "DURUKAN SEKERLEME",
+      "date": "18.11.2026",
+      "grossPerShare": 0.09,
+      "netPerShare": 0.0765,
+      "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "ASELS",
+      "name": "ASELSAN",
+      "date": "24.11.2026",
+      "grossPerShare": 0.43,
+      "netPerShare": 0.3655,
+      "sourceNetPerShare": 0.36,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "OFSYM",
+      "name": "OFIS YEM GIDA",
+      "date": "25.11.2026",
+      "grossPerShare": 0.42,
+      "netPerShare": 0.357,
+      "sourceNetPerShare": 0.36,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "DESA",
+      "name": "DESA DERI",
+      "date": "30.11.2026",
+      "grossPerShare": 0.1,
+      "netPerShare": 0.085,
+      "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "SUMAS",
+      "name": "SUMAS SUNI TAHTA",
+      "date": "07.12.2026",
+      "grossPerShare": 2.17,
+      "netPerShare": 1.8445,
+      "sourceNetPerShare": 1.84,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "TCELL",
+      "name": "TURKCELL",
+      "date": "09.12.2026",
+      "grossPerShare": 4.0,
+      "netPerShare": 3.4,
+      "sourceNetPerShare": 3.4,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "EBEBK",
+      "name": "EBEBEK MAGAZACILIK",
+      "date": "15.12.2026",
+      "grossPerShare": 0.63,
+      "netPerShare": 0.5355,
+      "sourceNetPerShare": 0.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BIMAS",
+      "name": "BIM MAGAZALAR",
+      "date": "16.12.2026",
+      "grossPerShare": 2.5,
+      "netPerShare": 2.125,
+      "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BEGYO",
+      "name": "BATI EGE GMYO",
+      "date": "21.12.2026",
+      "grossPerShare": 0.02,
+      "netPerShare": 0.017,
+      "sourceNetPerShare": 0.02,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "SRVGY",
+      "name": "SERVET GMYO",
+      "date": "25.12.2026",
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "MEDTR",
+      "name": "MEDITERA TIBBI MALZEME",
+      "date": "28.12.2026",
+      "grossPerShare": 0.11,
+      "netPerShare": 0.0935,
+      "sourceNetPerShare": 0.1,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "RGYAS",
+      "name": "RONESANS GAYRIMENKUL YAT.",
+      "date": "31.12.2026",
+      "grossPerShare": 7.82,
+      "netPerShare": 6.647,
+      "sourceNetPerShare": 6.65,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GWIND",
+      "name": "GALATA WIND ENERJI",
+      "date": "31.12.2026",
+      "grossPerShare": 0.74,
+      "netPerShare": 0.629,
+      "sourceNetPerShare": 0.63,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GLYHO",
+      "name": "GLOBAL YAT. HOLDING",
+      "date": "31.12.2026",
+      "grossPerShare": 0.1,
+      "netPerShare": 0.085,
+      "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GOKNR",
+      "name": "GOKNUR GIDA",
+      "date": "08.02.2027",
+      "grossPerShare": 0.31,
+      "netPerShare": 0.2635,
+      "sourceNetPerShare": 0.26,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BEGYO",
+      "name": "BATI EGE GMYO",
+      "date": "22.02.2027",
+      "grossPerShare": 0.03,
+      "netPerShare": 0.0255,
+      "sourceNetPerShare": 0.03,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "SRVGY",
+      "name": "SERVET GMYO",
+      "date": "25.02.2027",
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "BEGYO",
+      "name": "BATI EGE GMYO",
+      "date": "20.04.2027",
+      "grossPerShare": 0.03,
+      "netPerShare": 0.0255,
+      "sourceNetPerShare": 0.03,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    },
+    {
+      "code": "GOKNR",
+      "name": "GOKNUR GIDA",
+      "date": "10.05.2027",
+      "grossPerShare": 0.31,
+      "netPerShare": 0.2635,
+      "sourceNetPerShare": 0.26,
+      "withholdingRate": 15,
+      "source": "Doviz.com / halka açık temettü takvimi"
+    }
+  ]
+}

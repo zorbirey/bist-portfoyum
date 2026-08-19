@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-19T18:46:16.974459+00:00",
+  "updatedAt": "2026-08-19T19:07:23.196227+00:00",
   "source": "Mynet Finans",
-  "count": 628,
+  "count": 627,
   "prices": {
     "A1CAP": {
       "name": "A1 CAPITAL YATIRIM",
@@ -109,10 +109,10 @@
       "source": "Mynet Finans"
     },
     "AKBNK": {
-      "name": "",
+      "name": "AKBANK",
       "price": 70.3,
       "changePct": 3.92,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "AKCNS": {
@@ -389,10 +389,10 @@
       "source": "Mynet Finans"
     },
     "ASELS": {
-      "name": "",
+      "name": "ASELSAN",
       "price": 403.0,
       "changePct": 5.7,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "ASGYO": {
@@ -403,10 +403,10 @@
       "source": "Mynet Finans"
     },
     "ASTOR": {
-      "name": "",
+      "name": "ASTOR ENERJI",
       "price": 331.5,
       "changePct": 3.43,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "ASUZU": {
@@ -984,10 +984,10 @@
       "source": "Mynet Finans"
     },
     "CITAS": {
-      "name": "",
+      "name": "CITLEKCI MAGAZACILIK GIDA",
       "price": 89.15,
       "changePct": 9.99,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "CLEBI": {
@@ -1236,10 +1236,10 @@
       "source": "Mynet Finans"
     },
     "DOKTA": {
-      "name": "",
+      "name": "DOKTAS DOKUMCULUK",
       "price": 25.12,
       "changePct": 9.98,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "DSTKF": {
@@ -1333,13 +1333,6 @@
       "marketTime": "18:10",
       "source": "Mynet Finans"
     },
-    "EFORNSE": {
-      "name": "EFOR YATIRIM",
-      "price": 0.0,
-      "changePct": -0.0,
-      "marketTime": "18:10",
-      "source": "Mynet Finans"
-    },
     "EGEEN": {
       "name": "EGE ENDUSTRI",
       "price": 5275.0,
@@ -1397,10 +1390,10 @@
       "source": "Mynet Finans"
     },
     "EKIM": {
-      "name": "",
+      "name": "EKIM TURIZM",
       "price": 18.75,
       "changePct": 9.97,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "EKIZ": {
@@ -2615,10 +2608,10 @@
       "source": "Mynet Finans"
     },
     "LIDER": {
-      "name": "",
+      "name": "LDR TURIZM",
       "price": 38.08,
       "changePct": -9.98,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "LIDFA": {
@@ -2804,10 +2797,10 @@
       "source": "Mynet Finans"
     },
     "MEGMT": {
-      "name": "",
+      "name": "MEGA METAL",
       "price": 59.15,
       "changePct": -9.97,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "MEKAG": {
@@ -2986,10 +2979,10 @@
       "source": "Mynet Finans"
     },
     "NETAS": {
-      "name": "",
+      "name": "NETAS TELEKOM.",
       "price": 82.6,
       "changePct": 9.99,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "NETCD": {
@@ -3056,10 +3049,10 @@
       "source": "Mynet Finans"
     },
     "ODINE": {
-      "name": "",
+      "name": "ODINE TEKNOLOJI",
       "price": 2545.0,
       "changePct": -9.99,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "OFSYM": {
@@ -3826,10 +3819,10 @@
       "source": "Mynet Finans"
     },
     "TATEN": {
-      "name": "",
+      "name": "TATLIPINAR ENERJI URETIM",
       "price": 9.79,
       "changePct": 10.0,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "TATGD": {
@@ -3910,10 +3903,10 @@
       "source": "Mynet Finans"
     },
     "THYAO": {
-      "name": "",
+      "name": "TURK HAVA YOLLARI",
       "price": 301.25,
       "changePct": 0.25,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "TKFEN": {
@@ -3924,10 +3917,10 @@
       "source": "Mynet Finans"
     },
     "TKNSA": {
-      "name": "",
+      "name": "TEKNOSA IC VE DIS TICARET",
       "price": 19.53,
       "changePct": -10.0,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "TLMAN": {
@@ -4064,10 +4057,10 @@
       "source": "Mynet Finans"
     },
     "TUPRS": {
-      "name": "",
+      "name": "TUPRAS",
       "price": 395.5,
       "changePct": 5.75,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "TUREX": {
@@ -4379,10 +4372,10 @@
       "source": "Mynet Finans"
     },
     "ZGYO": {
-      "name": "",
+      "name": "Z GMYO",
       "price": 30.24,
       "changePct": -9.95,
-      "marketTime": null,
+      "marketTime": "18:10",
       "source": "Mynet Finans"
     },
     "ZOREN": {
