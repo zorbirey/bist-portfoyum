@@ -5,6 +5,8 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -44,52 +46,123 @@ public class MainActivity extends Activity {
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
-        configureSystemBars();
 
-        root = new FrameLayout(this);
-        root.setBackgroundColor(Color.rgb(5, 7, 6));
-        setContentView(root);
+        try {
+            configureSystemBars();
+            root = new FrameLayout(this);
+            root.setBackgroundColor(Color.rgb(5, 7, 6));
+            setContentView(root);
 
-        if (state == null) {
-            showNativeSplash();
-            splashRunnable = () -> {
-                if (!destroyed && !isFinishing()) showApp(null);
-            };
-            handler.postDelayed(splashRunnable, 3000);
-        } else {
-            showApp(state);
-        }
-    }
-
-    private void configureSystemBars() {
-        getWindow().setStatusBarColor(Color.rgb(219, 233, 227));
-        getWindow().setNavigationBarColor(Color.BLACK);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            WindowInsetsController controller = getWindow().getInsetsController();
-            if (controller != null) {
-                controller.setSystemBarsAppearance(
-                    0,
-                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-                );
+            if (state == null) {
+                showNativeSplashSafe();
+                scheduleAppStart();
+            } else {
+                showApp(state);
+            }
+        } catch (Throwable startupError) {
+            // Hiçbir görsel/resource problemi uygulamayı daha açılışta kapatmasın.
+            try {
+                if (root == null) {
+                    root = new FrameLayout(this);
+                    setContentView(root);
+                }
+                showFallbackSplash();
+                scheduleAppStart();
+            } catch (Throwable ignored) {
+                // Son güvenlik katmanı: splash olmadan doğrudan uygulamayı açmayı dene.
+                handler.postDelayed(() -> {
+                    try { showApp(null); } catch (Throwable ignoredAgain) { }
+                }, 250);
             }
         }
     }
 
-    private void showNativeSplash() {
+    private void scheduleAppStart() {
+        if (splashRunnable != null) handler.removeCallbacks(splashRunnable);
+        splashRunnable = () -> {
+            if (!destroyed && !isFinishing()) {
+                try {
+                    showApp(null);
+                } catch (Throwable appStartError) {
+                    showWebViewErrorScreen();
+                }
+            }
+        };
+        handler.postDelayed(splashRunnable, 3000);
+    }
+
+    private void configureSystemBars() {
+        try { getWindow().setStatusBarColor(Color.rgb(219, 233, 227)); } catch (Throwable ignored) { }
+        try { getWindow().setNavigationBarColor(Color.BLACK); } catch (Throwable ignored) { }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            try {
+                WindowInsetsController controller = getWindow().getInsetsController();
+                if (controller != null) {
+                    controller.setSystemBarsAppearance(
+                        0,
+                        WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                    );
+                }
+            } catch (Throwable ignored) { }
+        }
+    }
+
+    private void showNativeSplashSafe() {
         root.removeAllViews();
+        root.setBackgroundColor(Color.rgb(5, 7, 6));
+
+        ImageView fullSplash = new ImageView(this);
+        fullSplash.setBackgroundColor(Color.rgb(5, 7, 6));
+        fullSplash.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+
+        boolean imageLoaded = false;
+        Bitmap bitmap = null;
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inPreferredConfig = Bitmap.Config.RGB_565;
+            options.inScaled = true;
+            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.zeus_splash, options);
+            if (bitmap != null && bitmap.getWidth() > 0 && bitmap.getHeight() > 0) {
+                fullSplash.setImageBitmap(bitmap);
+                imageLoaded = true;
+            }
+        } catch (Throwable ignored) {
+            imageLoaded = false;
+        }
+
+        if (imageLoaded) {
+            root.addView(fullSplash, new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            ));
+        } else {
+            // Zeus dosyası herhangi bir cihazda decode edilemezse uygulama artık kapanmaz.
+            showFallbackSplash();
+        }
+    }
+
+    private void showFallbackSplash() {
+        if (root == null) return;
+        root.removeAllViews();
+        root.setBackgroundColor(Color.rgb(5, 7, 6));
 
         LinearLayout splash = new LinearLayout(this);
         splash.setOrientation(LinearLayout.VERTICAL);
         splash.setGravity(Gravity.CENTER);
-        splash.setPadding(dp(36), dp(36), dp(36), dp(36));
+        splash.setPadding(dp(28), dp(28), dp(28), dp(28));
         splash.setBackgroundColor(Color.rgb(5, 7, 6));
 
-        ImageView zeus = new ImageView(this);
-        zeus.setImageResource(R.drawable.zeus_splash);
-        zeus.setAdjustViewBounds(true);
-        zeus.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        LinearLayout.LayoutParams imgLp = new LinearLayout.LayoutParams(dp(220), dp(220));
-        splash.addView(zeus, imgLp);
+        TextView bolt = new TextView(this);
+        bolt.setText("ϟ");
+        bolt.setTextColor(Color.rgb(235, 190, 65));
+        bolt.setTextSize(92);
+        bolt.setGravity(Gravity.CENTER);
+        bolt.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        splash.addView(bolt, new LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        ));
 
         TextView inspired = new TextView(this);
         inspired.setText("INSPIRED BY ZEUS");
@@ -98,34 +171,53 @@ public class MainActivity extends Activity {
         inspired.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         inspired.setGravity(Gravity.CENTER);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) inspired.setLetterSpacing(0.12f);
-        LinearLayout.LayoutParams t1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams t1 = new LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        );
         t1.topMargin = dp(18);
         splash.addView(inspired, t1);
 
         TextView appName = new TextView(this);
         appName.setText("BİST TAKİP");
         appName.setTextColor(Color.WHITE);
-        appName.setTextSize(14);
+        appName.setTextSize(15);
         appName.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
         appName.setGravity(Gravity.CENTER);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) appName.setLetterSpacing(0.14f);
-        LinearLayout.LayoutParams t2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        t2.topMargin = dp(10);
+        LinearLayout.LayoutParams t2 = new LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        t2.topMargin = dp(12);
         splash.addView(appName, t2);
 
-        root.addView(splash, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        root.addView(splash, new FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        ));
     }
 
     private void showApp(Bundle savedState) {
-        if (destroyed || isFinishing()) return;
+        if (destroyed || isFinishing() || root == null) return;
 
         destroyWebView();
         root.removeAllViews();
         root.setBackgroundColor(Color.rgb(245, 247, 245));
 
-        webView = new WebView(getApplicationContext());
+        try {
+            // Activity context kullanmak WebView pencere/tema yaşam döngüsü için daha güvenlidir.
+            webView = new WebView(this);
+        } catch (Throwable webViewInitError) {
+            showWebViewErrorScreen();
+            return;
+        }
+
         webView.setBackgroundColor(Color.rgb(245, 247, 245));
-        FrameLayout.LayoutParams webLp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        FrameLayout.LayoutParams webLp = new FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        );
         root.addView(webView, webLp);
 
         applySafeInsets();
@@ -139,10 +231,63 @@ public class MainActivity extends Activity {
                 restored = false;
             }
         }
-        if (!restored) webView.loadUrl(APP_URL);
+
+        if (!restored) {
+            try {
+                webView.loadUrl(APP_URL);
+            } catch (Throwable loadError) {
+                showWebViewErrorScreen();
+            }
+        }
+    }
+
+    private void showWebViewErrorScreen() {
+        if (destroyed || isFinishing() || root == null) return;
+        try {
+            destroyWebView();
+            root.removeAllViews();
+            root.setBackgroundColor(Color.rgb(245, 247, 245));
+
+            LinearLayout box = new LinearLayout(this);
+            box.setOrientation(LinearLayout.VERTICAL);
+            box.setGravity(Gravity.CENTER);
+            box.setPadding(dp(28), dp(28), dp(28), dp(28));
+
+            TextView title = new TextView(this);
+            title.setText("BİST TAKİP");
+            title.setTextSize(24);
+            title.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+            title.setTextColor(Color.BLACK);
+            title.setGravity(Gravity.CENTER);
+            box.addView(title);
+
+            TextView message = new TextView(this);
+            message.setText("Uygulama görüntüleme motoru başlatılamadı. Tekrar deneniyor.");
+            message.setTextSize(16);
+            message.setTextColor(Color.DKGRAY);
+            message.setGravity(Gravity.CENTER);
+            LinearLayout.LayoutParams mlp = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+            mlp.topMargin = dp(16);
+            box.addView(message, mlp);
+
+            root.addView(box, new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            ));
+
+            handler.postDelayed(() -> {
+                if (!destroyed && !isFinishing()) {
+                    try { showApp(null); } catch (Throwable ignored) { }
+                }
+            }, 1500);
+        } catch (Throwable ignored) { }
     }
 
     private void applySafeInsets() {
+        if (root == null) return;
         root.setOnApplyWindowInsetsListener((v, insets) -> {
             int left;
             int top;
@@ -150,7 +295,9 @@ public class MainActivity extends Activity {
             int bottom;
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                android.graphics.Insets sys = insets.getInsets(WindowInsets.Type.systemBars() | WindowInsets.Type.displayCutout());
+                android.graphics.Insets sys = insets.getInsets(
+                    WindowInsets.Type.systemBars() | WindowInsets.Type.displayCutout()
+                );
                 left = sys.left;
                 top = sys.top;
                 right = sys.right;
@@ -162,38 +309,47 @@ public class MainActivity extends Activity {
                 bottom = insets.getSystemWindowInsetBottom();
             }
 
-            if (webView != null && (left != lastLeft || top != lastTop || right != lastRight || bottom != lastBottom)) {
+            if (webView != null &&
+                (left != lastLeft || top != lastTop || right != lastRight || bottom != lastBottom)) {
                 lastLeft = left;
                 lastTop = top;
                 lastRight = right;
                 lastBottom = bottom;
-                FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) webView.getLayoutParams();
-                lp.leftMargin = left;
-                lp.topMargin = top;
-                lp.rightMargin = right;
-                lp.bottomMargin = bottom;
-                webView.setLayoutParams(lp);
+                try {
+                    FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) webView.getLayoutParams();
+                    lp.leftMargin = left;
+                    lp.topMargin = top;
+                    lp.rightMargin = right;
+                    lp.bottomMargin = bottom;
+                    webView.setLayoutParams(lp);
+                } catch (Throwable ignored) { }
             }
             return insets;
         });
-        root.requestApplyInsets();
+        try { root.requestApplyInsets(); } catch (Throwable ignored) { }
     }
 
     private void configureWebView() {
         if (webView == null) return;
 
-        WebSettings s = webView.getSettings();
-        s.setJavaScriptEnabled(true);
-        s.setDomStorageEnabled(true);
-        s.setDatabaseEnabled(true);
-        s.setAllowFileAccess(true);
-        s.setAllowContentAccess(true);
-        s.setJavaScriptCanOpenWindowsAutomatically(false);
-        s.setSupportMultipleWindows(false);
-        s.setCacheMode(WebSettings.LOAD_DEFAULT);
+        try {
+            WebSettings s = webView.getSettings();
+            s.setJavaScriptEnabled(true);
+            s.setDomStorageEnabled(true);
+            s.setDatabaseEnabled(true);
+            s.setAllowFileAccess(true);
+            s.setAllowContentAccess(true);
+            s.setJavaScriptCanOpenWindowsAutomatically(false);
+            s.setSupportMultipleWindows(false);
+            s.setCacheMode(WebSettings.LOAD_DEFAULT);
+        } catch (Throwable settingsError) {
+            showWebViewErrorScreen();
+            return;
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            webView.setRendererPriorityPolicy(WebView.RENDERER_PRIORITY_IMPORTANT, true);
+            try { webView.setRendererPriorityPolicy(WebView.RENDERER_PRIORITY_IMPORTANT, true); }
+            catch (Throwable ignored) { }
         }
 
         webView.setWebViewClient(new WebViewClient() {
@@ -204,13 +360,17 @@ public class MainActivity extends Activity {
         });
 
         webView.setWebChromeClient(new WebChromeClient() {
-            @Override public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> callback, FileChooserParams params) {
+            @Override public boolean onShowFileChooser(
+                WebView view,
+                ValueCallback<Uri[]> callback,
+                FileChooserParams params
+            ) {
                 if (filePathCallback != null) filePathCallback.onReceiveValue(null);
                 filePathCallback = callback;
                 try {
                     startActivityForResult(params.createIntent(), FILE_CHOOSER_REQUEST);
                     return true;
-                } catch (Exception e) {
+                } catch (Throwable e) {
                     filePathCallback = null;
                     Toast.makeText(MainActivity.this, "Dosya seçici açılamadı", Toast.LENGTH_SHORT).show();
                     return false;
@@ -221,7 +381,8 @@ public class MainActivity extends Activity {
         webView.setDownloadListener((url, userAgent, contentDisposition, mimeType, contentLength) -> {
             try {
                 Uri uri = Uri.parse(url);
-                if (!"http".equalsIgnoreCase(uri.getScheme()) && !"https".equalsIgnoreCase(uri.getScheme())) {
+                if (!"http".equalsIgnoreCase(uri.getScheme()) &&
+                    !"https".equalsIgnoreCase(uri.getScheme())) {
                     Toast.makeText(MainActivity.this, "Bu indirme türü desteklenmiyor", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -231,7 +392,10 @@ public class MainActivity extends Activity {
                 request.setTitle("BIST Portföy yedeği");
                 request.setDescription("Dosya indiriliyor");
                 request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "bist-portfoy-yedek.json");
+                request.setDestinationInExternalPublicDir(
+                    Environment.DIRECTORY_DOWNLOADS,
+                    "bist-portfoy-yedek.json"
+                );
                 DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
                 if (manager != null) manager.enqueue(request);
             } catch (Throwable e) {
@@ -247,36 +411,47 @@ public class MainActivity extends Activity {
         handler.post(() -> {
             if (destroyed || isFinishing()) return;
             destroyWebView();
-            Toast.makeText(
-                MainActivity.this,
-                crashed ? "Görüntüleme motoru yeniden başlatıldı" : "Sayfa yeniden yükleniyor",
-                Toast.LENGTH_SHORT
-            ).show();
+            try {
+                Toast.makeText(
+                    MainActivity.this,
+                    crashed ? "Görüntüleme motoru yeniden başlatıldı" : "Sayfa yeniden yükleniyor",
+                    Toast.LENGTH_SHORT
+                ).show();
+            } catch (Throwable ignored) { }
+
             handler.postDelayed(() -> {
                 recoveringRenderer = false;
-                if (!destroyed && !isFinishing()) showApp(null);
-            }, 400);
+                if (!destroyed && !isFinishing()) {
+                    try { showApp(null); } catch (Throwable ignored) { showWebViewErrorScreen(); }
+                }
+            }, 500);
         });
     }
 
     private void destroyWebView() {
         if (webView == null) return;
-        try {
-            ViewGroup parent = (ViewGroup) webView.getParent();
-            if (parent != null) parent.removeView(webView);
-        } catch (Throwable ignored) { }
-        try { webView.stopLoading(); } catch (Throwable ignored) { }
-        try { webView.setWebChromeClient(null); } catch (Throwable ignored) { }
-        try { webView.setWebViewClient(null); } catch (Throwable ignored) { }
-        try { webView.loadUrl("about:blank"); } catch (Throwable ignored) { }
-        try { webView.clearHistory(); } catch (Throwable ignored) { }
-        try { webView.removeAllViews(); } catch (Throwable ignored) { }
-        try { webView.destroy(); } catch (Throwable ignored) { }
+        WebView old = webView;
         webView = null;
+
+        try {
+            if (old.getParent() instanceof ViewGroup) {
+                ((ViewGroup) old.getParent()).removeView(old);
+            }
+        } catch (Throwable ignored) { }
+        try { old.stopLoading(); } catch (Throwable ignored) { }
+        try { old.setWebChromeClient(null); } catch (Throwable ignored) { }
+        try { old.setWebViewClient(null); } catch (Throwable ignored) { }
+        try { old.clearHistory(); } catch (Throwable ignored) { }
+        try { old.removeAllViews(); } catch (Throwable ignored) { }
+        try { old.destroy(); } catch (Throwable ignored) { }
     }
 
     private int dp(int value) {
-        return Math.round(value * getResources().getDisplayMetrics().density);
+        try {
+            return Math.round(value * getResources().getDisplayMetrics().density);
+        } catch (Throwable ignored) {
+            return value;
+        }
     }
 
     @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -287,7 +462,7 @@ public class MainActivity extends Activity {
                 results = new Uri[]{data.getData()};
             }
             if (filePathCallback != null) {
-                filePathCallback.onReceiveValue(results);
+                try { filePathCallback.onReceiveValue(results); } catch (Throwable ignored) { }
                 filePathCallback = null;
             }
         }
@@ -304,7 +479,6 @@ public class MainActivity extends Activity {
     @Override protected void onPause() {
         if (webView != null) {
             try { webView.onPause(); } catch (Throwable ignored) { }
-            try { webView.pauseTimers(); } catch (Throwable ignored) { }
         }
         super.onPause();
     }
@@ -319,7 +493,9 @@ public class MainActivity extends Activity {
     @Override public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         configureSystemBars();
-        if (root != null) root.requestApplyInsets();
+        if (root != null) {
+            try { root.requestApplyInsets(); } catch (Throwable ignored) { }
+        }
     }
 
     @Override public void onLowMemory() {
@@ -334,7 +510,7 @@ public class MainActivity extends Activity {
         if (splashRunnable != null) handler.removeCallbacks(splashRunnable);
         handler.removeCallbacksAndMessages(null);
         if (filePathCallback != null) {
-            filePathCallback.onReceiveValue(null);
+            try { filePathCallback.onReceiveValue(null); } catch (Throwable ignored) { }
             filePathCallback = null;
         }
         destroyWebView();
@@ -342,7 +518,11 @@ public class MainActivity extends Activity {
     }
 
     @Override public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) webView.goBack();
-        else super.onBackPressed();
+        try {
+            if (webView != null && webView.canGoBack()) webView.goBack();
+            else super.onBackPressed();
+        } catch (Throwable ignored) {
+            super.onBackPressed();
+        }
     }
 }
