@@ -30,7 +30,7 @@ def main():
             continue
 
         first = cells[0].strip()
-        m = re.match(r"^([A-Z0-9]{3,6})\b", first)
+        m = re.match(r"^([A-Z0-9]{3,8})\b", first)
         if not m:
             continue
 
@@ -41,14 +41,24 @@ def main():
         time_text = None
 
         for cell in cells[1:]:
-            if price is None and re.fullmatch(r"[0-9.]+,[0-9]+", cell.strip()):
-                price = tr_number(cell)
+            raw = cell.strip()
+            if not raw:
                 continue
-            if price is not None and change_pct is None and re.fullmatch(r"-?[0-9.]+,[0-9]+", cell.strip()):
-                change_pct = tr_number(cell)
+            if re.fullmatch(r"\d{1,2}:\d{2}", raw):
+                time_text = raw
                 continue
-            if re.fullmatch(r"\d{1,2}:\d{2}", cell.strip()):
-                time_text = cell.strip()
+            if not re.search(r"\d", raw):
+                continue
+            value = tr_number(raw)
+            if price is None:
+                price = value
+                continue
+            if change_pct is None:
+                # Değişim yüzdesi Mynet'te bazen % işaretiyle gelir.
+                # Hacim çok büyük olduğundan makul yüzde aralığıyla ayırıyoruz.
+                if '%' in raw or abs(value) <= 100:
+                    change_pct = value
+                    continue
 
         if price is None:
             continue
