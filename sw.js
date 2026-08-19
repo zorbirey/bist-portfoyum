@@ -1,5 +1,5 @@
-const CACHE_NAME = 'bist-portfoy-v9';
-const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon.svg','./prices-sync.js','./distribution-pie.js'];
+const CACHE_NAME = 'bist-portfoy-v10';
+const ASSETS = ['./','./index.html','./manifest.webmanifest','./icon.svg','./prices-sync.js','./distribution-pie.js','./target-page.js'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
   self.skipWaiting();
@@ -14,13 +14,15 @@ self.addEventListener('fetch', event => {
   if (event.request.url.includes('prices-sync.js')) {
     event.respondWith((async()=>{
       try {
-        const [baseRes,pieRes]=await Promise.all([
+        const [baseRes,pieRes,targetRes]=await Promise.all([
           fetch('./prices-sync.js?live='+Date.now(),{cache:'no-store'}),
-          fetch('./distribution-pie.js?live='+Date.now(),{cache:'no-store'})
+          fetch('./distribution-pie.js?live='+Date.now(),{cache:'no-store'}),
+          fetch('./target-page.js?live='+Date.now(),{cache:'no-store'})
         ]);
         const base=await baseRes.text();
         const pie=await pieRes.text();
-        return new Response(base+'\n'+pie,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store'}});
+        const target=await targetRes.text();
+        return new Response(base+'\n'+pie+'\n'+target,{headers:{'Content-Type':'application/javascript; charset=utf-8','Cache-Control':'no-store'}});
       } catch(e) {
         return fetch(event.request,{cache:'no-store'});
       }
@@ -28,7 +30,7 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (event.request.url.includes('prices.json') || event.request.url.includes('dividends.json') || event.request.url.includes('distribution-pie.js')) {
+  if (event.request.url.includes('prices.json') || event.request.url.includes('dividends.json') || event.request.url.includes('distribution-pie.js') || event.request.url.includes('target-page.js')) {
     event.respondWith(fetch(event.request, {cache:'no-store'}).catch(() => caches.match(event.request)));
     return;
   }
