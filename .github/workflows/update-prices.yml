@@ -1,4 +1,4 @@
-name: BIST fiyatlarını güncelle
+name: BIST fiyat ve temettü verilerini güncelle
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'update_prices.py'
+      - 'update_dividends.py'
       - '.github/workflows/update-prices.yml'
   schedule:
     - cron: '*/15 5-16 * * 1-5'
@@ -14,7 +15,7 @@ permissions:
   contents: write
 
 jobs:
-  update-prices:
+  update-market-data:
     runs-on: ubuntu-latest
     steps:
       - name: Repoyu al
@@ -27,14 +28,16 @@ jobs:
         run: pip install requests beautifulsoup4
       - name: Fiyatları çek
         run: python update_prices.py
+      - name: Temettü takvimini çek
+        run: python update_dividends.py
       - name: Değişiklik varsa kaydet
         run: |
-          git config user.name "bist-price-bot"
+          git config user.name "bist-data-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add prices.json
+          git add prices.json dividends.json
           if git diff --cached --quiet; then
-            echo "Yeni fiyat değişikliği yok"
+            echo "Yeni veri değişikliği yok"
           else
-            git commit -m "BIST fiyatlarını güncelle"
+            git commit -m "BIST piyasa verilerini güncelle"
             git push
           fi
