@@ -46,17 +46,20 @@ async function syncMynetPrices(showStatus = false) {
 window.refreshPrices = () => syncMynetPrices(true);
 
 function normalizeBistCode(value) {
-  const map = { 'ç':'C','Ç':'C','ğ':'G','Ğ':'G','ı':'I','İ':'I','ö':'O','Ö':'O','ş':'S','Ş':'S','ü':'U','Ü':'U' };
   return String(value || '')
-    .split('')
-    .map(ch => map[ch] || ch)
-    .join('')
+    .replace(/ç/gi, 'C')
+    .replace(/ğ/gi, 'G')
+    .replace(/ı/gi, 'I')
+    .replace(/ö/gi, 'O')
+    .replace(/ş/gi, 'S')
+    .replace(/ü/gi, 'U')
     .toUpperCase()
     .replace(/[^A-Z0-9]/g, '')
     .slice(0, 6);
 }
 
-async function validateBistCodeInput(el) {
+async function validateCodeElement(el) {
+  if (!el) return false;
   const normalized = normalizeBistCode(el.value);
   if (el.value !== normalized) el.value = normalized;
 
@@ -68,21 +71,41 @@ async function validateBistCodeInput(el) {
     if (feedback) { feedback.textContent = 'BIST kodunu gir.'; feedback.style.color = 'var(--muted)'; }
     if (nameInput) nameInput.value = '';
     if (addBtn) addBtn.disabled = true;
-    return;
+    return false;
   }
 
   if (!Object.keys(bistPriceMap).length) await loadBistMap();
   const row = bistPriceMap[normalized];
+
   if (row) {
     if (nameInput) nameInput.value = row.name || '';
     if (feedback) { feedback.textContent = '✓ ' + (row.name || 'Geçerli BIST kodu'); feedback.style.color = 'var(--green)'; }
     if (addBtn) addBtn.disabled = false;
-  } else {
-    if (nameInput) nameInput.value = '';
-    if (feedback) { feedback.textContent = 'BIST\'te bu hisse kodu bulunamadı.'; feedback.style.color = 'var(--red)'; }
-    if (addBtn) addBtn.disabled = true;
+    return true;
   }
+
+  if (nameInput) nameInput.value = '';
+  if (feedback) { feedback.textContent = "BIST'te bu hisse kodu bulunamadı."; feedback.style.color = 'var(--red)'; }
+  if (addBtn) addBtn.disabled = true;
+  return false;
 }
+
+// Dinamik olarak yeniden oluşturulan Ayarlar ekranında da her zaman çalışır.
+document.addEventListener('input', function (event) {
+  const el = event.target;
+  if (el && el.id === 'code') {
+    const normalized = normalizeBistCode(el.value);
+    if (el.value !== normalized) el.value = normalized;
+    validateCodeElement(el);
+  }
+});
+
+document.addEventListener('paste', function (event) {
+  const el = event.target;
+  if (el && el.id === 'code') {
+    setTimeout(() => validateCodeElement(el), 0);
+  }
+});
 
 window.editStock = function(i) {
   const s = stocks[i];
@@ -111,7 +134,7 @@ window.addStock = addStock = async function() {
 
   if (!Object.keys(bistPriceMap).length) await loadBistMap();
   const row = bistPriceMap[code];
-  if (!row) return alert('BIST\'te bu hisse kodu bulunamadı. Lütfen kodu kontrol et.');
+  if (!row) return alert("BIST'te bu hisse kodu bulunamadı. Lütfen kodu kontrol et.");
   if (stocks.some(s => String(s.code).toUpperCase() === code)) return alert('Bu hisse zaten portföyde.');
 
   const qty = cleanMoney(document.getElementById('qty').value);
@@ -132,7 +155,7 @@ window.addStock = addStock = async function() {
 };
 
 window.settings = settings = function() {
-  return `<div class="page"><div class="section">Portföy Düzenle</div><div class="panel"><div class="formgrid"><div><input id="code" autocomplete="off" autocapitalize="characters" maxlength="6" placeholder="BIST kodu (örn. TUPRS)" oninput="this.value=normalizeBistCode(this.value);validateBistCodeInput(this)"><div id="codeFeedback" class="small" style="margin:6px 2px 0">Küçük harfler otomatik büyük harfe çevrilir.</div></div><input id="name" placeholder="Şirket adı otomatik gelecek" readonly><input id="qty" inputmode="decimal" placeholder="Hisse adedi"><input id="cost" inputmode="decimal" placeholder="Ortalama maliyet"></div><div class="btnrow"><button id="addStockBtn" onclick="addStock()" disabled>HİSSE EKLE</button><button onclick="refreshPrices()">FİYATLARI YENİLE</button></div></div>${stocks.map((s,i)=>`<div class="panel stock"><div><b>${s.code}</b><div class="small">${s.name||''} · ${fmt(s.qty)} adet · ${s.price?fmt(s.price)+' ₺':'fiyat bekleniyor'}</div></div><div class="right"><div style="display:flex;flex-direction:column;gap:7px;align-items:flex-end"><button onclick="removeStock(${i})">SİL</button><button onclick="editStock(${i})" title="Düzenle">✏️ DÜZENLE</button></div></div></div>`).join('')}<div class="section">Hedef Ayarı</div><div class="panel"><div class="label">AYLIK NET TEMETTÜ HEDEFİ</div><input id="monthly" inputmode="numeric" value="${moneyInput(monthlyTarget)}" oninput="formatTarget(this)" onblur="monthlyTarget=cleanMoney(this.value);save()"></div><div class="panel"><b>Fiyat kaynağı</b><div class="small" style="margin-top:6px">Mynet Finans tüm BIST hisseleri tablosu. GitHub Actions yaklaşık 15 dakikada bir günceller. Portföy adet ve maliyetlerin yalnızca bu cihazda saklanır.</div></div></div>`;
+  return `<div class="page"><div class="section">Portföy Düzenle</div><div class="panel"><div class="formgrid"><div><input id="code" autocomplete="off" autocapitalize="characters" maxlength="6" placeholder="BIST kodu (örn. TUPRS)"><div id="codeFeedback" class="small" style="margin:6px 2px 0">Küçük harfler otomatik büyük harfe çevrilir.</div></div><input id="name" placeholder="Şirket adı otomatik gelecek" readonly><input id="qty" inputmode="decimal" placeholder="Hisse adedi"><input id="cost" inputmode="decimal" placeholder="Ortalama maliyet"></div><div class="btnrow"><button id="addStockBtn" onclick="addStock()" disabled>HİSSE EKLE</button><button onclick="refreshPrices()">FİYATLARI YENİLE</button></div></div>${stocks.map((s,i)=>`<div class="panel stock"><div><b>${s.code}</b><div class="small">${s.name||''} · ${fmt(s.qty)} adet · ${s.price?fmt(s.price)+' ₺':'fiyat bekleniyor'}</div></div><div class="right"><div style="display:flex;flex-direction:column;gap:7px;align-items:stretch"><button onclick="removeStock(${i})">SİL</button><button onclick="editStock(${i})" title="Düzenle">✏️ DÜZENLE</button></div></div></div>`).join('')}<div class="section">Hedef Ayarı</div><div class="panel"><div class="label">AYLIK NET TEMETTÜ HEDEFİ</div><input id="monthly" inputmode="numeric" value="${moneyInput(monthlyTarget)}" oninput="formatTarget(this)" onblur="monthlyTarget=cleanMoney(this.value);save()"></div><div class="panel"><b>Fiyat kaynağı</b><div class="small" style="margin-top:6px">Mynet Finans tüm BIST hisseleri tablosu. GitHub Actions yaklaşık 15 dakikada bir günceller. Portföy adet ve maliyetlerin yalnızca bu cihazda saklanır.</div></div></div>`;
 };
 
 window.addEventListener('load', async () => {
