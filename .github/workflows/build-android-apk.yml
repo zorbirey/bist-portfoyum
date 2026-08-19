@@ -18,6 +18,12 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
+
+      - name: FFmpeg kur
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Gercek ikon ve Zeus gorsellerini hazirla
         run: |
           set -e
@@ -51,14 +57,17 @@ jobs:
 
           file android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
           file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
+
       - name: Gradle kur
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.7-bin.zip
           unzip -q gradle-8.7-bin.zip
           echo "$PWD/gradle-8.7/bin" >> $GITHUB_PATH
+
       - name: Debug APK olustur
         working-directory: android-wrapper
         run: gradle assembleDebug
+
       - uses: actions/upload-artifact@v4
         with:
           name: BIST-Portfoy-Android-APK
