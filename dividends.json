@@ -1,9 +1,159 @@
 {
-  "updatedAt": "2026-08-19T19:07:24.172220+00:00",
+  "updatedAt": "2026-08-19T19:12:08.384811+00:00",
   "year": 2026,
-  "source": "Doviz.com temettü takvimi",
-  "count": 59,
+  "source": "Geçmiş + gelecek temettü takvimi",
+  "count": 69,
   "dividends": [
+    {
+      "code": "FROTO",
+      "name": "Ford Otosan",
+      "date": "16.03.2026",
+      "grossPerShare": 3.635294,
+      "netPerShare": 3.09,
+      "sourceNetPerShare": 3.09,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "AYGAZ",
+      "name": "Aygaz",
+      "date": "16.03.2026",
+      "grossPerShare": 12.541176,
+      "netPerShare": 10.66,
+      "sourceNetPerShare": 10.66,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "TUPRS",
+      "name": "Tüpraş",
+      "date": "16.03.2026",
+      "grossPerShare": 10.376471,
+      "netPerShare": 8.82,
+      "sourceNetPerShare": 8.82,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "NUHCM",
+      "name": "Nuh Çimento",
+      "date": "17.03.2026",
+      "grossPerShare": 22.494118,
+      "netPerShare": 19.12,
+      "sourceNetPerShare": 19.12,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "TOASO",
+      "name": "Tofaş",
+      "date": "23.03.2026",
+      "grossPerShare": 20.0,
+      "netPerShare": 17.0,
+      "sourceNetPerShare": 17.0,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "KCHOL",
+      "name": "Koç Holding",
+      "date": "25.03.2026",
+      "grossPerShare": 6.823529,
+      "netPerShare": 5.8,
+      "sourceNetPerShare": 5.8,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "AKBNK",
+      "name": "Akbank",
+      "date": "26.03.2026",
+      "grossPerShare": 2.2,
+      "netPerShare": 1.87,
+      "sourceNetPerShare": 1.87,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "AYEN",
+      "name": "Ayen Enerji",
+      "date": "21.04.2026",
+      "grossPerShare": 0.776471,
+      "netPerShare": 0.66,
+      "sourceNetPerShare": 0.66,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "CLEBI",
+      "name": "Çelebi Hava Servisi",
+      "date": "24.04.2026",
+      "grossPerShare": 103.0,
+      "netPerShare": 87.55,
+      "sourceNetPerShare": 87.55,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "YUNSA",
+      "name": "Yünsa",
+      "date": "27.04.2026",
+      "grossPerShare": 0.364706,
+      "netPerShare": 0.31,
+      "sourceNetPerShare": 0.31,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "MSGYO",
+      "name": "Mistral GYO",
+      "date": "28.04.2026",
+      "grossPerShare": 0.505882,
+      "netPerShare": 0.43,
+      "sourceNetPerShare": 0.43,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "OSMEN",
+      "name": "Osmanlı Yatırım",
+      "date": "28.04.2026",
+      "grossPerShare": 0.047059,
+      "netPerShare": 0.04,
+      "sourceNetPerShare": 0.04,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "NETCD",
+      "name": "Netcad",
+      "date": "30.04.2026",
+      "grossPerShare": 4.376471,
+      "netPerShare": 3.72,
+      "sourceNetPerShare": 3.72,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "SISE",
+      "name": "Şişecam",
+      "date": "01.06.2026",
+      "grossPerShare": 0.588235,
+      "netPerShare": 0.5,
+      "sourceNetPerShare": 0.5,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "BIMAS",
+      "name": "BİM",
+      "date": "17.06.2026",
+      "grossPerShare": 4.0,
+      "netPerShare": 3.4,
+      "sourceNetPerShare": 3.4,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
     {
       "code": "BEGYO",
       "name": "BATI EGE GMYO",
@@ -12,7 +162,7 @@
       "netPerShare": 0.0255,
       "sourceNetPerShare": 0.03,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "AHGAZ",
@@ -22,7 +172,7 @@
       "netPerShare": 0.051,
       "sourceNetPerShare": 0.05,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "ENERY",
@@ -32,7 +182,7 @@
       "netPerShare": 0.017,
       "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TGSAS",
@@ -42,7 +192,7 @@
       "netPerShare": 0.255,
       "sourceNetPerShare": 0.26,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TURSG",
@@ -52,7 +202,7 @@
       "netPerShare": 0.1275,
       "sourceNetPerShare": 0.13,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "SUWEN",
@@ -62,7 +212,7 @@
       "netPerShare": 0.153,
       "sourceNetPerShare": 0.15,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TBORG",
@@ -72,7 +222,7 @@
       "netPerShare": 8.092,
       "sourceNetPerShare": 8.09,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BRKSN",
@@ -82,7 +232,7 @@
       "netPerShare": 0.051,
       "sourceNetPerShare": 0.05,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "LIDER",
@@ -92,7 +242,7 @@
       "netPerShare": 0.034,
       "sourceNetPerShare": 0.03,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "PLTUR",
@@ -102,7 +252,7 @@
       "netPerShare": 0.0595,
       "sourceNetPerShare": 0.52,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "AKFGY",
@@ -112,7 +262,7 @@
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BULGS",
@@ -122,7 +272,7 @@
       "netPerShare": 0.0765,
       "sourceNetPerShare": 0.09,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BIMAS",
@@ -132,7 +282,7 @@
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BIGCH",
@@ -142,7 +292,7 @@
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "PETUN",
@@ -152,7 +302,7 @@
       "netPerShare": 0.2125,
       "sourceNetPerShare": 0.21,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "GIPTA",
@@ -162,7 +312,7 @@
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "MACKO",
@@ -172,7 +322,7 @@
       "netPerShare": 1.53,
       "sourceNetPerShare": 1.53,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TAVHL",
@@ -182,7 +332,7 @@
       "netPerShare": 1.53,
       "sourceNetPerShare": 1.53,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "OFSYM",
@@ -192,7 +342,7 @@
       "netPerShare": 0.357,
       "sourceNetPerShare": 0.36,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "MOPAS",
@@ -202,7 +352,7 @@
       "netPerShare": 0.2295,
       "sourceNetPerShare": 0.23,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "LKMNH",
@@ -212,7 +362,7 @@
       "netPerShare": 0.1955,
       "sourceNetPerShare": 0.2,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TUPRS",
@@ -222,7 +372,7 @@
       "netPerShare": 5.7375,
       "sourceNetPerShare": 5.73,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "DESA",
@@ -232,7 +382,7 @@
       "netPerShare": 0.068,
       "sourceNetPerShare": 0.07,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "KIMMR",
@@ -242,7 +392,7 @@
       "netPerShare": 0.1785,
       "sourceNetPerShare": 0.18,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "AEFES",
@@ -252,7 +402,7 @@
       "netPerShare": 0.1445,
       "sourceNetPerShare": 0.14,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TRALT",
@@ -262,7 +412,7 @@
       "netPerShare": 0.425,
       "sourceNetPerShare": 0.43,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "EBEBK",
@@ -272,7 +422,7 @@
       "netPerShare": 0.5355,
       "sourceNetPerShare": 0.53,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "ASTOR",
@@ -282,7 +432,7 @@
       "netPerShare": 1.8615,
       "sourceNetPerShare": 1.86,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BEGYO",
@@ -292,7 +442,7 @@
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BASCM",
@@ -302,7 +452,7 @@
       "netPerShare": 0.901,
       "sourceNetPerShare": 0.9,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "OSMEN",
@@ -312,7 +462,7 @@
       "netPerShare": 0.0425,
       "sourceNetPerShare": 0.04,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "SRVGY",
@@ -322,7 +472,7 @@
       "netPerShare": 0.068,
       "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "MEDTR",
@@ -332,7 +482,7 @@
       "netPerShare": 0.0935,
       "sourceNetPerShare": 0.1,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "MERIT",
@@ -342,7 +492,7 @@
       "netPerShare": 0.85,
       "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "DESA",
@@ -352,7 +502,7 @@
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "LIDER",
@@ -362,7 +512,7 @@
       "netPerShare": 0.034,
       "sourceNetPerShare": 0.03,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "GOKNR",
@@ -372,7 +522,7 @@
       "netPerShare": 0.2635,
       "sourceNetPerShare": 0.26,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "KBORU",
@@ -382,7 +532,7 @@
       "netPerShare": 0.017,
       "sourceNetPerShare": 0.02,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "GIPTA",
@@ -392,7 +542,7 @@
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "DURKN",
@@ -402,7 +552,7 @@
       "netPerShare": 0.0765,
       "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "ASELS",
@@ -412,7 +562,7 @@
       "netPerShare": 0.3655,
       "sourceNetPerShare": 0.36,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "OFSYM",
@@ -422,7 +572,7 @@
       "netPerShare": 0.357,
       "sourceNetPerShare": 0.36,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "DESA",
@@ -432,7 +582,7 @@
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "SUMAS",
@@ -442,7 +592,7 @@
       "netPerShare": 1.8445,
       "sourceNetPerShare": 1.84,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "TCELL",
@@ -452,7 +602,7 @@
       "netPerShare": 3.4,
       "sourceNetPerShare": 3.4,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "EBEBK",
@@ -462,7 +612,7 @@
       "netPerShare": 0.5355,
       "sourceNetPerShare": 0.53,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "NTHOL",
@@ -472,7 +622,7 @@
       "netPerShare": 0.85,
       "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BIMAS",
@@ -482,7 +632,7 @@
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BEGYO",
@@ -492,7 +642,7 @@
       "netPerShare": 0.017,
       "sourceNetPerShare": 0.02,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "SRVGY",
@@ -502,7 +652,7 @@
       "netPerShare": 0.068,
       "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "MEDTR",
@@ -512,7 +662,7 @@
       "netPerShare": 0.0935,
       "sourceNetPerShare": 0.1,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "RGYAS",
@@ -522,7 +672,7 @@
       "netPerShare": 6.647,
       "sourceNetPerShare": 6.65,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "GWIND",
@@ -532,7 +682,7 @@
       "netPerShare": 0.629,
       "sourceNetPerShare": 0.63,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "GLYHO",
@@ -542,57 +692,7 @@
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
       "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
-    },
-    {
-      "code": "GOKNR",
-      "name": "GOKNUR GIDA",
-      "date": "08.02.2027",
-      "grossPerShare": 0.31,
-      "netPerShare": 0.2635,
-      "sourceNetPerShare": 0.26,
-      "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
-    },
-    {
-      "code": "BEGYO",
-      "name": "BATI EGE GMYO",
-      "date": "22.02.2027",
-      "grossPerShare": 0.03,
-      "netPerShare": 0.0255,
-      "sourceNetPerShare": 0.03,
-      "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
-    },
-    {
-      "code": "SRVGY",
-      "name": "SERVET GMYO",
-      "date": "25.02.2027",
-      "grossPerShare": 0.08,
-      "netPerShare": 0.068,
-      "sourceNetPerShare": 0.08,
-      "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
-    },
-    {
-      "code": "BEGYO",
-      "name": "BATI EGE GMYO",
-      "date": "20.04.2027",
-      "grossPerShare": 0.03,
-      "netPerShare": 0.0255,
-      "sourceNetPerShare": 0.03,
-      "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
-    },
-    {
-      "code": "GOKNR",
-      "name": "GOKNUR GIDA",
-      "date": "10.05.2027",
-      "grossPerShare": 0.31,
-      "netPerShare": 0.2635,
-      "sourceNetPerShare": 0.26,
-      "withholdingRate": 15,
-      "source": "Doviz.com / halka açık temettü takvimi"
+      "source": "Doviz.com temettü takvimi"
     }
   ]
 }
