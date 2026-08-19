@@ -23,12 +23,23 @@ jobs:
           set -e
           mkdir -p android-wrapper/app/src/main/res/drawable-nodpi
           rm -f android-wrapper/app/src/main/res/drawable/zeus_splash.xml
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64
 
-          tr -cd 'A-Za-z0-9+/=' < android-wrapper/assets-b64/app_icon.b64 | base64 -d > android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
-          tr -cd 'A-Za-z0-9+/=' < android-wrapper/assets-b64/zeus_splash.b64 | base64 -d > android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
+          pairs = [
+              (Path('android-wrapper/assets-b64/app_icon.b64'), Path('android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp')),
+              (Path('android-wrapper/assets-b64/zeus_splash.b64'), Path('android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp')),
+          ]
 
-          test -s android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
-          test -s android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
+          for src, dst in pairs:
+              text = ''.join(src.read_text(encoding='utf-8').split())
+              data = base64.b64decode(text, validate=True)
+              if not data.startswith(b'RIFF') or b'WEBP' not in data[:16]:
+                  raise RuntimeError(f'{src} geçerli WebP değil')
+              dst.write_bytes(data)
+              print(f'{dst}: {len(data)} byte WebP hazır')
+          PY
           file android-wrapper/app/src/main/res/drawable-nodpi/app_icon.webp
           file android-wrapper/app/src/main/res/drawable-nodpi/zeus_splash.webp
       - name: Gradle kur
