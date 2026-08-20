@@ -28,8 +28,8 @@ class Question {
   factory Question.fromJson(Map<String, dynamic> json) {
     final options = (json['options'] as List<dynamic>).cast<String>();
     final correctIndex = json['correctIndex'] as int;
-    if (options.length != 4) {
-      throw const FormatException('Her soruda tam 4 seçenek olmalı.');
+    if (options.length != 5) {
+      throw const FormatException('HMGS ARENA sorularında tam 5 seçenek olmalı.');
     }
     if (correctIndex < 0 || correctIndex >= options.length) {
       throw const FormatException('Doğru cevap indeksi geçersiz.');
