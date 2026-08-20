@@ -1,0 +1,50 @@
+name: BIST TAKIP 2.0 Dev Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ bist-takip-2.0 ]
+    paths:
+      - 'bist-takip-2/**'
+      - '.github/workflows/build-bist-takip-2.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Android platform dosyalarini olustur
+        working-directory: bist-takip-2
+        run: flutter create . --platforms=android --org com.zorbirey --project-name bist_takip_2 --no-pub
+
+      - name: Paketleri yukle
+        working-directory: bist-takip-2
+        run: flutter pub get
+
+      - name: Statik analiz
+        working-directory: bist-takip-2
+        run: flutter analyze
+
+      - name: Testleri calistir
+        working-directory: bist-takip-2
+        run: flutter test
+
+      - name: Debug APK olustur
+        working-directory: bist-takip-2
+        run: flutter build apk --debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BIST-TAKIP-2-DEV-APK
+          path: bist-takip-2/build/app/outputs/flutter-apk/app-debug.apk
