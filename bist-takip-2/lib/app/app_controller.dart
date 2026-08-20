@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../data/dividends/dividend_feed.dart';
 import '../data/legacy/legacy_backup_migrator.dart';
 import '../data/local/local_portfolio_store.dart';
 import '../data/market/market_feed.dart';
@@ -11,21 +12,28 @@ class AppController extends ChangeNotifier {
   AppController({
     required this.store,
     required this.marketFeed,
+    required this.dividendFeed,
   });
 
   final LocalPortfolioStore store;
   final MarketFeed marketFeed;
+  final DividendFeed dividendFeed;
   final PortfolioLedger _ledger = const PortfolioLedger();
 
   List<PortfolioTransaction> _transactions = const [];
   List<PortfolioSnapshot> _snapshots = const [];
   Map<String, MarketQuote> _quotes = const {};
+  List<DividendEvent> _dividendEvents = const [];
   double _annualTarget = 0;
   double _monthlyTarget = 0;
   bool _refreshingMarket = false;
+  bool _refreshingDividends = false;
   String? _marketError;
+  String? _dividendError;
   DateTime? _marketUpdatedAt;
+  DateTime? _dividendUpdatedAt;
   String _marketSource = '';
+  String _dividendSource = '';
 
   List<PortfolioTransaction> get transactions =>
       List.unmodifiable(_transactions);
@@ -33,12 +41,18 @@ class AppController extends ChangeNotifier {
   Map<String, HoldingPosition> get holdings =>
       _ledger.calculate(_transactions);
   Map<String, MarketQuote> get quotes => Map.unmodifiable(_quotes);
+  List<DividendEvent> get dividendEvents =>
+      List.unmodifiable(_dividendEvents);
   double get annualTarget => _annualTarget;
   double get monthlyTarget => _monthlyTarget;
   bool get refreshingMarket => _refreshingMarket;
+  bool get refreshingDividends => _refreshingDividends;
   String? get marketError => _marketError;
+  String? get dividendError => _dividendError;
   DateTime? get marketUpdatedAt => _marketUpdatedAt;
+  DateTime? get dividendUpdatedAt => _dividendUpdatedAt;
   String get marketSource => _marketSource;
+  String get dividendSource => _dividendSource;
 
   MarketQuote? quoteFor(String ticker) => _quotes[ticker.toUpperCase()];
 
@@ -125,6 +139,41 @@ class AppController extends ChangeNotifier {
       _refreshingMarket = false;
       notifyListeners();
     }
+  }
+
+  Future<void> refreshDividends() async {
+    if (_refreshingDividends) return;
+    _refreshingDividends = true;
+    _dividendError = null;
+    notifyListeners();
+
+    try {
+      final snapshot = await dividendFeed.fetch();
+      _dividendEvents = snapshot.events;
+      _dividendUpdatedAt = snapshot.updatedAt;
+      _dividendSource = snapshot.source;
+    } catch (error) {
+      _dividendError =
+          error.toString().replaceFirst('Exception: ', '');
+    } finally {
+      _refreshingDividends = false;
+      notifyListeners();
+    }
+  }
+
+  List<DividendEvent> dividendEventsForPortfolio({int? year}) {
+    final activeCodes = holdings.values
+        .where((holding) => holding.quantity > 0)
+        .map((holding) => holding.ticker)
+        .toSet();
+
+    return _dividendEvents
+        .where(
+          (event) =>
+              activeCodes.contains(event.ticker) &&
+              (year == null || event.date.year == year),
+        )
+        .toList();
   }
 
   Future<void> addTransaction(PortfolioTransaction transaction) async {

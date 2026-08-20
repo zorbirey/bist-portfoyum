@@ -22,12 +22,14 @@ BIST TAKİP 2.0; fiyat ekranı olmaktan çok portföy, gerçek getiri, temettü 
 - Günlük portföy snapshot kaydı ve Geçmiş çizgisi
 - Dağılım ekranında güncel değer / maliyet seçimi ve pasta grafik
 - Düzenlenebilir yıllık ve aylık temettü hedefleri
+- Gerçek `dividends.json` takvimine bağlı Temettü Merkezi
+- Mevcut adet üzerinden takvim net tahmini ve bekleyen temettü hesabı
 
 ## Sonraki hedefler
 
 1. BIST 100 benchmark karşılaştırması
 2. Dağılım ekranına sektör kırılımı
-3. Gelişmiş Temettü Merkezi ve Temettü Maaşım
+3. Temettü yeniden yatırım senaryosu ve kayıt kolaylaştırma
 4. Bildirim altyapısı
 5. Bulut hesap/senkronizasyon ve biyometri
 6. Ticari veri sağlayıcısına geçiş

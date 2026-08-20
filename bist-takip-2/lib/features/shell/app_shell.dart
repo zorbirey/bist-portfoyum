@@ -717,44 +717,202 @@ class _DividendPage extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
-        final total = controller.dividendsForYear(DateTime.now().year);
+        final year = DateTime.now().year;
         final money = NumberFormat('#,##0.00', 'tr_TR');
-        final monthlyAverage = total / 12;
+        final events = controller.dividendEventsForPortfolio(year: year);
+        final holdings = controller.holdings;
+
+        double calendarForecast = 0;
+        double upcomingForecast = 0;
+        for (final event in events) {
+          final quantity = holdings[event.ticker]?.quantity ?? 0;
+          final estimated = quantity * event.netPerShare;
+          calendarForecast += estimated;
+          if (!event.isPaid) upcomingForecast += estimated;
+        }
+
+        final recorded = controller.dividendsForYear(year);
+        final monthlyForecast = calendarForecast / 12;
         final target = controller.monthlyTarget;
-        final ratio = target > 0 ? (monthlyAverage / target) * 100 : 0;
+        final ratio =
+            target > 0 ? (monthlyForecast / target) * 100 : 0;
+
+        final ordered = [...events]
+          ..sort((a, b) {
+            if (a.isPaid != b.isPaid) return a.isPaid ? 1 : -1;
+            return a.isPaid
+                ? b.date.compareTo(a.date)
+                : a.date.compareTo(b.date);
+          });
+
+        final status = controller.refreshingDividends
+            ? 'Temettü takvimi güncelleniyor'
+            : controller.dividendError != null
+                ? controller.dividendError!
+                : controller.dividendUpdatedAt == null
+                    ? 'Temettü takvimi bekleniyor'
+                    : '${controller.dividendSource} · ${DateFormat('dd.MM HH:mm').format(controller.dividendUpdatedAt!.toLocal())}';
 
         return _PageFrame(
           title: 'Temettü',
           subtitle: 'Pasif gelirini ve gelecek ödemelerini takip et',
+          actions: [
+            IconButton(
+              tooltip: 'Temettü takvimini yenile',
+              onPressed: controller.refreshingDividends
+                  ? null
+                  : controller.refreshDividends,
+              icon: controller.refreshingDividends
+                  ? const SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : const Icon(Icons.refresh),
+            ),
+          ],
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Row(
                 children: [
                   Expanded(
                     child: _MetricCard(
-                      label: 'BU YIL NET',
-                      value: '${money.format(total)} ₺',
+                      label: '$year KAYITLI NET',
+                      value: '${money.format(recorded)} ₺',
                     ),
                   ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: _MetricCard(
-                      label: 'AYLIK ORTALAMA',
-                      value: '${money.format(monthlyAverage)} ₺',
+                      label: 'TAKVİM NET TAHMİNİ',
+                      value: '${money.format(calendarForecast)} ₺',
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 10),
-              _MetricCard(
-                label: 'TEMETTÜ MAAŞI HEDEFİ',
-                value: '%${ratio.clamp(0, 999).toStringAsFixed(0)}',
+              Row(
+                children: [
+                  Expanded(
+                    child: _MetricCard(
+                      label: 'BEKLEYEN TAHMİN',
+                      value: '${money.format(upcomingForecast)} ₺',
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _MetricCard(
+                      label: 'AYLIK HEDEF ORANI',
+                      value: '%${ratio.clamp(0, 999).toStringAsFixed(0)}',
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 8),
+              Text(status, style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: 14),
               const _InfoCard(
                 text:
-                    'Yaklaşan temettüler, gerçekleşen ödemeler ve yeniden yatırım senaryoları bu merkezde toplanacak.',
+                    'Takvim tahminleri mevcut hisse adedin üzerinden hesaplanır. Geçmiş ödeme tarihinde farklı adet taşıdıysan gerçek aldığın net tutarı ayrıca Temettü işlemi olarak kaydet.',
               ),
+              const SizedBox(height: 16),
+              Text(
+                'Temettü Takvimim',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.w800),
+              ),
+              const SizedBox(height: 8),
+              if (ordered.isEmpty)
+                const _InfoCard(
+                  text:
+                      'Portföyündeki hisseler için bu takvim yılında açıklanmış temettü kaydı bulunamadı.',
+                )
+              else
+                ...ordered.map((event) {
+                  final quantity =
+                      holdings[event.ticker]?.quantity ?? 0;
+                  final estimated = quantity * event.netPerShare;
+                  final statusColor = event.isPaid
+                      ? Colors.green.shade700
+                      : Theme.of(context).colorScheme.primary;
+
+                  return Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      event.ticker,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.w900,
+                                          ),
+                                    ),
+                                    if (event.name.isNotEmpty)
+                                      Text(
+                                        event.name,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
+                                      ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 9,
+                                  vertical: 5,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: statusColor.withOpacity(.10),
+                                  borderRadius: BorderRadius.circular(99),
+                                ),
+                                child: Text(
+                                  event.isPaid ? 'ÖDENDİ' : 'BEKLEYEN',
+                                  style: TextStyle(
+                                    color: statusColor,
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            'Ödeme: ${event.date.day.toString().padLeft(2, '0')}.${event.date.month.toString().padLeft(2, '0')}.${event.date.year}',
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'Net / hisse: ${money.format(event.netPerShare)} ₺ · Mevcut adet: ${NumberFormat('#,##0.##', 'tr_TR').format(quantity)}',
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            'Tahmini net: ${money.format(estimated)} ₺',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(fontWeight: FontWeight.w900),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
             ],
           ),
         );
