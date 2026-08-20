@@ -25,11 +25,13 @@ class Question {
   final String sourceLabel;
   final String sourceRef;
 
+  bool get isHmgsFiveOptionFormat => options.length == 5;
+
   factory Question.fromJson(Map<String, dynamic> json) {
     final options = (json['options'] as List<dynamic>).cast<String>();
     final correctIndex = json['correctIndex'] as int;
-    if (options.length != 5) {
-      throw const FormatException('HMGS ARENA sorularında tam 5 seçenek olmalı.');
+    if (options.length != 4 && options.length != 5) {
+      throw const FormatException('Soruda 4 veya 5 seçenek bulunmalı.');
     }
     if (correctIndex < 0 || correctIndex >= options.length) {
       throw const FormatException('Doğru cevap indeksi geçersiz.');
