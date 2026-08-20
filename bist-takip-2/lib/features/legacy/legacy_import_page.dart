@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:file_picker/file_picker.dart';
+import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app_controller.dart';
@@ -31,17 +31,22 @@ class _LegacyImportPageState extends State<LegacyImportPage> {
     });
 
     try {
-      final selection = await FilePicker.pickFiles(
-        type: FileType.custom,
-        allowedExtensions: const ['json'],
-        withData: true,
+      const jsonType = XTypeGroup(
+        label: 'JSON yedek dosyası',
+        extensions: <String>['json'],
       );
-      if (selection == null) return;
+      final file = await openFile(
+        acceptedTypeGroups: const <XTypeGroup>[jsonType],
+      );
+      if (file == null) return;
 
-      final file = selection.files.single;
-      final bytes = file.bytes;
-      if (bytes == null) {
-        throw const FormatException('Dosya içeriği okunamadı.');
+      if (!file.name.toLowerCase().endsWith('.json')) {
+        throw const FormatException('Seçilen dosya JSON değil.');
+      }
+
+      final bytes = await file.readAsBytes();
+      if (bytes.isEmpty) {
+        throw const FormatException('Dosya içeriği boş.');
       }
 
       final rawJson = utf8.decode(bytes);
