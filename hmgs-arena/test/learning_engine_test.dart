@@ -11,7 +11,7 @@ Question q(String id, String topic) => Question(
       topic: topic,
       difficulty: QuestionDifficulty.medium,
       question: 'Soru $id',
-      options: const ['A', 'B', 'C', 'D'],
+      options: const ['A', 'B', 'C', 'D', 'E'],
       correctIndex: 0,
       explanation: 'Açıklama',
       sourceLabel: 'TBK',
