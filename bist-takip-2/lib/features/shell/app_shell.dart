@@ -71,6 +71,7 @@ class _PortfolioPage extends StatelessWidget {
       title: 'BIST TAKİP 2.0',
       subtitle: 'Portföyün, gerçek getirilerin ve temettü gelirlerin tek yerde',
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const Row(
             children: [
@@ -87,6 +88,39 @@ class _PortfolioPage extends StatelessWidget {
               Expanded(child: _MetricCard(label: 'BIST 100 FARKI', value: '— %')),
             ],
           ),
+          const SizedBox(height: 18),
+          Text('Portföyüm', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800)),
+          const SizedBox(height: 8),
+          const _PortfolioStockCard(
+            ticker: 'TUPRS',
+            companyName: 'Tüpraş',
+            quantity: 500,
+            averageCost: 175.00,
+            currentPrice: 192.40,
+            dailyChangePercent: 1.28,
+            marketTime: '18:10',
+            profitLoss: 8700.00,
+            profitLossPercent: 9.94,
+            isPreview: true,
+          ),
+          const SizedBox(height: 8),
+          const _PortfolioStockCard(
+            ticker: 'THYAO',
+            companyName: 'Türk Hava Yolları',
+            quantity: 200,
+            averageCost: 315.60,
+            currentPrice: 304.75,
+            dailyChangePercent: -0.72,
+            marketTime: '18:10',
+            profitLoss: -2170.00,
+            profitLossPercent: -3.44,
+            isPreview: true,
+          ),
+          const SizedBox(height: 6),
+          Text(
+            'Örnek kartlar tasarım önizlemesidir. İşlem defteri ve fiyat verisi bağlandığında gerçek portföy hisselerin burada gösterilecek.',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 16),
           Card(
             child: Padding(
@@ -98,7 +132,7 @@ class _PortfolioPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   const Text('2.0 ile portföy artık sadece adet ve ortalama maliyet tutmayacak. Her alış, satış, komisyon ve temettü ayrı işlem olarak kaydedilecek.'),
                   const SizedBox(height: 14),
-                  SizedBox(
+                  const SizedBox(
                     width: double.infinity,
                     child: FilledButton.icon(
                       onPressed: null,
@@ -111,6 +145,169 @@ class _PortfolioPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _PortfolioStockCard extends StatelessWidget {
+  const _PortfolioStockCard({
+    required this.ticker,
+    required this.companyName,
+    required this.quantity,
+    required this.averageCost,
+    required this.currentPrice,
+    required this.dailyChangePercent,
+    required this.marketTime,
+    required this.profitLoss,
+    required this.profitLossPercent,
+    this.isPreview = false,
+  });
+
+  final String ticker;
+  final String companyName;
+  final double quantity;
+  final double averageCost;
+  final double currentPrice;
+  final double dailyChangePercent;
+  final String marketTime;
+  final double profitLoss;
+  final double profitLossPercent;
+  final bool isPreview;
+
+  String _money(double value) => value.abs().toStringAsFixed(2).replaceAll('.', ',');
+  String _number(double value) => value.toStringAsFixed(value.truncateToDouble() == value ? 0 : 2).replaceAll('.', ',');
+
+  @override
+  Widget build(BuildContext context) {
+    final isProfit = profitLoss > 0;
+    final isLoss = profitLoss < 0;
+    final statusColor = isProfit
+        ? Colors.green.shade700
+        : isLoss
+            ? Colors.red.shade700
+            : Theme.of(context).colorScheme.onSurfaceVariant;
+    final priceBackground = isProfit
+        ? Colors.green.shade50
+        : isLoss
+            ? Colors.red.shade50
+            : Theme.of(context).colorScheme.surfaceContainerHighest;
+    final dailyColor = dailyChangePercent > 0
+        ? Colors.green.shade700
+        : dailyChangePercent < 0
+            ? Colors.red.shade700
+            : Theme.of(context).colorScheme.onSurfaceVariant;
+
+    final signedProfitLoss = '${profitLoss >= 0 ? '+' : '-'}${_money(profitLoss)} ₺';
+    final signedProfitPercent = '${profitLossPercent >= 0 ? '+' : ''}${profitLossPercent.toStringAsFixed(2).replaceAll('.', ',')}%';
+    final signedDaily = '${dailyChangePercent >= 0 ? '+' : ''}${dailyChangePercent.toStringAsFixed(2).replaceAll('.', ',')}%';
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          ticker,
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w900),
+                        ),
+                      ),
+                      if (isPreview) ...[
+                        const SizedBox(width: 5),
+                        Text('ÖRNEK', style: Theme.of(context).textTheme.labelSmall),
+                      ],
+                    ],
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    companyName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    '${_number(quantity)} adet · Ort. maliyet ${_money(averageCost)} ₺',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              flex: 3,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 9),
+                decoration: BoxDecoration(
+                  color: priceBackground,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: statusColor.withOpacity(0.45)),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'GÜNCEL FİYAT',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(color: statusColor, fontWeight: FontWeight.w700),
+                    ),
+                    const SizedBox(height: 4),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        '${_money(currentPrice)} ₺',
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(color: statusColor, fontWeight: FontWeight.w900),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        '$signedDaily · $marketTime',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(color: dailyColor, fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text('KÂR / ZARAR', style: Theme.of(context).textTheme.labelSmall),
+                  const SizedBox(height: 4),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      signedProfitLoss,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(color: statusColor, fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  const SizedBox(height: 3),
+                  Text(
+                    signedProfitPercent,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(color: statusColor, fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
