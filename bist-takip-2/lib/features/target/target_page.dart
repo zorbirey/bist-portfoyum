@@ -15,412 +15,46 @@ class TargetPage extends StatefulWidget {
   State<TargetPage> createState() => _TargetPageState();
 }
 
-class _TargetPageState extends State<TargetPage> {
-  Future<void> _editTargets({_TargetPeriod initial = _TargetPeriod.annual}) async {
-    final result = await showDialog<_TargetEditResult>(
-      context: context,
-      builder: (_) => _TargetAmountDialog(
-        initialPeriod: initial,
-        annualTarget: widget.controller.annualTarget,
-        monthlyTarget: widget.controller.monthlyTarget,
-      ),
-    );
-
-    if (result == null || !mounted) return;
-    await WidgetsBinding.instance.endOfFrame;
-    if (!mounted) return;
-
-    if (result.period == _TargetPeriod.annual) {
-      await widget.controller.updateTargets(
-        annualTarget: result.amount,
-        monthlyTarget: widget.controller.monthlyTarget,
-      );
-    } else {
-      await widget.controller.updateTargets(
-        annualTarget: widget.controller.annualTarget,
-        monthlyTarget: result.amount,
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: widget.controller,
-      builder: (context, _) {
-        final money = NumberFormat('#,##0.00', 'tr_TR');
-        final year = DateTime.now().year;
-        final actualPaid = widget.controller.dividendsForYear(year);
-        final annualTarget = widget.controller.annualTarget;
-        final monthlyTarget = widget.controller.monthlyTarget;
-        final monthlyActual = actualPaid / 12;
-        final monthlyRatio =
-            monthlyTarget > 0 ? (monthlyActual / monthlyTarget) * 100 : 0.0;
-        final annualRatio =
-            annualTarget > 0 ? (actualPaid / annualTarget) * 100 : 0.0;
-
-        final milestones = <_Milestone>[
-          const _Milestone(factor: .25, label: 'ÇEYREK'),
-          const _Milestone(factor: .50, label: 'YARIM'),
-          const _Milestone(factor: .75, label: '3/4'),
-          const _Milestone(factor: 1, label: 'HEDEF'),
-        ];
-
-        return PageFrame(
-          title: 'Hedef',
-          subtitle: 'Gerçek aldığın temettü ile hedefe ne kadar kaldığını gör',
-          actions: [
-            IconButton(
-              tooltip: 'Hedef tutarını düzenle',
-              onPressed: () => _editTargets(),
-              icon: const Icon(Icons.edit_outlined),
-            ),
-          ],
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      Text(
-                        'NET TEMETTÜ HEDEFİ',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.w900,
-                              color: Colors.red.shade700,
-                            ),
-                      ),
-                      const SizedBox(height: 7),
-                      Text(
-                        'HEDEFE GİDEN YOLDA ÇEKİLEN BÜTÜN ÇİLELER KUTSALDIR',
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium
-                            ?.copyWith(fontWeight: FontWeight.w900),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Row(
-                        children: [
-                          const Icon(Icons.tune_outlined),
-                          const SizedBox(width: 9),
-                          Expanded(
-                            child: Text(
-                              'Hedef Tutarım',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleMedium
-                                  ?.copyWith(fontWeight: FontWeight.w900),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: _CompactTargetCard(
-                              label: 'YILLIK HEDEFİM',
-                              value: annualTarget > 0
-                                  ? '${money.format(annualTarget)} ₺'
-                                  : 'Belirlenmedi',
-                            ),
-                          ),
-                          const SizedBox(width: 9),
-                          Expanded(
-                            child: _CompactTargetCard(
-                              label: 'AYLIK HEDEFİM',
-                              value: monthlyTarget > 0
-                                  ? '${money.format(monthlyTarget)} ₺'
-                                  : 'Belirlenmedi',
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      FilledButton.icon(
-                        onPressed: () => _editTargets(),
-                        icon: const Icon(Icons.edit_note_outlined),
-                        label: const Text('HEDEF TUTARIMI BELİRLE'),
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: OutlinedButton(
-                              onPressed: () => _editTargets(
-                                initial: _TargetPeriod.annual,
-                              ),
-                              child: const Text('YILLIK HEDEF'),
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: OutlinedButton(
-                              onPressed: () => _editTargets(
-                                initial: _TargetPeriod.monthly,
-                              ),
-                              child: const Text('AYLIK HEDEF'),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: MetricCard(
-                      label: '$year GERÇEK ALINAN NET',
-                      value: '${money.format(actualPaid)} ₺',
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: MetricCard(
-                      label: 'YILLIK HEDEF',
-                      value: '${money.format(annualTarget)} ₺',
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Hedef Kademeleri',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.w900),
-              ),
-              const SizedBox(height: 8),
-              if (annualTarget <= 0)
-                const InfoCard(
-                  text:
-                      'Çeyrek, yarım, 3/4 ve hedef kademelerini görmek için yıllık temettü hedefini gir.',
-                  icon: Icons.track_changes_outlined,
-                )
-              else
-                GridView.count(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  childAspectRatio: 1.45,
-                  crossAxisSpacing: 9,
-                  mainAxisSpacing: 9,
-                  children: milestones.map((milestone) {
-                    final goal = annualTarget * milestone.factor;
-                    final ratio =
-                        goal > 0 ? (actualPaid / goal) * 100 : 0.0;
-                    final reached = actualPaid >= goal;
-                    return _MilestoneCard(
-                      label: milestone.label,
-                      goal: goal,
-                      ratio: ratio,
-                      reached: reached,
-                    );
-                  }).toList(),
-                ),
-              const SizedBox(height: 14),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(14),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'YILLIK HEDEFE ULAŞMA',
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
-                      const SizedBox(height: 8),
-                      LinearProgressIndicator(
-                        value: (annualRatio / 100)
-                            .clamp(0.0, 1.0)
-                            .toDouble(),
-                        minHeight: 10,
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        annualTarget > 0
-                            ? '%${annualRatio.toStringAsFixed(1).replaceAll('.', ',')} · Kalan ${money.format(math.max(0, annualTarget - actualPaid))} ₺'
-                            : 'Yıllık hedef girilmedi.',
-                        style: const TextStyle(fontWeight: FontWeight.w800),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 14),
-              Text(
-                'Aylık Temettü Hedefi',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.w900),
-              ),
-              const SizedBox(height: 8),
-              Row(
-                children: [
-                  Expanded(
-                    child: MetricCard(
-                      label: 'AYLIK HEDEF',
-                      value: '${money.format(monthlyTarget)} ₺',
-                    ),
-                  ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: MetricCard(
-                      label: 'GERÇEK AYLIK ORT.',
-                      value: '${money.format(monthlyActual)} ₺',
-                      subtitle: '$year gerçek net ÷ 12',
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(14),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'AYLIK HEDEFE ULAŞMA',
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
-                      const SizedBox(height: 8),
-                      LinearProgressIndicator(
-                        value: (monthlyRatio / 100)
-                            .clamp(0.0, 1.0)
-                            .toDouble(),
-                        minHeight: 10,
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        monthlyTarget > 0
-                            ? '%${monthlyRatio.toStringAsFixed(1).replaceAll('.', ',')} · ${money.format(monthlyActual)} ₺ / ${money.format(monthlyTarget)} ₺'
-                            : 'Aylık hedef girilmedi.',
-                        style: const TextStyle(fontWeight: FontWeight.w800),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-              const InfoCard(
-                text:
-                    'Hedef ilerlemesinde takvim tahmini değil, Temettü ekranında kaydettiğin GERÇEK net ödemeler kullanılır. Aylık hedef hesabında yıl içinde gerçekten alınan net temettü toplamı 12’ye bölünür.',
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
-
-class _CompactTargetCard extends StatelessWidget {
-  const _CompactTargetCard({required this.label, required this.value});
-
-  final String label;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(label, style: Theme.of(context).textTheme.labelSmall),
-            const SizedBox(height: 6),
-            SizedBox(
-              width: double.infinity,
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  value,
-                  maxLines: 1,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w900,
-                      ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 enum _TargetPeriod { annual, monthly }
+enum _TargetMode { single, equal }
 
-class _TargetEditResult {
-  const _TargetEditResult({required this.period, required this.amount});
+class _TargetPageState extends State<TargetPage> {
+  _TargetPeriod _period = _TargetPeriod.annual;
+  _TargetMode _mode = _TargetMode.single;
+  double _selectedMilestone = 1;
 
-  final _TargetPeriod period;
-  final double amount;
-}
-
-class _TargetAmountDialog extends StatefulWidget {
-  const _TargetAmountDialog({
-    required this.initialPeriod,
-    required this.annualTarget,
-    required this.monthlyTarget,
-  });
-
-  final _TargetPeriod initialPeriod;
-  final double annualTarget;
-  final double monthlyTarget;
-
-  @override
-  State<_TargetAmountDialog> createState() => _TargetAmountDialogState();
-}
-
-class _TargetAmountDialogState extends State<_TargetAmountDialog> {
-  late _TargetPeriod _period;
-  late final TextEditingController _controller;
-  String? _error;
+  late final TextEditingController _amountController;
+  late final FocusNode _amountFocus;
 
   @override
   void initState() {
     super.initState();
-    _period = widget.initialPeriod;
-    _controller = TextEditingController(text: _valueFor(_period));
+    _amountController = TextEditingController(
+      text: _formatInput(widget.controller.annualTarget),
+    );
+    _amountFocus = FocusNode()..addListener(_handleAmountFocus);
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _amountFocus.removeListener(_handleAmountFocus);
+    _amountFocus.dispose();
+    _amountController.dispose();
     super.dispose();
   }
 
-  String _valueFor(_TargetPeriod period) {
-    final value = period == _TargetPeriod.annual
-        ? widget.annualTarget
-        : widget.monthlyTarget;
-    return value > 0 ? value.toStringAsFixed(0) : '';
+  void _handleAmountFocus() {
+    if (!_amountFocus.hasFocus) {
+      _saveTargetAmount();
+    }
   }
 
-  double _parse(String input) {
+  String _formatInput(double value) {
+    if (value <= 0) return '0';
+    return NumberFormat('#,##0', 'tr_TR').format(value);
+  }
+
+  double _parseMoney(String input) {
     var text = input.trim().replaceAll(' ', '');
     if (text.isEmpty) return 0;
 
@@ -443,93 +77,446 @@ class _TargetAmountDialogState extends State<_TargetAmountDialog> {
     return double.tryParse(text) ?? 0;
   }
 
-  void _changePeriod(_TargetPeriod period) {
-    if (_period == period) return;
+  Future<void> _saveTargetAmount() async {
+    final parsed = _parseMoney(_amountController.text);
+    final amount = math.max(0.0, parsed).toDouble();
+
+    if (_period == _TargetPeriod.annual) {
+      if ((widget.controller.annualTarget - amount).abs() > 0.001) {
+        await widget.controller.updateTargets(
+          annualTarget: amount,
+          monthlyTarget: widget.controller.monthlyTarget,
+        );
+      }
+    } else {
+      if ((widget.controller.monthlyTarget - amount).abs() > 0.001) {
+        await widget.controller.updateTargets(
+          annualTarget: widget.controller.annualTarget,
+          monthlyTarget: amount,
+        );
+      }
+    }
+
+    if (!mounted) return;
+    _amountController.text = _formatInput(amount);
+    _amountController.selection = TextSelection.collapsed(
+      offset: _amountController.text.length,
+    );
+    setState(() {});
+  }
+
+  Future<void> _changePeriod(_TargetPeriod next) async {
+    if (next == _period) return;
+    await _saveTargetAmount();
+    if (!mounted) return;
+
     setState(() {
-      _period = period;
-      _error = null;
-      _controller.text = _valueFor(period);
-      _controller.selection = TextSelection.collapsed(
-        offset: _controller.text.length,
+      _period = next;
+      final value = _period == _TargetPeriod.annual
+          ? widget.controller.annualTarget
+          : widget.controller.monthlyTarget;
+      _amountController.text = _formatInput(value);
+      _amountController.selection = TextSelection.collapsed(
+        offset: _amountController.text.length,
       );
     });
   }
 
-  void _save() {
-    final amount = _parse(_controller.text);
-    if (amount <= 0) {
-      setState(() => _error = 'Sıfırdan büyük bir hedef tutarı gir.');
-      return;
-    }
-    Navigator.of(context).pop(
-      _TargetEditResult(period: _period, amount: amount),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      title: const Text('Hedef tutarımı belirle'),
-      content: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SegmentedButton<_TargetPeriod>(
-              segments: const [
-                ButtonSegment(
-                  value: _TargetPeriod.annual,
-                  icon: Icon(Icons.calendar_today_outlined),
-                  label: Text('Yıllık'),
-                ),
-                ButtonSegment(
-                  value: _TargetPeriod.monthly,
-                  icon: Icon(Icons.date_range_outlined),
-                  label: Text('Aylık'),
-                ),
-              ],
-              selected: {_period},
-              onSelectionChanged: (selection) =>
-                  _changePeriod(selection.first),
-            ),
-            const SizedBox(height: 14),
-            TextField(
-              controller: _controller,
-              autofocus: true,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
-              decoration: InputDecoration(
-                labelText: _period == _TargetPeriod.annual
-                    ? 'Yıllık net temettü hedefi'
-                    : 'Aylık net temettü hedefi',
-                hintText: _period == _TargetPeriod.annual
-                    ? 'Örnek: 120.000'
-                    : 'Örnek: 10.000',
-                suffixText: '₺',
-                errorText: _error,
+    return AnimatedBuilder(
+      animation: widget.controller,
+      builder: (context, _) {
+        final money = NumberFormat('#,##0.00', 'tr_TR');
+        final money0 = NumberFormat('#,##0', 'tr_TR');
+        final year = DateTime.now().year;
+
+        final rawTarget = _period == _TargetPeriod.annual
+            ? widget.controller.annualTarget
+            : widget.controller.monthlyTarget;
+        final annualTarget = _period == _TargetPeriod.monthly
+            ? rawTarget * 12
+            : rawTarget;
+
+        final netPerShareByTicker = <String, double>{};
+        for (final event
+            in widget.controller.dividendEventsForPortfolio(year: year)) {
+          final ticker = event.ticker.toUpperCase();
+          netPerShareByTicker[ticker] =
+              (netPerShareByTicker[ticker] ?? 0) + event.netPerShare;
+        }
+
+        double forecast = 0;
+        final eligible = <_EligibleStock>[];
+        for (final holding in widget.controller.holdings.values) {
+          if (holding.quantity <= 0) continue;
+          final ticker = holding.ticker.toUpperCase();
+          final netYearPerShare = netPerShareByTicker[ticker] ?? 0;
+          final quote = widget.controller.quoteFor(ticker);
+          final price = quote?.price ?? 0;
+
+          if (netYearPerShare > 0) {
+            forecast += holding.quantity * netYearPerShare;
+          }
+
+          if (price > 0 && netYearPerShare > 0) {
+            eligible.add(
+              _EligibleStock(
+                ticker: ticker,
+                name: quote?.name ?? '',
+                price: price,
+                netYearPerShare: netYearPerShare,
               ),
-              onSubmitted: (_) => _save(),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              _period == _TargetPeriod.annual
-                  ? 'Bu tutar ÇEYREK, YARIM, 3/4 ve HEDEF kademelerinde kullanılır.'
-                  : 'Aylık ilerleme, yıl içinde gerçekten aldığın net temettü toplamı ÷ 12 ile karşılaştırılır.',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
-        ),
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text('VAZGEÇ'),
-        ),
-        FilledButton(
-          onPressed: _save,
-          child: const Text('KAYDET'),
-        ),
-      ],
+            );
+          }
+        }
+
+        final selectedGoal = annualTarget * _selectedMilestone;
+        final remaining = math.max(0.0, selectedGoal - forecast).toDouble();
+
+        final plan = <_TargetPlan>[];
+        if (_mode == _TargetMode.single) {
+          for (final stock in eligible) {
+            final qty = stock.netYearPerShare > 0
+                ? (remaining / stock.netYearPerShare).ceil()
+                : 0;
+            plan.add(
+              _TargetPlan(
+                stock: stock,
+                quantity: qty,
+                cost: qty * stock.price,
+                addedDividend: qty * stock.netYearPerShare,
+              ),
+            );
+          }
+          plan.sort((a, b) => a.cost.compareTo(b.cost));
+        } else if (eligible.isNotEmpty) {
+          final share = remaining / eligible.length;
+          for (final stock in eligible) {
+            final qty = stock.netYearPerShare > 0
+                ? (share / stock.netYearPerShare).ceil()
+                : 0;
+            plan.add(
+              _TargetPlan(
+                stock: stock,
+                quantity: qty,
+                cost: qty * stock.price,
+                addedDividend: qty * stock.netYearPerShare,
+              ),
+            );
+          }
+        }
+
+        final planTotal =
+            plan.fold<double>(0, (sum, item) => sum + item.cost);
+        final planDividend =
+            plan.fold<double>(0, (sum, item) => sum + item.addedDividend);
+
+        const milestones = <_Milestone>[
+          _Milestone(factor: .25, label: '25%'),
+          _Milestone(factor: .50, label: '50%'),
+          _Milestone(factor: .75, label: '75%'),
+          _Milestone(factor: 1, label: 'HEDEF'),
+        ];
+
+        return PageFrame(
+          title: 'Hedef',
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Column(
+                  children: [
+                    Text(
+                      'NET TEMETTÜ HEDEFİ',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                            color: Colors.red.shade700,
+                            fontWeight: FontWeight.w900,
+                          ),
+                    ),
+                    const SizedBox(height: 6),
+                    Text(
+                      'HEDEFE GİDEN YOLDA ÇEKİLEN BÜTÜN ÇİLELER KUTSALDIR',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontWeight: FontWeight.w900,
+                          ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 8),
+              Container(
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: Colors.red.shade50,
+                  border: Border.all(color: Colors.red.shade300, width: 2),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Text(
+                  'UYARI\nBU HESAPLAMALAR SADECE BU SENEYE GÖRE YAPILMIŞTIR. SENEYE HİSSENİN TEMETTÜ VERMESİ GARANTİ DEĞİLDİR. SADECE FİKİR AMAÇLIDIR',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.red.shade800,
+                    fontWeight: FontWeight.w900,
+                    height: 1.45,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'HEDEF TÜRÜ',
+                        style: Theme.of(context).textTheme.labelSmall,
+                      ),
+                      const SizedBox(height: 8),
+                      SegmentedButton<_TargetPeriod>(
+                        segments: const [
+                          ButtonSegment(
+                            value: _TargetPeriod.annual,
+                            label: Text('YILLIK'),
+                          ),
+                          ButtonSegment(
+                            value: _TargetPeriod.monthly,
+                            label: Text('AYLIK'),
+                          ),
+                        ],
+                        selected: {_period},
+                        onSelectionChanged: (selection) {
+                          _changePeriod(selection.first);
+                        },
+                      ),
+                      const SizedBox(height: 12),
+                      Text(
+                        _period == _TargetPeriod.annual
+                            ? 'YILLIK NET TEMETTÜ HEDEFİ'
+                            : 'AYLIK NET TEMETTÜ HEDEFİ',
+                        style: Theme.of(context).textTheme.labelSmall,
+                      ),
+                      const SizedBox(height: 6),
+                      TextField(
+                        controller: _amountController,
+                        focusNode: _amountFocus,
+                        keyboardType:
+                            const TextInputType.numberWithOptions(decimal: true),
+                        decoration: const InputDecoration(
+                          suffixText: '₺',
+                        ),
+                        onSubmitted: (_) => _saveTargetAmount(),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Yıllık karşılığı: ${money.format(annualTarget)} ₺',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                      ),
+                      const SizedBox(height: 3),
+                      Text(
+                        'Bu yıl öngörülen net temettü: ${money.format(forecast)} ₺',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Hedef Kademeleri',
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w900,
+                    ),
+              ),
+              const SizedBox(height: 8),
+              GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                childAspectRatio: 1.55,
+                crossAxisSpacing: 9,
+                mainAxisSpacing: 9,
+                children: milestones.map((milestone) {
+                  final goal = annualTarget * milestone.factor;
+                  final ratio = goal > 0
+                      ? math.min(100.0, (forecast / goal) * 100)
+                      : 0.0;
+                  final selected = _selectedMilestone == milestone.factor;
+                  return InkWell(
+                    borderRadius: BorderRadius.circular(14),
+                    onTap: () => setState(
+                      () => _selectedMilestone = milestone.factor,
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(14),
+                        border: Border.all(
+                          color: selected
+                              ? Colors.green.shade500
+                              : Theme.of(context).dividerColor,
+                          width: selected ? 2 : 1,
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            milestone.label,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelLarge
+                                ?.copyWith(fontWeight: FontWeight.w900),
+                          ),
+                          const SizedBox(height: 5),
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              '${money0.format(goal)} ₺',
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w800),
+                            ),
+                          ),
+                          const Spacer(),
+                          LinearProgressIndicator(
+                            value: (ratio / 100).clamp(0.0, 1.0),
+                            minHeight: 9,
+                          ),
+                          const SizedBox(height: 5),
+                          Text(
+                            ratio >= 100
+                                ? 'Ulaşıldı'
+                                : '%${ratio.toStringAsFixed(0)}',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+              const SizedBox(height: 12),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'HEDEF KADEMESİNE KALAN TUTAR',
+                        style: Theme.of(context).textTheme.labelSmall,
+                      ),
+                      const SizedBox(height: 4),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '${money.format(remaining)} ₺',
+                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                color: remaining > 0
+                                    ? Colors.red.shade700
+                                    : Colors.green.shade700,
+                                fontWeight: FontWeight.w900,
+                              ),
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Seçili kademe: %${(_selectedMilestone * 100).toStringAsFixed(0)} · ${money.format(selectedGoal)} ₺',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        'Tek hisseden mi portföye eşit dağılımla mı ilerlemek istersiniz?',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                              fontWeight: FontWeight.w900,
+                            ),
+                      ),
+                      const SizedBox(height: 9),
+                      SegmentedButton<_TargetMode>(
+                        segments: const [
+                          ButtonSegment(
+                            value: _TargetMode.single,
+                            label: Text('TEK HİSSE'),
+                          ),
+                          ButtonSegment(
+                            value: _TargetMode.equal,
+                            label: Text('EŞİT DAĞILIM'),
+                          ),
+                        ],
+                        selected: {_mode},
+                        onSelectionChanged: (selection) =>
+                            setState(() => _mode = selection.first),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      if (_mode == _TargetMode.equal && plan.isNotEmpty) ...[
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _PlanSummary(
+                                label: 'PLAN TOPLAM MALİYETİ',
+                                value: '${money.format(planTotal)} ₺',
+                              ),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: _PlanSummary(
+                                label: 'EK NET TEMETTÜ GELİRİ',
+                                value: '+${money.format(planDividend)} ₺',
+                                valueColor: Colors.green.shade700,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                      ],
+                      if (plan.isEmpty)
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          child: Text(
+                            'Plan oluşturmak için portföyde fiyatı ve $year net temettü verisi bulunan hisse gerekli.',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        )
+                      else
+                        ...plan.asMap().entries.map((entry) {
+                          final index = entry.key;
+                          final item = entry.value;
+                          return _TargetPlanCard(
+                            item: item,
+                            cheapest:
+                                _mode == _TargetMode.single && index == 0,
+                          );
+                        }),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -541,61 +528,157 @@ class _Milestone {
   final String label;
 }
 
-class _MilestoneCard extends StatelessWidget {
-  const _MilestoneCard({
+class _EligibleStock {
+  const _EligibleStock({
+    required this.ticker,
+    required this.name,
+    required this.price,
+    required this.netYearPerShare,
+  });
+
+  final String ticker;
+  final String name;
+  final double price;
+  final double netYearPerShare;
+}
+
+class _TargetPlan {
+  const _TargetPlan({
+    required this.stock,
+    required this.quantity,
+    required this.cost,
+    required this.addedDividend,
+  });
+
+  final _EligibleStock stock;
+  final int quantity;
+  final double cost;
+  final double addedDividend;
+}
+
+class _PlanSummary extends StatelessWidget {
+  const _PlanSummary({
     required this.label,
-    required this.goal,
-    required this.ratio,
-    required this.reached,
+    required this.value,
+    this.valueColor,
   });
 
   final String label;
-  final double goal;
-  final double ratio;
-  final bool reached;
+  final String value;
+  final Color? valueColor;
 
   @override
   Widget build(BuildContext context) {
-    final money = NumberFormat('#,##0', 'tr_TR');
-    final color = reached
-        ? Colors.green.shade700
-        : Theme.of(context).colorScheme.primary;
-
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    fontWeight: FontWeight.w900,
-                    color: color,
-                  ),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              '${money.format(goal)} ₺',
-              style: const TextStyle(fontWeight: FontWeight.w800),
-            ),
-            const Spacer(),
-            LinearProgressIndicator(
-              value: (ratio / 100).clamp(0.0, 1.0).toDouble(),
-              minHeight: 8,
-            ),
-            const SizedBox(height: 6),
-            Text(
-              reached
-                  ? 'Ulaşıldı'
-                  : '%${ratio.toStringAsFixed(1).replaceAll('.', ',')}',
-              style: TextStyle(
-                color: color,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-          ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: Theme.of(context).textTheme.labelSmall),
+        const SizedBox(height: 3),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            value,
+            maxLines: 1,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: valueColor,
+                  fontWeight: FontWeight.w900,
+                ),
+          ),
         ),
+      ],
+    );
+  }
+}
+
+class _TargetPlanCard extends StatelessWidget {
+  const _TargetPlanCard({required this.item, required this.cheapest});
+
+  final _TargetPlan item;
+  final bool cheapest;
+
+  @override
+  Widget build(BuildContext context) {
+    final money = NumberFormat('#,##0.00', 'tr_TR');
+    final integer = NumberFormat('#,##0', 'tr_TR');
+
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 13),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Theme.of(context).dividerColor),
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      if (cheapest)
+                        const TextSpan(text: '★ EN DÜŞÜK MALİYET · '),
+                      TextSpan(text: item.stock.ticker),
+                    ],
+                  ),
+                  style: const TextStyle(fontWeight: FontWeight.w900),
+                ),
+                if (item.stock.name.isNotEmpty)
+                  Text(
+                    item.stock.name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                const SizedBox(height: 5),
+                Text(
+                  'Yıllık net temettü / hisse: ${money.format(item.stock.netYearPerShare)} ₺ · Güncel fiyat: ${money.format(item.stock.price)} ₺',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                const SizedBox(height: 3),
+                Text(
+                  'Alınması gereken: ${integer.format(item.quantity)} adet · Ek net temettü: ${money.format(item.addedDividend)} ₺',
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 10),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade50,
+                  borderRadius: BorderRadius.circular(999),
+                ),
+                child: Text(
+                  'MALİYET',
+                  style: TextStyle(
+                    color: Colors.green.shade800,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 5),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  '${money.format(item.cost)} ₺',
+                  style: const TextStyle(fontWeight: FontWeight.w900),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
