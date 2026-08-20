@@ -21,7 +21,7 @@ enum _TargetMode { single, equal }
 class _TargetPageState extends State<TargetPage> {
   _TargetPeriod _period = _TargetPeriod.annual;
   _TargetMode _mode = _TargetMode.single;
-  double _selectedMilestone = 1;
+  double _milestone = 1.0;
 
   late final TextEditingController _amountController;
   late final FocusNode _amountFocus;
@@ -32,55 +32,45 @@ class _TargetPageState extends State<TargetPage> {
     _amountController = TextEditingController(
       text: _formatInput(widget.controller.annualTarget),
     );
-    _amountFocus = FocusNode()..addListener(_handleAmountFocus);
+    _amountFocus = FocusNode()..addListener(_onAmountFocusChanged);
   }
 
   @override
   void dispose() {
-    _amountFocus.removeListener(_handleAmountFocus);
+    _amountFocus.removeListener(_onAmountFocusChanged);
     _amountFocus.dispose();
     _amountController.dispose();
     super.dispose();
   }
 
-  void _handleAmountFocus() {
-    if (!_amountFocus.hasFocus) {
-      _saveTargetAmount();
-    }
+  void _onAmountFocusChanged() {
+    if (!_amountFocus.hasFocus) _saveTargetAmount();
   }
 
-  String _formatInput(double value) {
-    if (value <= 0) return '0';
-    return NumberFormat('#,##0', 'tr_TR').format(value);
-  }
+  String _formatInput(double value) =>
+      NumberFormat('#,##0', 'tr_TR').format(math.max(0.0, value));
 
   double _parseMoney(String input) {
     var text = input.trim().replaceAll(' ', '');
-    if (text.isEmpty) return 0;
+    if (text.isEmpty) return 0.0;
 
     if (text.contains(',')) {
       text = text.replaceAll('.', '').replaceAll(',', '.');
-      return double.tryParse(text) ?? 0;
+      return double.tryParse(text) ?? 0.0;
     }
 
-    final dotCount = '.'.allMatches(text).length;
-    if (dotCount > 1) {
+    final dots = '.'.allMatches(text).length;
+    if (dots > 1) {
       text = text.replaceAll('.', '');
-    } else if (dotCount == 1) {
-      final dot = text.indexOf('.');
-      final decimalDigits = text.length - dot - 1;
-      if (decimalDigits == 3) {
-        text = text.replaceAll('.', '');
-      }
+    } else if (dots == 1) {
+      final index = text.indexOf('.');
+      if (text.length - index - 1 == 3) text = text.replaceAll('.', '');
     }
-
-    return double.tryParse(text) ?? 0;
+    return double.tryParse(text) ?? 0.0;
   }
 
   Future<void> _saveTargetAmount() async {
-    final parsed = _parseMoney(_amountController.text);
-    final amount = math.max(0.0, parsed).toDouble();
-
+    final amount = math.max(0.0, _parseMoney(_amountController.text)).toDouble();
     if (_period == _TargetPeriod.annual) {
       if ((widget.controller.annualTarget - amount).abs() > 0.001) {
         await widget.controller.updateTargets(
@@ -88,13 +78,11 @@ class _TargetPageState extends State<TargetPage> {
           monthlyTarget: widget.controller.monthlyTarget,
         );
       }
-    } else {
-      if ((widget.controller.monthlyTarget - amount).abs() > 0.001) {
-        await widget.controller.updateTargets(
-          annualTarget: widget.controller.annualTarget,
-          monthlyTarget: amount,
-        );
-      }
+    } else if ((widget.controller.monthlyTarget - amount).abs() > 0.001) {
+      await widget.controller.updateTargets(
+        annualTarget: widget.controller.annualTarget,
+        monthlyTarget: amount,
+      );
     }
 
     if (!mounted) return;
@@ -105,14 +93,13 @@ class _TargetPageState extends State<TargetPage> {
     setState(() {});
   }
 
-  Future<void> _changePeriod(_TargetPeriod next) async {
+  Future<void> _setPeriod(_TargetPeriod next) async {
     if (next == _period) return;
     await _saveTargetAmount();
     if (!mounted) return;
-
     setState(() {
       _period = next;
-      final value = _period == _TargetPeriod.annual
+      final value = next == _TargetPeriod.annual
           ? widget.controller.annualTarget
           : widget.controller.monthlyTarget;
       _amountController.text = _formatInput(value);
@@ -130,93 +117,58 @@ class _TargetPageState extends State<TargetPage> {
         final money = NumberFormat('#,##0.00', 'tr_TR');
         final money0 = NumberFormat('#,##0', 'tr_TR');
         final year = DateTime.now().year;
-
         final rawTarget = _period == _TargetPeriod.annual
             ? widget.controller.annualTarget
             : widget.controller.monthlyTarget;
-        final annualTarget = _period == _TargetPeriod.monthly
-            ? rawTarget * 12
-            : rawTarget;
+        final annualTarget =
+            (_period == _TargetPeriod.monthly ? rawTarget * 12 : rawTarget)
+                .toDouble();
 
-        final netPerShareByTicker = <String, double>{};
+        final netPerShare = <String, double>{};
         for (final event
             in widget.controller.dividendEventsForPortfolio(year: year)) {
           final ticker = event.ticker.toUpperCase();
-          netPerShareByTicker[ticker] =
-              (netPerShareByTicker[ticker] ?? 0) + event.netPerShare;
+          netPerShare[ticker] =
+              (netPerShare[ticker] ?? 0.0) + event.netPerShare;
         }
 
-        double forecast = 0;
+        double forecast = 0.0;
         final eligible = <_EligibleStock>[];
         for (final holding in widget.controller.holdings.values) {
           if (holding.quantity <= 0) continue;
           final ticker = holding.ticker.toUpperCase();
-          final netYearPerShare = netPerShareByTicker[ticker] ?? 0;
+          final dps = netPerShare[ticker] ?? 0.0;
           final quote = widget.controller.quoteFor(ticker);
-          final price = quote?.price ?? 0;
+          final price = quote?.price ?? 0.0;
 
-          if (netYearPerShare > 0) {
-            forecast += holding.quantity * netYearPerShare;
-          }
-
-          if (price > 0 && netYearPerShare > 0) {
+          if (dps > 0) forecast += holding.quantity * dps;
+          if (dps > 0 && price > 0) {
             eligible.add(
               _EligibleStock(
                 ticker: ticker,
                 name: quote?.name ?? '',
                 price: price,
-                netYearPerShare: netYearPerShare,
+                netYearPerShare: dps,
               ),
             );
           }
         }
 
-        final selectedGoal = annualTarget * _selectedMilestone;
+        final selectedGoal = annualTarget * _milestone;
         final remaining = math.max(0.0, selectedGoal - forecast).toDouble();
-
-        final plan = <_TargetPlan>[];
-        if (_mode == _TargetMode.single) {
-          for (final stock in eligible) {
-            final qty = stock.netYearPerShare > 0
-                ? (remaining / stock.netYearPerShare).ceil()
-                : 0;
-            plan.add(
-              _TargetPlan(
-                stock: stock,
-                quantity: qty,
-                cost: qty * stock.price,
-                addedDividend: qty * stock.netYearPerShare,
-              ),
-            );
-          }
-          plan.sort((a, b) => a.cost.compareTo(b.cost));
-        } else if (eligible.isNotEmpty) {
-          final share = remaining / eligible.length;
-          for (final stock in eligible) {
-            final qty = stock.netYearPerShare > 0
-                ? (share / stock.netYearPerShare).ceil()
-                : 0;
-            plan.add(
-              _TargetPlan(
-                stock: stock,
-                quantity: qty,
-                cost: qty * stock.price,
-                addedDividend: qty * stock.netYearPerShare,
-              ),
-            );
-          }
-        }
-
-        final planTotal =
-            plan.fold<double>(0, (sum, item) => sum + item.cost);
-        final planDividend =
-            plan.fold<double>(0, (sum, item) => sum + item.addedDividend);
+        final plan = _makePlan(eligible, remaining);
+        final planCost =
+            plan.fold<double>(0.0, (sum, item) => sum + item.cost);
+        final planDividend = plan.fold<double>(
+          0.0,
+          (sum, item) => sum + item.addedDividend,
+        );
 
         const milestones = <_Milestone>[
-          _Milestone(factor: .25, label: '25%'),
-          _Milestone(factor: .50, label: '50%'),
-          _Milestone(factor: .75, label: '75%'),
-          _Milestone(factor: 1, label: 'HEDEF'),
+          _Milestone(.25, '25%'),
+          _Milestone(.50, '50%'),
+          _Milestone(.75, '75%'),
+          _Milestone(1.0, 'HEDEF'),
         ];
 
         return PageFrame(
@@ -224,47 +176,9 @@ class _TargetPageState extends State<TargetPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 6),
-                child: Column(
-                  children: [
-                    Text(
-                      'NET TEMETTÜ HEDEFİ',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            color: Colors.red.shade700,
-                            fontWeight: FontWeight.w900,
-                          ),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      'HEDEFE GİDEN YOLDA ÇEKİLEN BÜTÜN ÇİLELER KUTSALDIR',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.w900,
-                          ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 8),
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: Colors.red.shade50,
-                  border: Border.all(color: Colors.red.shade300, width: 2),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Text(
-                  'UYARI\nBU HESAPLAMALAR SADECE BU SENEYE GÖRE YAPILMIŞTIR. SENEYE HİSSENİN TEMETTÜ VERMESİ GARANTİ DEĞİLDİR. SADECE FİKİR AMAÇLIDIR',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.red.shade800,
-                    fontWeight: FontWeight.w900,
-                    height: 1.45,
-                  ),
-                ),
-              ),
+              _TargetHeader(),
+              const SizedBox(height: 12),
+              _WarningCard(),
               const SizedBox(height: 12),
               Card(
                 child: Padding(
@@ -272,25 +186,21 @@ class _TargetPageState extends State<TargetPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
-                        'HEDEF TÜRÜ',
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
+                      Text('HEDEF TÜRÜ',
+                          style: Theme.of(context).textTheme.labelSmall),
                       const SizedBox(height: 8),
                       SegmentedButton<_TargetPeriod>(
                         segments: const [
                           ButtonSegment(
-                            value: _TargetPeriod.annual,
-                            label: Text('YILLIK'),
-                          ),
+                              value: _TargetPeriod.annual,
+                              label: Text('YILLIK')),
                           ButtonSegment(
-                            value: _TargetPeriod.monthly,
-                            label: Text('AYLIK'),
-                          ),
+                              value: _TargetPeriod.monthly,
+                              label: Text('AYLIK')),
                         ],
                         selected: {_period},
                         onSelectionChanged: (selection) {
-                          _changePeriod(selection.first);
+                          _setPeriod(selection.first);
                         },
                       ),
                       const SizedBox(height: 12),
@@ -306,10 +216,10 @@ class _TargetPageState extends State<TargetPage> {
                         focusNode: _amountFocus,
                         keyboardType:
                             const TextInputType.numberWithOptions(decimal: true),
-                        decoration: const InputDecoration(
-                          suffixText: '₺',
-                        ),
-                        onSubmitted: (_) => _saveTargetAmount(),
+                        decoration: const InputDecoration(suffixText: '₺'),
+                        onSubmitted: (_) {
+                          _saveTargetAmount();
+                        },
                       ),
                       const SizedBox(height: 8),
                       Text(
@@ -318,7 +228,6 @@ class _TargetPageState extends State<TargetPage> {
                               fontWeight: FontWeight.w700,
                             ),
                       ),
-                      const SizedBox(height: 3),
                       Text(
                         'Bu yıl öngörülen net temettü: ${money.format(forecast)} ₺',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
@@ -344,64 +253,19 @@ class _TargetPageState extends State<TargetPage> {
                 childAspectRatio: 1.55,
                 crossAxisSpacing: 9,
                 mainAxisSpacing: 9,
-                children: milestones.map((milestone) {
-                  final goal = annualTarget * milestone.factor;
-                  final ratio = goal > 0
-                      ? math.min(100.0, (forecast / goal) * 100)
-                      : 0.0;
-                  final selected = _selectedMilestone == milestone.factor;
-                  return InkWell(
-                    borderRadius: BorderRadius.circular(14),
-                    onTap: () => setState(
-                      () => _selectedMilestone = milestone.factor,
-                    ),
-                    child: Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(14),
-                        border: Border.all(
-                          color: selected
-                              ? Colors.green.shade500
-                              : Theme.of(context).dividerColor,
-                          width: selected ? 2 : 1,
-                        ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            milestone.label,
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge
-                                ?.copyWith(fontWeight: FontWeight.w900),
-                          ),
-                          const SizedBox(height: 5),
-                          FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Text(
-                              '${money0.format(goal)} ₺',
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.w800),
-                            ),
-                          ),
-                          const Spacer(),
-                          LinearProgressIndicator(
-                            value: (ratio / 100).clamp(0.0, 1.0),
-                            minHeight: 9,
-                          ),
-                          const SizedBox(height: 5),
-                          Text(
-                            ratio >= 100
-                                ? 'Ulaşıldı'
-                                : '%${ratio.toStringAsFixed(0)}',
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                        ],
-                      ),
-                    ),
+                children: milestones.map((item) {
+                  final goal = annualTarget * item.factor;
+                  final ratio = (goal > 0
+                          ? math.min(100.0, forecast / goal * 100)
+                          : 0.0)
+                      .toDouble();
+                  return _MilestoneCard(
+                    item: item,
+                    goal: goal,
+                    ratio: ratio,
+                    selected: _milestone == item.factor,
+                    money: money0,
+                    onTap: () => setState(() => _milestone = item.factor),
                   );
                 }).toList(),
               ),
@@ -412,10 +276,8 @@ class _TargetPageState extends State<TargetPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
-                        'HEDEF KADEMESİNE KALAN TUTAR',
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
+                      Text('HEDEF KADEMESİNE KALAN TUTAR',
+                          style: Theme.of(context).textTheme.labelSmall),
                       const SizedBox(height: 4),
                       FittedBox(
                         fit: BoxFit.scaleDown,
@@ -430,9 +292,8 @@ class _TargetPageState extends State<TargetPage> {
                               ),
                         ),
                       ),
-                      const SizedBox(height: 4),
                       Text(
-                        'Seçili kademe: %${(_selectedMilestone * 100).toStringAsFixed(0)} · ${money.format(selectedGoal)} ₺',
+                        'Seçili kademe: %${(_milestone * 100).toStringAsFixed(0)} · ${money.format(selectedGoal)} ₺',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       const SizedBox(height: 16),
@@ -446,17 +307,16 @@ class _TargetPageState extends State<TargetPage> {
                       SegmentedButton<_TargetMode>(
                         segments: const [
                           ButtonSegment(
-                            value: _TargetMode.single,
-                            label: Text('TEK HİSSE'),
-                          ),
+                              value: _TargetMode.single,
+                              label: Text('TEK HİSSE')),
                           ButtonSegment(
-                            value: _TargetMode.equal,
-                            label: Text('EŞİT DAĞILIM'),
-                          ),
+                              value: _TargetMode.equal,
+                              label: Text('EŞİT DAĞILIM')),
                         ],
                         selected: {_mode},
-                        onSelectionChanged: (selection) =>
-                            setState(() => _mode = selection.first),
+                        onSelectionChanged: (selection) {
+                          setState(() => _mode = selection.first);
+                        },
                       ),
                     ],
                   ),
@@ -473,17 +333,17 @@ class _TargetPageState extends State<TargetPage> {
                         Row(
                           children: [
                             Expanded(
-                              child: _PlanSummary(
-                                label: 'PLAN TOPLAM MALİYETİ',
-                                value: '${money.format(planTotal)} ₺',
+                              child: _Summary(
+                                'PLAN TOPLAM MALİYETİ',
+                                '${money.format(planCost)} ₺',
                               ),
                             ),
                             const SizedBox(width: 10),
                             Expanded(
-                              child: _PlanSummary(
-                                label: 'EK NET TEMETTÜ GELİRİ',
-                                value: '+${money.format(planDividend)} ₺',
-                                valueColor: Colors.green.shade700,
+                              child: _Summary(
+                                'EK NET TEMETTÜ GELİRİ',
+                                '+${money.format(planDividend)} ₺',
+                                color: Colors.green.shade700,
                               ),
                             ),
                           ],
@@ -496,19 +356,16 @@ class _TargetPageState extends State<TargetPage> {
                           child: Text(
                             'Plan oluşturmak için portföyde fiyatı ve $year net temettü verisi bulunan hisse gerekli.',
                             textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         )
                       else
-                        ...plan.asMap().entries.map((entry) {
-                          final index = entry.key;
-                          final item = entry.value;
-                          return _TargetPlanCard(
-                            item: item,
-                            cheapest:
-                                _mode == _TargetMode.single && index == 0,
-                          );
-                        }),
+                        ...plan.asMap().entries.map(
+                              (entry) => _PlanRow(
+                                plan: entry.value,
+                                cheapest: _mode == _TargetMode.single &&
+                                    entry.key == 0,
+                              ),
+                            ),
                     ],
                   ),
                 ),
@@ -519,13 +376,141 @@ class _TargetPageState extends State<TargetPage> {
       },
     );
   }
+
+  List<_TargetPlan> _makePlan(
+    List<_EligibleStock> eligible,
+    double remaining,
+  ) {
+    final result = <_TargetPlan>[];
+    if (_mode == _TargetMode.single) {
+      for (final stock in eligible) {
+        final qty = (remaining / stock.netYearPerShare).ceil();
+        result.add(_TargetPlan(stock, qty));
+      }
+      result.sort((a, b) => a.cost.compareTo(b.cost));
+      return result;
+    }
+
+    if (eligible.isEmpty) return result;
+    final share = remaining / eligible.length;
+    for (final stock in eligible) {
+      result.add(_TargetPlan(stock, (share / stock.netYearPerShare).ceil()));
+    }
+    return result;
+  }
+}
+
+class _TargetHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Column(
+        children: [
+          Text(
+            'NET TEMETTÜ HEDEFİ',
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Colors.red.shade700,
+                  fontWeight: FontWeight.w900,
+                ),
+          ),
+          const SizedBox(height: 6),
+          Text(
+            'HEDEFE GİDEN YOLDA ÇEKİLEN BÜTÜN ÇİLELER KUTSALDIR',
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium
+                ?.copyWith(fontWeight: FontWeight.w900),
+          ),
+        ],
+      );
+}
+
+class _WarningCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: Colors.red.shade50,
+          border: Border.all(color: Colors.red.shade300, width: 2),
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Text(
+          'UYARI\nBU HESAPLAMALAR SADECE BU SENEYE GÖRE YAPILMIŞTIR. SENEYE HİSSENİN TEMETTÜ VERMESİ GARANTİ DEĞİLDİR. SADECE FİKİR AMAÇLIDIR',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.red.shade800,
+            fontWeight: FontWeight.w900,
+            height: 1.45,
+          ),
+        ),
+      );
 }
 
 class _Milestone {
-  const _Milestone({required this.factor, required this.label});
-
+  const _Milestone(this.factor, this.label);
   final double factor;
   final String label;
+}
+
+class _MilestoneCard extends StatelessWidget {
+  const _MilestoneCard({
+    required this.item,
+    required this.goal,
+    required this.ratio,
+    required this.selected,
+    required this.money,
+    required this.onTap,
+  });
+
+  final _Milestone item;
+  final double goal;
+  final double ratio;
+  final bool selected;
+  final NumberFormat money;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) => InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(
+              color: selected
+                  ? Colors.green.shade500
+                  : Theme.of(context).dividerColor,
+              width: selected ? 2 : 1,
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(item.label,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontWeight: FontWeight.w900)),
+              const SizedBox(height: 5),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text('${money.format(goal)} ₺',
+                    style: const TextStyle(fontWeight: FontWeight.w800)),
+              ),
+              const Spacer(),
+              LinearProgressIndicator(
+                value: (ratio / 100).clamp(0.0, 1.0).toDouble(),
+                minHeight: 9,
+              ),
+              const SizedBox(height: 5),
+              Text(
+                ratio >= 100 ? 'Ulaşıldı' : '%${ratio.toStringAsFixed(0)}',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ],
+          ),
+        ),
+      );
 }
 
 class _EligibleStock {
@@ -543,71 +528,55 @@ class _EligibleStock {
 }
 
 class _TargetPlan {
-  const _TargetPlan({
-    required this.stock,
-    required this.quantity,
-    required this.cost,
-    required this.addedDividend,
-  });
+  const _TargetPlan(this.stock, this.quantity);
 
   final _EligibleStock stock;
   final int quantity;
-  final double cost;
-  final double addedDividend;
+  double get cost => quantity * stock.price;
+  double get addedDividend => quantity * stock.netYearPerShare;
 }
 
-class _PlanSummary extends StatelessWidget {
-  const _PlanSummary({
-    required this.label,
-    required this.value,
-    this.valueColor,
-  });
-
+class _Summary extends StatelessWidget {
+  const _Summary(this.label, this.value, {this.color});
   final String label;
   final String value;
-  final Color? valueColor;
+  final Color? color;
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: Theme.of(context).textTheme.labelSmall),
-        const SizedBox(height: 3),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: Alignment.centerLeft,
-          child: Text(
-            value,
-            maxLines: 1,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: valueColor,
-                  fontWeight: FontWeight.w900,
-                ),
+  Widget build(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.labelSmall),
+          const SizedBox(height: 3),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              value,
+              maxLines: 1,
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: color,
+                    fontWeight: FontWeight.w900,
+                  ),
+            ),
           ),
-        ),
-      ],
-    );
-  }
+        ],
+      );
 }
 
-class _TargetPlanCard extends StatelessWidget {
-  const _TargetPlanCard({required this.item, required this.cheapest});
-
-  final _TargetPlan item;
+class _PlanRow extends StatelessWidget {
+  const _PlanRow({required this.plan, required this.cheapest});
+  final _TargetPlan plan;
   final bool cheapest;
 
   @override
   Widget build(BuildContext context) {
     final money = NumberFormat('#,##0.00', 'tr_TR');
     final integer = NumberFormat('#,##0', 'tr_TR');
-
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 13),
       decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(color: Theme.of(context).dividerColor),
-        ),
+        border: Border(bottom: BorderSide(color: Theme.of(context).dividerColor)),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -616,34 +585,27 @@ class _TargetPlanCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      if (cheapest)
-                        const TextSpan(text: '★ EN DÜŞÜK MALİYET · '),
-                      TextSpan(text: item.stock.ticker),
-                    ],
-                  ),
+                Text(
+                  '${cheapest ? '★ EN DÜŞÜK MALİYET · ' : ''}${plan.stock.ticker}',
                   style: const TextStyle(fontWeight: FontWeight.w900),
                 ),
-                if (item.stock.name.isNotEmpty)
-                  Text(
-                    item.stock.name,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
+                if (plan.stock.name.isNotEmpty)
+                  Text(plan.stock.name,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(height: 5),
                 Text(
-                  'Yıllık net temettü / hisse: ${money.format(item.stock.netYearPerShare)} ₺ · Güncel fiyat: ${money.format(item.stock.price)} ₺',
+                  'Yıllık net temettü / hisse: ${money.format(plan.stock.netYearPerShare)} ₺ · Güncel fiyat: ${money.format(plan.stock.price)} ₺',
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  'Alınması gereken: ${integer.format(item.quantity)} adet · Ek net temettü: ${money.format(item.addedDividend)} ₺',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
+                  'Alınması gereken: ${integer.format(plan.quantity)} adet · Ek net temettü: ${money.format(plan.addedDividend)} ₺',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(fontWeight: FontWeight.w700),
                 ),
               ],
             ),
@@ -653,28 +615,22 @@ class _TargetPlanCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                 decoration: BoxDecoration(
                   color: Colors.green.shade50,
                   borderRadius: BorderRadius.circular(999),
                 ),
-                child: Text(
-                  'MALİYET',
-                  style: TextStyle(
-                    color: Colors.green.shade800,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
+                child: Text('MALİYET',
+                    style: TextStyle(
+                        color: Colors.green.shade800,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w900)),
               ),
               const SizedBox(height: 5),
               FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Text(
-                  '${money.format(item.cost)} ₺',
-                  style: const TextStyle(fontWeight: FontWeight.w900),
-                ),
+                child: Text('${money.format(plan.cost)} ₺',
+                    style: const TextStyle(fontWeight: FontWeight.w900)),
               ),
             ],
           ),
