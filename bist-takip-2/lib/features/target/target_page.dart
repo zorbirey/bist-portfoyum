@@ -100,10 +100,10 @@ class _TargetPageState extends State<TargetPage> {
 
         final monthlyActual = actualPaid / 12;
         final monthlyRatio =
-            monthlyTarget > 0 ? (monthlyActual / monthlyTarget) * 100 : 0;
+            monthlyTarget > 0 ? (monthlyActual / monthlyTarget) * 100 : 0.0;
 
         final annualRatio =
-            annualTarget > 0 ? (actualPaid / annualTarget) * 100 : 0;
+            annualTarget > 0 ? (actualPaid / annualTarget) * 100 : 0.0;
 
         final milestones = <_Milestone>[
           const _Milestone(factor: .25, label: 'ÇEYREK'),
@@ -196,7 +196,8 @@ class _TargetPageState extends State<TargetPage> {
                   mainAxisSpacing: 9,
                   children: milestones.map((milestone) {
                     final goal = annualTarget * milestone.factor;
-                    final ratio = goal > 0 ? (actualPaid / goal) * 100 : 0;
+                    final ratio =
+                        goal > 0 ? (actualPaid / goal) * 100 : 0.0;
                     final reached = actualPaid >= goal;
 
                     return _MilestoneCard(
@@ -220,7 +221,9 @@ class _TargetPageState extends State<TargetPage> {
                       ),
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
-                        value: (annualRatio / 100).clamp(0, 1),
+                        value: (annualRatio / 100)
+                            .clamp(0.0, 1.0)
+                            .toDouble(),
                         minHeight: 10,
                       ),
                       const SizedBox(height: 8),
@@ -274,7 +277,9 @@ class _TargetPageState extends State<TargetPage> {
                       ),
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
-                        value: (monthlyRatio / 100).clamp(0, 1),
+                        value: (monthlyRatio / 100)
+                            .clamp(0.0, 1.0)
+                            .toDouble(),
                         minHeight: 10,
                       ),
                       const SizedBox(height: 8),
@@ -348,7 +353,7 @@ class _MilestoneCard extends StatelessWidget {
             ),
             const Spacer(),
             LinearProgressIndicator(
-              value: (ratio / 100).clamp(0, 1),
+              value: (ratio / 100).clamp(0.0, 1.0).toDouble(),
               minHeight: 8,
             ),
             const SizedBox(height: 6),
