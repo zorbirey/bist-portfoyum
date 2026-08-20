@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "targetQuestionCount": 5000,
+  "files": [
+    "assets/questions_seed.json"
+  ]
+}
