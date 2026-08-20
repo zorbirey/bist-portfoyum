@@ -1,9 +1,9 @@
-name: BIST TAKIP 2.0 Dev Build
+name: BIST TAKIP 2.1 Dev Build
 
 on:
   workflow_dispatch:
   push:
-    branches: [ bist-takip-2.0 ]
+    branches: [ bist-takip-2.1 ]
     paths:
       - 'bist-takip-2/**'
       - '.github/workflows/build-bist-takip-2.yml'
@@ -53,5 +53,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: BIST-TAKIP-2-DEV-APK
+          name: BIST-TAKIP-2.1-DEV-APK
           path: bist-takip-2/build/app/outputs/flutter-apk/app-debug.apk
