@@ -50,15 +50,12 @@ class _TargetPageState extends State<TargetPage> {
       builder: (context, _) {
         final money = NumberFormat('#,##0.00', 'tr_TR');
         final year = DateTime.now().year;
-
         final actualPaid = widget.controller.dividendsForYear(year);
         final annualTarget = widget.controller.annualTarget;
         final monthlyTarget = widget.controller.monthlyTarget;
-
         final monthlyActual = actualPaid / 12;
         final monthlyRatio =
             monthlyTarget > 0 ? (monthlyActual / monthlyTarget) * 100 : 0.0;
-
         final annualRatio =
             annualTarget > 0 ? (actualPaid / annualTarget) * 100 : 0.0;
 
@@ -89,10 +86,7 @@ class _TargetPageState extends State<TargetPage> {
                     children: [
                       Text(
                         'NET TEMETTÜ HEDEFİ',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge
-                            ?.copyWith(
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               fontWeight: FontWeight.w900,
                               color: Colors.red.shade700,
                             ),
@@ -132,15 +126,11 @@ class _TargetPageState extends State<TargetPage> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 7),
-                      const Text(
-                        '1.1.5 mantığı korunur: kendi hedefini aylık veya yıllık olarak sen belirlersin. İki hedef birbirinden bağımsız kaydedilir.',
-                      ),
                       const SizedBox(height: 12),
                       Row(
                         children: [
                           Expanded(
-                            child: MetricCard(
+                            child: _CompactTargetCard(
                               label: 'YILLIK HEDEFİM',
                               value: annualTarget > 0
                                   ? '${money.format(annualTarget)} ₺'
@@ -149,7 +139,7 @@ class _TargetPageState extends State<TargetPage> {
                           ),
                           const SizedBox(width: 9),
                           Expanded(
-                            child: MetricCard(
+                            child: _CompactTargetCard(
                               label: 'AYLIK HEDEFİM',
                               value: monthlyTarget > 0
                                   ? '${money.format(monthlyTarget)} ₺'
@@ -236,7 +226,6 @@ class _TargetPageState extends State<TargetPage> {
                     final ratio =
                         goal > 0 ? (actualPaid / goal) * 100 : 0.0;
                     final reached = actualPaid >= goal;
-
                     return _MilestoneCard(
                       label: milestone.label,
                       goal: goal,
@@ -343,6 +332,45 @@ class _TargetPageState extends State<TargetPage> {
   }
 }
 
+class _CompactTargetCard extends StatelessWidget {
+  const _CompactTargetCard({required this.label, required this.value});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(label, style: Theme.of(context).textTheme.labelSmall),
+            const SizedBox(height: 6),
+            SizedBox(
+              width: double.infinity,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  value,
+                  maxLines: 1,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w900,
+                      ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 enum _TargetPeriod { annual, monthly }
 
 class _TargetEditResult {
@@ -394,9 +422,24 @@ class _TargetAmountDialogState extends State<_TargetAmountDialog> {
 
   double _parse(String input) {
     var text = input.trim().replaceAll(' ', '');
+    if (text.isEmpty) return 0;
+
     if (text.contains(',')) {
       text = text.replaceAll('.', '').replaceAll(',', '.');
+      return double.tryParse(text) ?? 0;
     }
+
+    final dotCount = '.'.allMatches(text).length;
+    if (dotCount > 1) {
+      text = text.replaceAll('.', '');
+    } else if (dotCount == 1) {
+      final dot = text.indexOf('.');
+      final decimalDigits = text.length - dot - 1;
+      if (decimalDigits == 3) {
+        text = text.replaceAll('.', '');
+      }
+    }
+
     return double.tryParse(text) ?? 0;
   }
 
@@ -432,10 +475,6 @@ class _TargetAmountDialogState extends State<_TargetAmountDialog> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              'Hedef türünü seç ve ulaşmak istediğin net temettü tutarını gir.',
-            ),
-            const SizedBox(height: 14),
             SegmentedButton<_TargetPeriod>(
               segments: const [
                 ButtonSegment(
