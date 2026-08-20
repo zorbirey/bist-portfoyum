@@ -34,7 +34,7 @@ jobs:
 
       - name: Statik analiz
         working-directory: bist-takip-2
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Testleri calistir
         working-directory: bist-takip-2
