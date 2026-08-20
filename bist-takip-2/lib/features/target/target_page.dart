@@ -16,74 +16,31 @@ class TargetPage extends StatefulWidget {
 }
 
 class _TargetPageState extends State<TargetPage> {
-  double _number(String input) {
-    var text = input.trim().replaceAll(' ', '');
-    if (text.contains(',')) {
-      text = text.replaceAll('.', '').replaceAll(',', '.');
-    }
-    return double.tryParse(text) ?? 0;
-  }
-
-  Future<void> _editTargets() async {
-    final annual = TextEditingController(
-      text: widget.controller.annualTarget.toStringAsFixed(0),
-    );
-    final monthly = TextEditingController(
-      text: widget.controller.monthlyTarget.toStringAsFixed(0),
-    );
-
-    final values = await showDialog<List<double>>(
+  Future<void> _editTargets({_TargetPeriod initial = _TargetPeriod.annual}) async {
+    final result = await showDialog<_TargetEditResult>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Temettü hedeflerini düzenle'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: annual,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
-              decoration: const InputDecoration(
-                labelText: 'Yıllık net temettü hedefi',
-                suffixText: '₺',
-              ),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: monthly,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
-              decoration: const InputDecoration(
-                labelText: 'Aylık net temettü hedefi',
-                suffixText: '₺',
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('VAZGEÇ'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(
-              context,
-              [_number(annual.text), _number(monthly.text)],
-            ),
-            child: const Text('KAYDET'),
-          ),
-        ],
+      builder: (_) => _TargetAmountDialog(
+        initialPeriod: initial,
+        annualTarget: widget.controller.annualTarget,
+        monthlyTarget: widget.controller.monthlyTarget,
       ),
     );
 
-    annual.dispose();
-    monthly.dispose();
+    if (result == null || !mounted) return;
+    await WidgetsBinding.instance.endOfFrame;
+    if (!mounted) return;
 
-    if (values == null) return;
-    await widget.controller.updateTargets(
-      annualTarget: values[0],
-      monthlyTarget: values[1],
-    );
+    if (result.period == _TargetPeriod.annual) {
+      await widget.controller.updateTargets(
+        annualTarget: result.amount,
+        monthlyTarget: widget.controller.monthlyTarget,
+      );
+    } else {
+      await widget.controller.updateTargets(
+        annualTarget: widget.controller.annualTarget,
+        monthlyTarget: result.amount,
+      );
+    }
   }
 
   @override
@@ -117,8 +74,8 @@ class _TargetPageState extends State<TargetPage> {
           subtitle: 'Gerçek aldığın temettü ile hedefe ne kadar kaldığını gör',
           actions: [
             IconButton(
-              tooltip: 'Hedefleri düzenle',
-              onPressed: _editTargets,
+              tooltip: 'Hedef tutarını düzenle',
+              onPressed: () => _editTargets(),
               icon: const Icon(Icons.edit_outlined),
             ),
           ],
@@ -148,6 +105,86 @@ class _TargetPageState extends State<TargetPage> {
                             .textTheme
                             .bodyMedium
                             ?.copyWith(fontWeight: FontWeight.w900),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(Icons.tune_outlined),
+                          const SizedBox(width: 9),
+                          Expanded(
+                            child: Text(
+                              'Hedef Tutarım',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.copyWith(fontWeight: FontWeight.w900),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 7),
+                      const Text(
+                        '1.1.5 mantığı korunur: kendi hedefini aylık veya yıllık olarak sen belirlersin. İki hedef birbirinden bağımsız kaydedilir.',
+                      ),
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: MetricCard(
+                              label: 'YILLIK HEDEFİM',
+                              value: annualTarget > 0
+                                  ? '${money.format(annualTarget)} ₺'
+                                  : 'Belirlenmedi',
+                            ),
+                          ),
+                          const SizedBox(width: 9),
+                          Expanded(
+                            child: MetricCard(
+                              label: 'AYLIK HEDEFİM',
+                              value: monthlyTarget > 0
+                                  ? '${money.format(monthlyTarget)} ₺'
+                                  : 'Belirlenmedi',
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      FilledButton.icon(
+                        onPressed: () => _editTargets(),
+                        icon: const Icon(Icons.edit_note_outlined),
+                        label: const Text('HEDEF TUTARIMI BELİRLE'),
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: OutlinedButton(
+                              onPressed: () => _editTargets(
+                                initial: _TargetPeriod.annual,
+                              ),
+                              child: const Text('YILLIK HEDEF'),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: OutlinedButton(
+                              onPressed: () => _editTargets(
+                                initial: _TargetPeriod.monthly,
+                              ),
+                              child: const Text('AYLIK HEDEF'),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -296,12 +333,164 @@ class _TargetPageState extends State<TargetPage> {
               const SizedBox(height: 16),
               const InfoCard(
                 text:
-                    'Hedef ilerlemesinde takvim tahmini değil, Temettü ekranında kaydettiğin GERÇEK net ödemeler kullanılır. Gelecekteki temettüler garanti değildir.',
+                    'Hedef ilerlemesinde takvim tahmini değil, Temettü ekranında kaydettiğin GERÇEK net ödemeler kullanılır. Aylık hedef hesabında yıl içinde gerçekten alınan net temettü toplamı 12’ye bölünür.',
               ),
             ],
           ),
         );
       },
+    );
+  }
+}
+
+enum _TargetPeriod { annual, monthly }
+
+class _TargetEditResult {
+  const _TargetEditResult({required this.period, required this.amount});
+
+  final _TargetPeriod period;
+  final double amount;
+}
+
+class _TargetAmountDialog extends StatefulWidget {
+  const _TargetAmountDialog({
+    required this.initialPeriod,
+    required this.annualTarget,
+    required this.monthlyTarget,
+  });
+
+  final _TargetPeriod initialPeriod;
+  final double annualTarget;
+  final double monthlyTarget;
+
+  @override
+  State<_TargetAmountDialog> createState() => _TargetAmountDialogState();
+}
+
+class _TargetAmountDialogState extends State<_TargetAmountDialog> {
+  late _TargetPeriod _period;
+  late final TextEditingController _controller;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _period = widget.initialPeriod;
+    _controller = TextEditingController(text: _valueFor(_period));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  String _valueFor(_TargetPeriod period) {
+    final value = period == _TargetPeriod.annual
+        ? widget.annualTarget
+        : widget.monthlyTarget;
+    return value > 0 ? value.toStringAsFixed(0) : '';
+  }
+
+  double _parse(String input) {
+    var text = input.trim().replaceAll(' ', '');
+    if (text.contains(',')) {
+      text = text.replaceAll('.', '').replaceAll(',', '.');
+    }
+    return double.tryParse(text) ?? 0;
+  }
+
+  void _changePeriod(_TargetPeriod period) {
+    if (_period == period) return;
+    setState(() {
+      _period = period;
+      _error = null;
+      _controller.text = _valueFor(period);
+      _controller.selection = TextSelection.collapsed(
+        offset: _controller.text.length,
+      );
+    });
+  }
+
+  void _save() {
+    final amount = _parse(_controller.text);
+    if (amount <= 0) {
+      setState(() => _error = 'Sıfırdan büyük bir hedef tutarı gir.');
+      return;
+    }
+    Navigator.of(context).pop(
+      _TargetEditResult(period: _period, amount: amount),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Hedef tutarımı belirle'),
+      content: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const Text(
+              'Hedef türünü seç ve ulaşmak istediğin net temettü tutarını gir.',
+            ),
+            const SizedBox(height: 14),
+            SegmentedButton<_TargetPeriod>(
+              segments: const [
+                ButtonSegment(
+                  value: _TargetPeriod.annual,
+                  icon: Icon(Icons.calendar_today_outlined),
+                  label: Text('Yıllık'),
+                ),
+                ButtonSegment(
+                  value: _TargetPeriod.monthly,
+                  icon: Icon(Icons.date_range_outlined),
+                  label: Text('Aylık'),
+                ),
+              ],
+              selected: {_period},
+              onSelectionChanged: (selection) =>
+                  _changePeriod(selection.first),
+            ),
+            const SizedBox(height: 14),
+            TextField(
+              controller: _controller,
+              autofocus: true,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: InputDecoration(
+                labelText: _period == _TargetPeriod.annual
+                    ? 'Yıllık net temettü hedefi'
+                    : 'Aylık net temettü hedefi',
+                hintText: _period == _TargetPeriod.annual
+                    ? 'Örnek: 120.000'
+                    : 'Örnek: 10.000',
+                suffixText: '₺',
+                errorText: _error,
+              ),
+              onSubmitted: (_) => _save(),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              _period == _TargetPeriod.annual
+                  ? 'Bu tutar ÇEYREK, YARIM, 3/4 ve HEDEF kademelerinde kullanılır.'
+                  : 'Aylık ilerleme, yıl içinde gerçekten aldığın net temettü toplamı ÷ 12 ile karşılaştırılır.',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('VAZGEÇ'),
+        ),
+        FilledButton(
+          onPressed: _save,
+          child: const Text('KAYDET'),
+        ),
+      ],
     );
   }
 }
