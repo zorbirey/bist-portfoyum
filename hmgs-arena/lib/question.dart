@@ -1,3 +1,5 @@
+import 'question_difficulty.dart';
+
 class Question {
   const Question({
     required this.id,
@@ -15,7 +17,7 @@ class Question {
   final String id;
   final String subject;
   final String topic;
-  final String difficulty;
+  final QuestionDifficulty difficulty;
   final String question;
   final List<String> options;
   final int correctIndex;
@@ -37,7 +39,7 @@ class Question {
       id: json['id'] as String,
       subject: json['subject'] as String,
       topic: json['topic'] as String,
-      difficulty: json['difficulty'] as String,
+      difficulty: QuestionDifficulty.fromCode(json['difficulty'] as String),
       question: json['question'] as String,
       options: options,
       correctIndex: correctIndex,
@@ -46,4 +48,17 @@ class Question {
       sourceRef: json['sourceRef'] as String,
     );
   }
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'subject': subject,
+        'topic': topic,
+        'difficulty': difficulty.code,
+        'question': question,
+        'options': options,
+        'correctIndex': correctIndex,
+        'explanation': explanation,
+        'sourceLabel': sourceLabel,
+        'sourceRef': sourceRef,
+      };
 }
