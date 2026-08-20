@@ -12,7 +12,7 @@ Question makeQuestion(int index, QuestionDifficulty difficulty) => Question(
       topic: 'Temel Haklar',
       difficulty: difficulty,
       question: 'Soru $index',
-      options: const ['A', 'B', 'C', 'D'],
+      options: const ['A', 'B', 'C', 'D', 'E'],
       correctIndex: 0,
       explanation: 'Açıklama',
       sourceLabel: 'Anayasa',
