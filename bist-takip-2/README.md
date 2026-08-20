@@ -18,19 +18,20 @@ BIST TAKİP 2.0; fiyat ekranı olmaktan çok portföy, gerçek getiri, temettü 
 - Mevcut 2.0 verisinin üzerine yazmadan önce onay
 - Mevcut `prices.json` beslemesini soyut MarketFeed katmanı üzerinden okuma
 - Portföy kartlarında 1.1.5 bilgileri + kâr/zarara göre renklenen güncel fiyat kutusu
-- Portföy değeri, günlük değişim ve toplam kâr/zarar için temel hesaplar
+- Portföy değeri, günlük değişim ve toplam kâr/zarar için ortak hesap motoru
+- Günlük portföy snapshot kaydı ve Geçmiş çizgisi
+- Dağılım ekranında güncel değer / maliyet seçimi ve pasta grafik
+- Düzenlenebilir yıllık ve aylık temettü hedefleri
 
 ## Sonraki hedefler
 
-1. Günlük portföy snapshot sistemi
-2. BIST 100 benchmark karşılaştırması
-3. Dağılım ekranı: maliyet / güncel değer / sektör
-4. Gelişmiş Temettü Merkezi ve Temettü Maaşım
-5. Hedef düzenleme ve ilerleme hesapları
-6. Bildirim altyapısı
-7. Bulut hesap/senkronizasyon ve biyometri
-8. Ticari veri sağlayıcısına geçiş
-9. Android/iOS test derleme akışı
+1. BIST 100 benchmark karşılaştırması
+2. Dağılım ekranına sektör kırılımı
+3. Gelişmiş Temettü Merkezi ve Temettü Maaşım
+4. Bildirim altyapısı
+5. Bulut hesap/senkronizasyon ve biyometri
+6. Ticari veri sağlayıcısına geçiş
+7. Android/iOS test derleme akışı
 
 ## Veri geçiş notu
 

@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -24,18 +26,10 @@ class _AppShellState extends State<AppShell> {
   Widget build(BuildContext context) {
     final pages = [
       _PortfolioPage(controller: widget.controller),
-      const _PlaceholderPage(
-        title: 'Dağılım',
-        message:
-            'Maliyet, güncel değer ve sektör dağılımları burada gösterilecek.',
-      ),
+      _DistributionPage(controller: widget.controller),
       _DividendPage(controller: widget.controller),
       _TargetPage(controller: widget.controller),
-      const _PlaceholderPage(
-        title: 'Geçmiş',
-        message:
-            'Günlük portföy değeri, BIST 100 kıyası ve gerçek getiri grafikleri burada olacak.',
-      ),
+      _HistoryPage(controller: widget.controller),
       _SettingsPage(controller: widget.controller),
     ];
 
@@ -147,36 +141,14 @@ class _PortfolioPage extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
-        final allHoldings = controller.holdings.values.toList();
-        final holdings = allHoldings
+        final holdings = controller.holdings.values
             .where((holding) => holding.quantity > 0)
             .toList()
           ..sort((a, b) => a.ticker.compareTo(b.ticker));
 
-        double portfolioValue = 0;
-        double totalPnl = allHoldings.fold<double>(
-          0,
-          (sum, holding) =>
-              sum + holding.realizedPnl + holding.netDividends,
-        );
-        double dailyPnl = 0;
-
-        for (final holding in holdings) {
-          final quote = controller.quoteFor(holding.ticker);
-          if (quote == null || quote.price <= 0) continue;
-          final marketValue = holding.quantity * quote.price;
-          final unrealized =
-              (quote.price - holding.averageCost) * holding.quantity;
-          portfolioValue += marketValue;
-          totalPnl += unrealized;
-
-          if (quote.changePercent != -100) {
-            final previous =
-                quote.price / (1 + (quote.changePercent / 100));
-            dailyPnl += (quote.price - previous) * holding.quantity;
-          }
-        }
-
+        final portfolioValue = controller.portfolioValue;
+        final totalPnl = controller.totalPnl;
+        final dailyPnl = controller.dailyPnl;
         final money = NumberFormat('#,##0.00', 'tr_TR');
         final marketStatus = controller.refreshingMarket
             ? 'Fiyatlar güncelleniyor'
@@ -184,7 +156,7 @@ class _PortfolioPage extends StatelessWidget {
                 ? controller.marketError!
                 : controller.marketUpdatedAt == null
                     ? 'Fiyat verisi bekleniyor'
-                    : '${controller.marketSource} · ${DateFormat('dd.MM HH:mm', 'tr_TR').format(controller.marketUpdatedAt!.toLocal())}';
+                    : '${controller.marketSource} · ${DateFormat('dd.MM HH:mm').format(controller.marketUpdatedAt!.toLocal())}';
 
         return _PageFrame(
           title: 'BIST TAKİP 2.0',
@@ -501,6 +473,240 @@ class _PortfolioStockCard extends StatelessWidget {
   }
 }
 
+enum _DistributionMode { currentValue, cost }
+
+class _DistributionPage extends StatefulWidget {
+  const _DistributionPage({required this.controller});
+
+  final AppController controller;
+
+  @override
+  State<_DistributionPage> createState() => _DistributionPageState();
+}
+
+class _DistributionPageState extends State<_DistributionPage> {
+  _DistributionMode mode = _DistributionMode.currentValue;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: widget.controller,
+      builder: (context, _) {
+        final money = NumberFormat('#,##0.00', 'tr_TR');
+        final rows = <_DistributionRow>[];
+
+        for (final holding in widget.controller.holdings.values) {
+          if (holding.quantity <= 0) continue;
+          final quote = widget.controller.quoteFor(holding.ticker);
+          final value = mode == _DistributionMode.currentValue
+              ? (quote?.price ?? 0) * holding.quantity
+              : holding.costBasis;
+          if (value <= 0) continue;
+
+          rows.add(
+            _DistributionRow(
+              ticker: holding.ticker,
+              name: quote?.name ?? '',
+              value: value,
+            ),
+          );
+        }
+
+        rows.sort((a, b) => b.value.compareTo(a.value));
+        final total =
+            rows.fold<double>(0, (sum, item) => sum + item.value);
+
+        return _PageFrame(
+          title: 'Dağılım',
+          subtitle: 'Portföyünün hangi hisselerde yoğunlaştığını gör',
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SegmentedButton<_DistributionMode>(
+                segments: const [
+                  ButtonSegment(
+                    value: _DistributionMode.currentValue,
+                    label: Text('Güncel Değer'),
+                  ),
+                  ButtonSegment(
+                    value: _DistributionMode.cost,
+                    label: Text('Maliyet'),
+                  ),
+                ],
+                selected: {mode},
+                onSelectionChanged: (value) =>
+                    setState(() => mode = value.first),
+              ),
+              const SizedBox(height: 16),
+              if (rows.isEmpty)
+                const _InfoCard(
+                  text:
+                      'Dağılım göstermek için portföyde en az bir aktif hisse ve gerekli fiyat/maliyet verisi olmalı.',
+                )
+              else ...[
+                SizedBox(
+                  height: 220,
+                  child: CustomPaint(
+                    painter: _DistributionPiePainter(
+                      rows: rows,
+                      total: total,
+                      colors: _distributionColors,
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            mode == _DistributionMode.currentValue
+                                ? 'GÜNCEL DEĞER'
+                                : 'TOPLAM MALİYET',
+                            style: Theme.of(context).textTheme.labelSmall,
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            '${money.format(total)} ₺',
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(fontWeight: FontWeight.w900),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                ...rows.asMap().entries.map((entry) {
+                  final index = entry.key;
+                  final row = entry.value;
+                  final percent = total > 0 ? row.value / total * 100 : 0;
+
+                  return Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 12,
+                            height: 12,
+                            decoration: BoxDecoration(
+                              color: _distributionColors[
+                                  index % _distributionColors.length],
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  row.ticker,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                  ),
+                                ),
+                                if (row.name.isNotEmpty)
+                                  Text(
+                                    row.name,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall,
+                                  ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                '%${percent.toStringAsFixed(1).replaceAll('.', ',')}',
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                              Text(
+                                '${money.format(row.value)} ₺',
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+              ],
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _DistributionRow {
+  const _DistributionRow({
+    required this.ticker,
+    required this.name,
+    required this.value,
+  });
+
+  final String ticker;
+  final String name;
+  final double value;
+}
+
+const _distributionColors = [
+  Color(0xFF78A88F),
+  Color(0xFF9AA8D6),
+  Color(0xFFD2A67C),
+  Color(0xFFB48CB8),
+  Color(0xFF7FA8C9),
+  Color(0xFFC79A9A),
+  Color(0xFFA6B979),
+  Color(0xFFB39B7D),
+];
+
+class _DistributionPiePainter extends CustomPainter {
+  const _DistributionPiePainter({
+    required this.rows,
+    required this.total,
+    required this.colors,
+  });
+
+  final List<_DistributionRow> rows;
+  final double total;
+  final List<Color> colors;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (total <= 0) return;
+
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = math.min(size.width, size.height) * .42;
+    final rect = Rect.fromCircle(center: center, radius: radius);
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = radius * .34
+      ..strokeCap = StrokeCap.butt;
+
+    var start = -math.pi / 2;
+    for (var i = 0; i < rows.length; i++) {
+      final sweep = (rows[i].value / total) * math.pi * 2;
+      paint.color = colors[i % colors.length];
+      canvas.drawArc(rect, start, sweep, false, paint);
+      start += sweep;
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _DistributionPiePainter oldDelegate) =>
+      oldDelegate.rows != rows || oldDelegate.total != total;
+}
+
 class _DividendPage extends StatelessWidget {
   const _DividendPage({required this.controller});
 
@@ -511,10 +717,7 @@ class _DividendPage extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
-        final total = controller.holdings.values.fold<double>(
-          0,
-          (sum, holding) => sum + holding.netDividends,
-        );
+        final total = controller.dividendsForYear(DateTime.now().year);
         final money = NumberFormat('#,##0.00', 'tr_TR');
         final monthlyAverage = total / 12;
         final target = controller.monthlyTarget;
@@ -560,32 +763,169 @@ class _DividendPage extends StatelessWidget {
   }
 }
 
-class _TargetPage extends StatelessWidget {
+class _TargetPage extends StatefulWidget {
   const _TargetPage({required this.controller});
 
   final AppController controller;
 
   @override
-  Widget build(BuildContext context) {
-    final money = NumberFormat('#,##0.00', 'tr_TR');
-    return _PageFrame(
-      title: 'Hedef',
-      subtitle: 'Portföy ve temettü hedeflerini ayrı ayrı izle',
-      child: Column(
-        children: [
-          _MetricCard(
-            label: 'YILLIK NET TEMETTÜ HEDEFİ',
-            value: '${money.format(controller.annualTarget)} ₺',
+  State<_TargetPage> createState() => _TargetPageState();
+}
+
+class _TargetPageState extends State<_TargetPage> {
+  double _number(String input) {
+    var text = input.trim().replaceAll(' ', '');
+    if (text.contains(',')) {
+      text = text.replaceAll('.', '').replaceAll(',', '.');
+    }
+    return double.tryParse(text) ?? 0;
+  }
+
+  Future<void> _editTargets() async {
+    final annual = TextEditingController(
+      text: widget.controller.annualTarget.toStringAsFixed(0),
+    );
+    final monthly = TextEditingController(
+      text: widget.controller.monthlyTarget.toStringAsFixed(0),
+    );
+
+    final values = await showDialog<List<double>>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Temettü hedeflerini düzenle'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: annual,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: const InputDecoration(
+                labelText: 'Yıllık net temettü hedefi',
+                suffixText: '₺',
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: monthly,
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
+              decoration: const InputDecoration(
+                labelText: 'Aylık net temettü hedefi',
+                suffixText: '₺',
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('VAZGEÇ'),
           ),
-          const SizedBox(height: 10),
-          const _MetricCard(label: 'HEDEFE ULAŞMA', value: '%0'),
-          const SizedBox(height: 16),
-          const _InfoCard(
-            text:
-                'Buradaki projeksiyonlar senaryo amaçlı olacak; gelecekteki getiri veya temettü garantisi olarak sunulmayacak.',
+          FilledButton(
+            onPressed: () => Navigator.pop(
+              context,
+              [_number(annual.text), _number(monthly.text)],
+            ),
+            child: const Text('KAYDET'),
           ),
         ],
       ),
+    );
+
+    annual.dispose();
+    monthly.dispose();
+
+    if (values == null) return;
+    await widget.controller.updateTargets(
+      annualTarget: values[0],
+      monthlyTarget: values[1],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: widget.controller,
+      builder: (context, _) {
+        final money = NumberFormat('#,##0.00', 'tr_TR');
+        final year = DateTime.now().year;
+        final paid = widget.controller.dividendsForYear(year);
+        final annualTarget = widget.controller.annualTarget;
+        final monthlyTarget = widget.controller.monthlyTarget;
+        final annualRatio =
+            annualTarget > 0 ? (paid / annualTarget) * 100 : 0;
+        final monthlyAverage = paid / 12;
+        final monthlyRatio =
+            monthlyTarget > 0 ? (monthlyAverage / monthlyTarget) * 100 : 0;
+
+        return _PageFrame(
+          title: 'Hedef',
+          subtitle: 'Portföy ve temettü hedeflerini ayrı ayrı izle',
+          actions: [
+            IconButton(
+              tooltip: 'Hedefleri düzenle',
+              onPressed: _editTargets,
+              icon: const Icon(Icons.edit_outlined),
+            ),
+          ],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _MetricCard(
+                label: '$year NET TEMETTÜ',
+                value: '${money.format(paid)} ₺',
+              ),
+              const SizedBox(height: 10),
+              _MetricCard(
+                label: 'YILLIK NET TEMETTÜ HEDEFİ',
+                value: '${money.format(annualTarget)} ₺',
+              ),
+              const SizedBox(height: 10),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'YILLIK HEDEFE ULAŞMA',
+                        style: Theme.of(context).textTheme.labelSmall,
+                      ),
+                      const SizedBox(height: 8),
+                      LinearProgressIndicator(
+                        value: (annualRatio / 100).clamp(0, 1),
+                        minHeight: 10,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        '%${annualRatio.toStringAsFixed(1).replaceAll('.', ',')} · Kalan ${money.format(math.max(0, annualTarget - paid))} ₺',
+                        style: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              _MetricCard(
+                label: 'AYLIK TEMETTÜ HEDEFİ',
+                value: '${money.format(monthlyTarget)} ₺',
+              ),
+              const SizedBox(height: 10),
+              _MetricCard(
+                label: 'AYLIK ORTALAMA / HEDEF',
+                value:
+                    '${money.format(monthlyAverage)} ₺ · %${monthlyRatio.toStringAsFixed(0)}',
+              ),
+              const SizedBox(height: 16),
+              const _InfoCard(
+                text:
+                    'Hedef ekranındaki projeksiyonlar senaryo amaçlıdır; gelecekteki getiri veya temettü garantisi değildir.',
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -648,6 +988,176 @@ class _SettingsPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class _HistoryPage extends StatelessWidget {
+  const _HistoryPage({required this.controller});
+
+  final AppController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: controller,
+      builder: (context, _) {
+        final snapshots = controller.snapshots;
+        final money = NumberFormat('#,##0.00', 'tr_TR');
+
+        return _PageFrame(
+          title: 'Geçmiş',
+          subtitle: 'Portföy değerinin günlük gelişimini takip et',
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              if (snapshots.isEmpty)
+                const _InfoCard(
+                  text:
+                      'İlk fiyat güncellemesinden sonra günlük portföy kaydı burada oluşacak.',
+                )
+              else ...[
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'PORTFÖY DEĞERİ',
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                        const SizedBox(height: 8),
+                        SizedBox(
+                          height: 180,
+                          child: CustomPaint(
+                            painter: _HistoryLinePainter(
+                              values: snapshots
+                                  .map((item) => item.portfolioValue)
+                                  .toList(),
+                              color: Theme.of(context).colorScheme.primary,
+                              gridColor:
+                                  Theme.of(context).colorScheme.outlineVariant,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Text(
+                                _shortDate(snapshots.first.day),
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ),
+                            Text(
+                              _shortDate(snapshots.last.day),
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                ...snapshots.reversed.take(30).map(
+                  (item) => Card(
+                    child: ListTile(
+                      title: Text(
+                        _fullDate(item.day),
+                        style: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                      subtitle: Text(
+                        'Günlük K/Z ${item.dailyPnl >= 0 ? '+' : ''}${money.format(item.dailyPnl)} ₺ · Toplam K/Z ${item.totalPnl >= 0 ? '+' : ''}${money.format(item.totalPnl)} ₺',
+                      ),
+                      trailing: Text(
+                        '${money.format(item.portfolioValue)} ₺',
+                        style: const TextStyle(fontWeight: FontWeight.w800),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  static String _shortDate(DateTime date) =>
+      '${date.day.toString().padLeft(2, '0')}.${date.month.toString().padLeft(2, '0')}';
+
+  static String _fullDate(DateTime date) =>
+      '${date.day.toString().padLeft(2, '0')}.${date.month.toString().padLeft(2, '0')}.${date.year}';
+}
+
+class _HistoryLinePainter extends CustomPainter {
+  const _HistoryLinePainter({
+    required this.values,
+    required this.color,
+    required this.gridColor,
+  });
+
+  final List<double> values;
+  final Color color;
+  final Color gridColor;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (values.isEmpty) return;
+
+    final gridPaint = Paint()
+      ..color = gridColor
+      ..strokeWidth = 1;
+
+    for (var i = 1; i <= 3; i++) {
+      final y = size.height * i / 4;
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), gridPaint);
+    }
+
+    if (values.length == 1) {
+      final dot = Paint()..color = color;
+      canvas.drawCircle(
+        Offset(size.width / 2, size.height / 2),
+        4,
+        dot,
+      );
+      return;
+    }
+
+    final minValue = values.reduce(math.min);
+    final maxValue = values.reduce(math.max);
+    final range = maxValue - minValue;
+    final safeRange = range.abs() < .000001 ? 1.0 : range;
+
+    final path = Path();
+    for (var i = 0; i < values.length; i++) {
+      final x = size.width * i / (values.length - 1);
+      final normalized = (values[i] - minValue) / safeRange;
+      final y = size.height - (normalized * size.height * .82) -
+          (size.height * .09);
+      if (i == 0) {
+        path.moveTo(x, y);
+      } else {
+        path.lineTo(x, y);
+      }
+    }
+
+    final linePaint = Paint()
+      ..color = color
+      ..strokeWidth = 3
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round;
+
+    canvas.drawPath(path, linePaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _HistoryLinePainter oldDelegate) =>
+      oldDelegate.values != values ||
+      oldDelegate.color != color ||
+      oldDelegate.gridColor != gridColor;
 }
 
 class _PlaceholderPage extends StatelessWidget {
