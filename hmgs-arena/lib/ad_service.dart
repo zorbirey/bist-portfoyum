@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -38,18 +39,6 @@ class AdService {
         onAdLoaded: (ad) {
           _loadingRewarded = false;
           _rewardedAd = ad;
-          ad.fullScreenContentCallback = FullScreenContentCallback(
-            onAdDismissedFullScreenContent: (ad) {
-              ad.dispose();
-              _rewardedAd = null;
-              loadRewarded();
-            },
-            onAdFailedToShowFullScreenContent: (ad, error) {
-              ad.dispose();
-              _rewardedAd = null;
-              loadRewarded();
-            },
-          );
         },
         onAdFailedToLoad: (_) {
           _loadingRewarded = false;
@@ -59,26 +48,36 @@ class AdService {
     );
   }
 
-  Future<bool> showRewarded() async {
+  Future<bool> showRewarded() {
     final ad = _rewardedAd;
     if (ad == null) {
       loadRewarded();
-      return false;
+      return Future.value(false);
     }
 
     _rewardedAd = null;
+    final completer = Completer<bool>();
     var earned = false;
+
+    ad.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        if (!completer.isCompleted) completer.complete(earned);
+        loadRewarded();
+      },
+      onAdFailedToShowFullScreenContent: (ad, _) {
+        ad.dispose();
+        if (!completer.isCompleted) completer.complete(false);
+        loadRewarded();
+      },
+    );
+
     ad.show(
       onUserEarnedReward: (_, __) {
         earned = true;
       },
     );
-
-    while (ad.responseInfo != null && !earned) {
-      await Future<void>.delayed(const Duration(milliseconds: 100));
-      if (_rewardedAd != null) break;
-    }
-    return earned;
+    return completer.future;
   }
 
   BannerAd createBanner({required void Function() onLoaded}) {
