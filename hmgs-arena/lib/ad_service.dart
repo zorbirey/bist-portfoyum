@@ -24,10 +24,28 @@ class AdService {
     throw UnsupportedError('Desteklenmeyen platform');
   }
 
+  static String get interstitialUnitId {
+    if (Platform.isAndroid) {
+      return 'ca-app-pub-3940256099942544/1033173712';
+    }
+    if (Platform.isIOS) {
+      return 'ca-app-pub-3940256099942544/4411468910';
+    }
+    throw UnsupportedError('Desteklenmeyen platform');
+  }
+
   RewardedAd? _rewardedAd;
+  InterstitialAd? _interstitialAd;
   bool _loadingRewarded = false;
+  bool _loadingInterstitial = false;
 
   bool get rewardedReady => _rewardedAd != null;
+  bool get interstitialReady => _interstitialAd != null;
+
+  void preload() {
+    loadRewarded();
+    loadInterstitial();
+  }
 
   void loadRewarded() {
     if (_loadingRewarded || _rewardedAd != null) return;
@@ -43,6 +61,25 @@ class AdService {
         onAdFailedToLoad: (_) {
           _loadingRewarded = false;
           _rewardedAd = null;
+        },
+      ),
+    );
+  }
+
+  void loadInterstitial() {
+    if (_loadingInterstitial || _interstitialAd != null) return;
+    _loadingInterstitial = true;
+    InterstitialAd.load(
+      adUnitId: interstitialUnitId,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          _loadingInterstitial = false;
+          _interstitialAd = ad;
+        },
+        onAdFailedToLoad: (_) {
+          _loadingInterstitial = false;
+          _interstitialAd = null;
         },
       ),
     );
@@ -80,6 +117,33 @@ class AdService {
     return completer.future;
   }
 
+  Future<bool> showInterstitial() {
+    final ad = _interstitialAd;
+    if (ad == null) {
+      loadInterstitial();
+      return Future.value(false);
+    }
+
+    _interstitialAd = null;
+    final completer = Completer<bool>();
+
+    ad.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        if (!completer.isCompleted) completer.complete(true);
+        loadInterstitial();
+      },
+      onAdFailedToShowFullScreenContent: (ad, _) {
+        ad.dispose();
+        if (!completer.isCompleted) completer.complete(false);
+        loadInterstitial();
+      },
+    );
+
+    ad.show();
+    return completer.future;
+  }
+
   BannerAd createBanner({required void Function() onLoaded}) {
     return BannerAd(
       adUnitId: bannerUnitId,
@@ -90,5 +154,12 @@ class AdService {
         onAdFailedToLoad: (ad, _) => ad.dispose(),
       ),
     );
+  }
+
+  void dispose() {
+    _rewardedAd?.dispose();
+    _rewardedAd = null;
+    _interstitialAd?.dispose();
+    _interstitialAd = null;
   }
 }
