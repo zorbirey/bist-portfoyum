@@ -12,14 +12,6 @@ class DividendPage extends StatelessWidget {
 
   final AppController controller;
 
-  double _number(String input) {
-    var text = input.trim().replaceAll(' ', '');
-    if (text.contains(',')) {
-      text = text.replaceAll('.', '').replaceAll(',', '.');
-    }
-    return double.tryParse(text) ?? 0;
-  }
-
   Future<void> _recordEvent(
     BuildContext context,
     DividendEvent event,
@@ -27,52 +19,22 @@ class DividendPage extends StatelessWidget {
   ) async {
     final existing =
         controller.recordedDividendForEvent(event.ticker, event.date);
-    final input = TextEditingController(
-      text: (existing ?? estimated).toStringAsFixed(2).replaceAll('.', ','),
-    );
 
     final amount = await showDialog<double>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: Text('${event.ticker} gerçek temettü'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Banka hesabına gerçekten geçen NET tutarı gir. Takvim tahmini farklıysa burada gerçek rakamı kullan.',
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: input,
-              autofocus: true,
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
-              decoration: const InputDecoration(
-                labelText: 'Gerçek alınan net tutar',
-                suffixText: '₺',
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('VAZGEÇ'),
-          ),
-          FilledButton(
-            onPressed: () {
-              final value = _number(input.text);
-              if (value > 0) Navigator.pop(context, value);
-            },
-            child: const Text('KAYDET'),
-          ),
-        ],
+      builder: (_) => _DividendAmountDialog(
+        ticker: event.ticker,
+        initialAmount: existing ?? estimated,
       ),
     );
 
-    input.dispose();
-    if (amount == null || amount <= 0) return;
+    if (amount == null || amount <= 0 || !context.mounted) return;
+
+    // Diyalog route'unun tamamen kapanmasını bekle. Böylece controller
+    // notifyListeners çağrısı, kapanan dialog ağacının dispose süreciyle
+    // çakışmaz.
+    await WidgetsBinding.instance.endOfFrame;
+    if (!context.mounted) return;
 
     await controller.recordDividend(
       ticker: event.ticker,
@@ -125,8 +87,9 @@ class DividendPage extends StatelessWidget {
         final recorded = controller.dividendsForYear(year);
         final monthlyActual = recorded / 12;
         final monthlyTarget = controller.monthlyTarget;
-        final monthlyRatio =
-            monthlyTarget > 0 ? (monthlyActual / monthlyTarget) * 100 : 0;
+        final monthlyRatio = monthlyTarget > 0
+            ? (monthlyActual / monthlyTarget) * 100
+            : 0.0;
 
         final ordered = [...events]
           ..sort((a, b) {
@@ -215,9 +178,8 @@ class DividendPage extends StatelessWidget {
                 value: monthlyTarget > 0
                     ? '%${monthlyRatio.toStringAsFixed(1).replaceAll('.', ',')}'
                     : 'Hedef girilmedi',
-                valueColor: monthlyRatio >= 100
-                    ? Colors.green.shade700
-                    : null,
+                valueColor:
+                    monthlyRatio >= 100 ? Colors.green.shade700 : null,
                 subtitle: monthlyTarget > 0
                     ? '${money.format(monthlyActual)} ₺ / ${money.format(monthlyTarget)} ₺'
                     : 'Hedef sekmesinden aylık hedefini belirle.',
@@ -227,7 +189,7 @@ class DividendPage extends StatelessWidget {
               const SizedBox(height: 14),
               const InfoCard(
                 text:
-                    'Ödeme tarihi geçmiş bir temettü otomatik olarak “gerçek alınan” sayılmaz. Banka hesabına geçen net rakamı kaydettiğinde 2026 KAYITLI NET ve hedef ilerlemesi güncellenir.',
+                    'Ödeme tarihi geçmiş bir temettü otomatik olarak “gerçek alınan” sayılmaz. Banka hesabına geçen net rakamı kaydettiğinde KAYITLI NET ve hedef ilerlemesi güncellenir.',
               ),
               const SizedBox(height: 12),
               FilledButton.icon(
@@ -251,8 +213,7 @@ class DividendPage extends StatelessWidget {
                 )
               else
                 ...ordered.map((event) {
-                  final quantity =
-                      holdings[event.ticker]?.quantity ?? 0;
+                  final quantity = holdings[event.ticker]?.quantity ?? 0;
                   final estimated = quantity * event.netPerShare;
                   final registered = controller.recordedDividendForEvent(
                     event.ticker,
@@ -395,6 +356,94 @@ class DividendPage extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class _DividendAmountDialog extends StatefulWidget {
+  const _DividendAmountDialog({
+    required this.ticker,
+    required this.initialAmount,
+  });
+
+  final String ticker;
+  final double initialAmount;
+
+  @override
+  State<_DividendAmountDialog> createState() => _DividendAmountDialogState();
+}
+
+class _DividendAmountDialogState extends State<_DividendAmountDialog> {
+  late final TextEditingController _controller;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(
+      text: widget.initialAmount.toStringAsFixed(2).replaceAll('.', ','),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  double _parseAmount(String input) {
+    var text = input.trim().replaceAll(' ', '');
+    if (text.contains(',')) {
+      text = text.replaceAll('.', '').replaceAll(',', '.');
+    }
+    return double.tryParse(text) ?? 0;
+  }
+
+  void _save() {
+    final value = _parseAmount(_controller.text);
+    if (value <= 0) {
+      setState(() => _error = 'Sıfırdan büyük gerçek net tutarı gir.');
+      return;
+    }
+    Navigator.of(context).pop(value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('${widget.ticker} gerçek temettü'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Banka hesabına gerçekten geçen NET tutarı gir. Takvim tahmini farklıysa burada gerçek rakamı kullan.',
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _controller,
+            autofocus: true,
+            keyboardType:
+                const TextInputType.numberWithOptions(decimal: true),
+            decoration: InputDecoration(
+              labelText: 'Gerçek alınan net tutar',
+              suffixText: '₺',
+              errorText: _error,
+            ),
+            onSubmitted: (_) => _save(),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('VAZGEÇ'),
+        ),
+        FilledButton(
+          onPressed: _save,
+          child: const Text('KAYDET'),
+        ),
+      ],
     );
   }
 }
