@@ -76,7 +76,7 @@ class _StartupGateState extends State<StartupGate> {
                           ),
                         const SizedBox(height: 18),
                         Text(
-                          'BIST TAKİP 2.0',
+                          'BIST TAKİP 2.1',
                           style: Theme.of(context)
                               .textTheme
                               .titleLarge
