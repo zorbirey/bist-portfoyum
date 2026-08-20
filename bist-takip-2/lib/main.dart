@@ -38,7 +38,7 @@ class BistTakipApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'BIST TAKİP 2.0',
+      title: 'BIST TAKİP 2.1',
       locale: const Locale('tr', 'TR'),
       supportedLocales: const [
         Locale('tr', 'TR'),
