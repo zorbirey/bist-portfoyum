@@ -3,12 +3,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:hmgs_arena/learning_engine.dart';
 import 'package:hmgs_arena/question.dart';
+import 'package:hmgs_arena/question_difficulty.dart';
 
 Question q(String id, String topic) => Question(
       id: id,
       subject: 'Borçlar Hukuku',
       topic: topic,
-      difficulty: 'orta',
+      difficulty: QuestionDifficulty.medium,
       question: 'Soru $id',
       options: const ['A', 'B', 'C', 'D'],
       correctIndex: 0,
