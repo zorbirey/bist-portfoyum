@@ -1,7 +1,7 @@
 name: bist_takip_2
 description: BIST TAKİP 2.0 - portföy ve temettü yönetim uygulaması
 publish_to: none
-version: 2.0.0+6
+version: 2.0.0+7
 
 environment:
   sdk: '>=3.9.0 <4.0.0'
