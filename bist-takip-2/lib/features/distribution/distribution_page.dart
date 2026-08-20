@@ -46,8 +46,22 @@ class _DistributionPageState extends State<DistributionPage> {
         }
 
         rows.sort((a, b) => b.value.compareTo(a.value));
-        final total =
-            rows.fold<double>(0, (sum, item) => sum + item.value);
+        final total = rows.fold<double>(0, (sum, item) => sum + item.value);
+        final equalPercent = rows.isEmpty ? 0.0 : 100 / rows.length;
+        final equalAmount = rows.isEmpty ? 0.0 : total / rows.length;
+        final largestPercent = rows.isEmpty || total <= 0
+            ? 0.0
+            : rows.first.value / total * 100;
+        final concentrationDifference = largestPercent - equalPercent;
+
+        String balanceLabel;
+        if (rows.length <= 1) {
+          balanceLabel = 'Tek hisse portföyü';
+        } else if (largestPercent <= equalPercent * 1.25) {
+          balanceLabel = 'Eşit portföye yakın';
+        } else {
+          balanceLabel = 'Tek hisse ağırlığı yüksek';
+        }
 
         return PageFrame(
           title: 'Dağılım',
@@ -109,10 +123,72 @@ class _DistributionPageState extends State<DistributionPage> {
                   ),
                 ),
                 const SizedBox(height: 14),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'TEK HİSSE Mİ, EŞİT PORTFÖY MÜ?',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
+                              ?.copyWith(fontWeight: FontWeight.w900),
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _BalanceMetric(
+                                label: 'EŞİT PAY',
+                                value:
+                                    '%${equalPercent.toStringAsFixed(1).replaceAll('.', ',')}',
+                                subtitle: '${money.format(equalAmount)} ₺',
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: _BalanceMetric(
+                                label: 'EN AĞIR HİSSE',
+                                value:
+                                    '${rows.first.ticker} %${largestPercent.toStringAsFixed(1).replaceAll('.', ',')}',
+                                subtitle:
+                                    '${concentrationDifference >= 0 ? '+' : ''}${concentrationDifference.toStringAsFixed(1).replaceAll('.', ',')} puan',
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 10,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .surfaceContainerHighest,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Text(
+                            balanceLabel,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(fontWeight: FontWeight.w900),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 14),
                 ...rows.asMap().entries.map((entry) {
                   final index = entry.key;
                   final row = entry.value;
-                  final percent = total > 0 ? row.value / total * 100 : 0;
+                  final percent = total > 0 ? row.value / total * 100 : 0.0;
+                  final deviationPercent = percent - equalPercent;
+                  final deviationAmount = row.value - equalAmount;
 
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 8),
@@ -149,6 +225,16 @@ class _DistributionPageState extends State<DistributionPage> {
                                       style:
                                           Theme.of(context).textTheme.bodySmall,
                                     ),
+                                  const SizedBox(height: 3),
+                                  Text(
+                                    'Eşit paya göre ${deviationPercent >= 0 ? '+' : ''}${deviationPercent.toStringAsFixed(1).replaceAll('.', ',')} puan · ${deviationAmount >= 0 ? '+' : ''}${money.format(deviationAmount)} ₺',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.copyWith(
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -179,6 +265,50 @@ class _DistributionPageState extends State<DistributionPage> {
           ),
         );
       },
+    );
+  }
+}
+
+class _BalanceMetric extends StatelessWidget {
+  const _BalanceMetric({
+    required this.label,
+    required this.value,
+    required this.subtitle,
+  });
+
+  final String label;
+  final String value;
+  final String subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(11),
+      decoration: BoxDecoration(
+        border: Border.all(color: Theme.of(context).dividerColor),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: Theme.of(context).textTheme.labelSmall),
+          const SizedBox(height: 4),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              value,
+              maxLines: 1,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(fontWeight: FontWeight.w900),
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(subtitle, style: Theme.of(context).textTheme.bodySmall),
+        ],
+      ),
     );
   }
 }
