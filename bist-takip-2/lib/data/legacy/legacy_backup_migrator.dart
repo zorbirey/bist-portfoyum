@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import '../../domain/models/portfolio_transaction.dart';
 
 class LegacyMigrationResult {
@@ -84,10 +85,15 @@ class LegacyBackupMigrator {
 
   double _asDouble(dynamic value) {
     if (value is num) return value.toDouble();
-    if (value is String) {
-      final normalized = value.replaceAll('.', '').replaceAll(',', '.');
-      return double.tryParse(normalized) ?? 0;
+    if (value is! String) return 0;
+
+    var text = value.trim().replaceAll(' ', '');
+    if (text.isEmpty) return 0;
+
+    if (text.contains(',')) {
+      text = text.replaceAll('.', '').replaceAll(',', '.');
     }
-    return 0;
+
+    return double.tryParse(text) ?? 0;
   }
 }
