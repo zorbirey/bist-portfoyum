@@ -1,7 +1,7 @@
 name: bist_takip_2
 description: BIST TAKİP 2.0 - portföy ve temettü yönetim uygulaması
 publish_to: none
-version: 2.0.0+4
+version: 2.0.0+5
 
 environment:
   sdk: '>=3.9.0 <4.0.0'
@@ -22,3 +22,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/zeus_splash.b64

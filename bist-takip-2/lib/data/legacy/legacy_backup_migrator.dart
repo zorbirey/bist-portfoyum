@@ -51,7 +51,7 @@ class LegacyBackupMigrator {
         PortfolioTransaction(
           id: 'legacy-${date.microsecondsSinceEpoch}-$i',
           ticker: ticker,
-          type: PortfolioTransactionType.buy,
+          type: PortfolioTransactionType.opening,
           date: date,
           quantity: quantity,
           unitPrice: averageCost,
@@ -62,7 +62,7 @@ class LegacyBackupMigrator {
 
     if (transactions.isNotEmpty) {
       warnings.add(
-        '1.1.5 yalnızca toplam adet ve ortalama maliyeti tuttuğu için eski alış/satış tarihleri geri oluşturulamaz. Aktarılan pozisyonlar 2.0 için açılış bakiyesi olarak kaydedildi.',
+        '1.1.5 eski alış/satış tarihlerini tutmadığı için pozisyonlar 2.0 açılış bakiyesi olarak aktarılır. Benchmark kıyası için başlangıç tarihini Ayarlar bölümünden kontrol et.',
       );
     }
 
@@ -90,8 +90,25 @@ class LegacyBackupMigrator {
     var text = value.trim().replaceAll(' ', '');
     if (text.isEmpty) return 0;
 
-    if (text.contains(',')) {
-      text = text.replaceAll('.', '').replaceAll(',', '.');
+    final comma = text.lastIndexOf(',');
+    final dot = text.lastIndexOf('.');
+
+    if (comma >= 0 && dot >= 0) {
+      if (comma > dot) {
+        text = text.replaceAll('.', '').replaceAll(',', '.');
+      } else {
+        text = text.replaceAll(',', '');
+      }
+    } else if (comma >= 0) {
+      final decimals = text.length - comma - 1;
+      text = decimals >= 1 && decimals <= 4
+          ? text.replaceAll('.', '').replaceAll(',', '.')
+          : text.replaceAll(',', '');
+    } else if (dot >= 0) {
+      final decimals = text.length - dot - 1;
+      if (decimals > 4) {
+        text = text.replaceAll('.', '');
+      }
     }
 
     return double.tryParse(text) ?? 0;

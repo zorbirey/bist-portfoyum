@@ -30,12 +30,14 @@ class PortfolioLedger {
       final state = states.putIfAbsent(ticker, () => _MutableHolding(ticker));
 
       switch (tx.type) {
+        case PortfolioTransactionType.opening:
         case PortfolioTransactionType.buy:
           if (tx.quantity <= 0 || tx.unitPrice < 0) continue;
           final oldCost = state.quantity * state.averageCost;
           final incomingCost = (tx.quantity * tx.unitPrice) + tx.fee;
           final newQuantity = state.quantity + tx.quantity;
-          state.averageCost = newQuantity == 0 ? 0 : (oldCost + incomingCost) / newQuantity;
+          state.averageCost =
+              newQuantity == 0 ? 0 : (oldCost + incomingCost) / newQuantity;
           state.quantity = newQuantity;
           break;
         case PortfolioTransactionType.sell:

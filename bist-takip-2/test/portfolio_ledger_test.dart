@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('ağırlıklı maliyet ve satış kârını hesaplar', () {
-    const ledger = PortfolioLedger();
+    final ledger = PortfolioLedger();
     final rows = [
       PortfolioTransaction(
         id: '1',
@@ -38,36 +38,27 @@ void main() {
     expect(position.realizedPnl, 1500);
   });
 
-  test('alış ve satış komisyonunu doğru uygular', () {
-    const ledger = PortfolioLedger();
+  test('açılış bakiyesi alış gibi maliyet tabanına girer', () {
+    final ledger = PortfolioLedger();
     final rows = [
       PortfolioTransaction(
-        id: '1',
-        ticker: 'THYAO',
-        type: PortfolioTransactionType.buy,
+        id: 'opening',
+        ticker: 'FROTO',
+        type: PortfolioTransactionType.opening,
         date: DateTime(2026, 1, 1),
         quantity: 10,
-        unitPrice: 100,
-        fee: 10,
-      ),
-      PortfolioTransaction(
-        id: '2',
-        ticker: 'THYAO',
-        type: PortfolioTransactionType.sell,
-        date: DateTime(2026, 2, 1),
-        quantity: 5,
-        unitPrice: 120,
-        fee: 5,
+        unitPrice: 900,
       ),
     ];
 
-    final position = ledger.calculate(rows)['THYAO']!;
-    expect(position.averageCost, 101);
-    expect(position.realizedPnl, 90);
+    final position = ledger.calculate(rows)['FROTO']!;
+    expect(position.quantity, 10);
+    expect(position.averageCost, 900);
+    expect(position.costBasis, 9000);
   });
 
   test('net temettüyü pozisyona ekler', () {
-    const ledger = PortfolioLedger();
+    final ledger = PortfolioLedger();
     final rows = [
       PortfolioTransaction(
         id: '1',

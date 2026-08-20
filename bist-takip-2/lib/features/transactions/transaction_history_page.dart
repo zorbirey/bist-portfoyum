@@ -10,6 +10,7 @@ class TransactionHistoryPage extends StatelessWidget {
   final AppController controller;
 
   String _type(PortfolioTransactionType type) => switch (type) {
+        PortfolioTransactionType.opening => 'AÇILIŞ',
         PortfolioTransactionType.buy => 'ALIŞ',
         PortfolioTransactionType.sell => 'SATIŞ',
         PortfolioTransactionType.dividend => 'TEMETTÜ',
@@ -44,7 +45,7 @@ class TransactionHistoryPage extends StatelessWidget {
               final isDividend =
                   tx.type == PortfolioTransactionType.dividend;
               final detail = isDividend
-                  ? 'Net ${money.format(tx.netDividend)} ₺'
+                  ? 'Gerçek net ${money.format(tx.netDividend)} ₺'
                   : '${money.format(tx.quantity)} adet · ${money.format(tx.unitPrice)} ₺ · Masraf ${money.format(tx.fee)} ₺';
 
               return Card(

@@ -11,12 +11,14 @@ class LocalPortfolioSnapshot {
     required this.snapshots,
     required this.annualTarget,
     required this.monthlyTarget,
+    required this.portfolioStartDate,
   });
 
   final List<PortfolioTransaction> transactions;
   final List<PortfolioSnapshot> snapshots;
   final double annualTarget;
   final double monthlyTarget;
+  final DateTime? portfolioStartDate;
 }
 
 class LocalPortfolioStore {
@@ -24,6 +26,7 @@ class LocalPortfolioStore {
   static const _snapshotsKey = 'v2.snapshots';
   static const _annualTargetKey = 'v2.annualTarget';
   static const _monthlyTargetKey = 'v2.monthlyTarget';
+  static const _portfolioStartDateKey = 'v2.portfolioStartDate';
 
   Future<LocalPortfolioSnapshot> load() async {
     final prefs = await SharedPreferences.getInstance();
@@ -33,12 +36,15 @@ class LocalPortfolioStore {
     final snapshots = _decodeSnapshots(
       prefs.getString(_snapshotsKey),
     );
+    final rawStartDate = prefs.getString(_portfolioStartDateKey);
 
     return LocalPortfolioSnapshot(
       transactions: transactions,
       snapshots: snapshots,
       annualTarget: prefs.getDouble(_annualTargetKey) ?? 0,
       monthlyTarget: prefs.getDouble(_monthlyTargetKey) ?? 0,
+      portfolioStartDate:
+          rawStartDate == null ? null : DateTime.tryParse(rawStartDate),
     );
   }
 
@@ -89,6 +95,7 @@ class LocalPortfolioStore {
     required List<PortfolioSnapshot> snapshots,
     required double annualTarget,
     required double monthlyTarget,
+    required DateTime? portfolioStartDate,
   }) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(
@@ -101,5 +108,14 @@ class LocalPortfolioStore {
     );
     await prefs.setDouble(_annualTargetKey, annualTarget);
     await prefs.setDouble(_monthlyTargetKey, monthlyTarget);
+
+    if (portfolioStartDate == null) {
+      await prefs.remove(_portfolioStartDateKey);
+    } else {
+      await prefs.setString(
+        _portfolioStartDateKey,
+        portfolioStartDate.toIso8601String(),
+      );
+    }
   }
 }

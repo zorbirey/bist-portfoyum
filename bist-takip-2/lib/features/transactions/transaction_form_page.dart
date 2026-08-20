@@ -4,9 +4,20 @@ import '../../app/app_controller.dart';
 import '../../domain/models/portfolio_transaction.dart';
 
 class TransactionFormPage extends StatefulWidget {
-  const TransactionFormPage({super.key, required this.controller});
+  const TransactionFormPage({
+    super.key,
+    required this.controller,
+    this.initialType = PortfolioTransactionType.buy,
+    this.initialTicker,
+    this.initialDate,
+    this.initialDividend,
+  });
 
   final AppController controller;
+  final PortfolioTransactionType initialType;
+  final String? initialTicker;
+  final DateTime? initialDate;
+  final double? initialDividend;
 
   @override
   State<TransactionFormPage> createState() => _TransactionFormPageState();
@@ -20,10 +31,22 @@ class _TransactionFormPageState extends State<TransactionFormPage> {
   final dividendController = TextEditingController();
   final noteController = TextEditingController();
 
-  PortfolioTransactionType type = PortfolioTransactionType.buy;
-  DateTime date = DateTime.now();
+  late PortfolioTransactionType type;
+  late DateTime date;
   bool saving = false;
   String? error;
+
+  @override
+  void initState() {
+    super.initState();
+    type = widget.initialType;
+    date = widget.initialDate ?? DateTime.now();
+    tickerController.text = widget.initialTicker ?? '';
+    if (widget.initialDividend != null && widget.initialDividend! > 0) {
+      dividendController.text =
+          widget.initialDividend!.toStringAsFixed(2).replaceAll('.', ',');
+    }
+  }
 
   @override
   void dispose() {
@@ -68,7 +91,7 @@ class _TransactionFormPageState extends State<TransactionFormPage> {
 
     if (type == PortfolioTransactionType.dividend) {
       if (dividend <= 0) {
-        setState(() => error = 'Net temettü tutarını gir.');
+        setState(() => error = 'Banka hesabına geçen gerçek net temettü tutarını gir.');
         return;
       }
     } else {
@@ -124,7 +147,7 @@ class _TransactionFormPageState extends State<TransactionFormPage> {
         padding: const EdgeInsets.all(16),
         children: [
           DropdownButtonFormField<PortfolioTransactionType>(
-            value: type,
+            initialValue: type,
             decoration: const InputDecoration(labelText: 'İşlem türü'),
             items: const [
               DropdownMenuItem(
@@ -154,7 +177,7 @@ class _TransactionFormPageState extends State<TransactionFormPage> {
               labelText: 'BIST kodu',
               hintText: 'TUPRS',
               helperText: quote == null
-                  ? 'Kod girildiğinde mevcut fiyat kaynağıyla eşleşir.'
+                  ? 'Hisse kodunu gir.'
                   : '${quote.name} · ${quote.price.toStringAsFixed(2)} ₺',
             ),
             onChanged: (_) => setState(() {}),
@@ -188,12 +211,23 @@ class _TransactionFormPageState extends State<TransactionFormPage> {
               ),
             ),
           ] else ...[
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Text(
+                  'Buraya takvim tahminini değil, banka hesabına gerçekten geçen NET tutarı yaz. Örneğin tahmin 1.250,40 ₺ iken hesabına 1.247,85 ₺ geçtiyse 1.247,85 ₺ kaydet.',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
             TextField(
               controller: dividendController,
               keyboardType:
                   const TextInputType.numberWithOptions(decimal: true),
               decoration: const InputDecoration(
-                labelText: 'Net temettü tutarı',
+                labelText: 'Gerçek alınan net temettü',
+                hintText: 'Banka hesabına geçen tutar',
                 suffixText: '₺',
               ),
             ),

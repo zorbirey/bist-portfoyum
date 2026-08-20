@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bist_takip_2/data/legacy/legacy_backup_migrator.dart';
+import 'package:bist_takip_2/domain/models/portfolio_transaction.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -25,10 +26,35 @@ void main() {
 
     expect(result.transactions.length, 2);
     expect(result.transactions.first.ticker, 'TUPRS');
+    expect(
+      result.transactions.first.type,
+      PortfolioTransactionType.opening,
+    );
     expect(result.transactions.first.quantity, 500);
     expect(result.transactions.first.unitPrice, 175.40);
     expect(result.annualTarget, 60000);
     expect(result.monthlyTarget, 5000);
     expect(result.warnings, isNotEmpty);
+  });
+
+  test('Türkçe ve noktalı ondalık değerleri bozmadan okur', () {
+    final raw = jsonEncode({
+      'storage': {
+        'stocks': jsonEncode([
+          {'code': 'TUPRS', 'qty': '1.234,50', 'cost': '175,25'},
+          {'code': 'THYAO', 'qty': '10', 'cost': '304.75'},
+        ]),
+        'annualTarget': '60.000,50',
+        'monthlyTarget': '5000.25',
+      },
+    });
+
+    final result = const LegacyBackupMigrator().migrate(raw);
+
+    expect(result.transactions[0].quantity, 1234.50);
+    expect(result.transactions[0].unitPrice, 175.25);
+    expect(result.transactions[1].unitPrice, 304.75);
+    expect(result.annualTarget, 60000.50);
+    expect(result.monthlyTarget, 5000.25);
   });
 }

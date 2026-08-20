@@ -1,4 +1,4 @@
-enum PortfolioTransactionType { buy, sell, dividend }
+enum PortfolioTransactionType { opening, buy, sell, dividend }
 
 class PortfolioTransaction {
   const PortfolioTransaction({
@@ -24,6 +24,30 @@ class PortfolioTransaction {
   final String? note;
 
   double get grossAmount => quantity * unitPrice;
+
+  PortfolioTransaction copyWith({
+    String? id,
+    String? ticker,
+    PortfolioTransactionType? type,
+    DateTime? date,
+    double? quantity,
+    double? unitPrice,
+    double? fee,
+    double? netDividend,
+    String? note,
+  }) {
+    return PortfolioTransaction(
+      id: id ?? this.id,
+      ticker: ticker ?? this.ticker,
+      type: type ?? this.type,
+      date: date ?? this.date,
+      quantity: quantity ?? this.quantity,
+      unitPrice: unitPrice ?? this.unitPrice,
+      fee: fee ?? this.fee,
+      netDividend: netDividend ?? this.netDividend,
+      note: note ?? this.note,
+    );
+  }
 
   Map<String, Object?> toJson() => {
         'id': id,
