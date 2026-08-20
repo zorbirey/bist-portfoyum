@@ -69,7 +69,7 @@ class PortfolioPage extends StatelessWidget {
         final gold = controller.benchmarkFor(BenchmarkKind.gramGold);
 
         return PageFrame(
-          title: 'BIST TAKİP 2.0',
+          title: 'BIST TAKİP 2.1',
           subtitle:
               'Portföyün, gerçek getirilerin ve temettü gelirlerin tek yerde',
           actions: [
@@ -230,7 +230,7 @@ class PortfolioPage extends StatelessWidget {
                     child: Column(
                       children: [
                         const Text(
-                          'Henüz 2.0 portföy kaydı yok. İlk alışını ekleyebilir veya 1.1.5 yedeğini Ayarlar bölümünden içe aktarabilirsin.',
+                          'Henüz 2.1 portföy kaydı yok. İlk alışını ekleyebilir veya 1.1.5 yedeğini Ayarlar bölümünden içe aktarabilirsin.',
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 14),
