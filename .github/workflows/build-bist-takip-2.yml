@@ -1,4 +1,4 @@
-name: BIST TAKIP 2.1 Dev Build
+name: BIST TAKIP 2.1 Release Build
 
 on:
   workflow_dispatch:
@@ -7,6 +7,9 @@ on:
     paths:
       - 'bist-takip-2/**'
       - '.github/workflows/build-bist-takip-2.yml'
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -35,6 +38,20 @@ jobs:
         working-directory: bist-takip-2
         run: flutter create . --platforms=android --org com.zorbirey --project-name bist_takip_2 --no-pub
 
+      - name: Release internet iznini garanti et
+        working-directory: bist-takip-2
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('android/app/src/main/AndroidManifest.xml')
+          text = p.read_text()
+          permission = '<uses-permission android:name="android.permission.INTERNET" />'
+          if 'android.permission.INTERNET' not in text:
+              marker = '<manifest xmlns:android="http://schemas.android.com/apk/res/android">'
+              text = text.replace(marker, marker + '\n    ' + permission, 1)
+              p.write_text(text)
+          PY
+
       - name: Paketleri yukle
         working-directory: bist-takip-2
         run: flutter pub get
@@ -47,11 +64,25 @@ jobs:
         working-directory: bist-takip-2
         run: flutter test
 
-      - name: Debug APK olustur
+      - name: Kucuk release APK'lari olustur
         working-directory: bist-takip-2
-        run: flutter build apk --debug
+        run: flutter build apk --release --split-per-abi
+
+      - name: Google Play AAB olustur
+        working-directory: bist-takip-2
+        run: flutter build appbundle --release
 
       - uses: actions/upload-artifact@v4
         with:
-          name: BIST-TAKIP-2.1-DEV-APK
-          path: bist-takip-2/build/app/outputs/flutter-apk/app-debug.apk
+          name: BIST-TAKIP-2.1-RELEASE-APK
+          path: |
+            bist-takip-2/build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
+            bist-takip-2/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+            bist-takip-2/build/app/outputs/flutter-apk/app-x86_64-release.apk
+          if-no-files-found: error
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BIST-TAKIP-2.1-PLAY-AAB
+          path: bist-takip-2/build/app/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
