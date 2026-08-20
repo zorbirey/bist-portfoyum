@@ -13,7 +13,6 @@ dependencies:
   google_mobile_ads: ^6.0.0
   shared_preferences: ^2.5.3
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -22,4 +21,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/question_manifest.json
     - assets/questions_seed.json
