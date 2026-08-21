@@ -52,6 +52,12 @@ Motto:
 - Ödüllü reklamlar gönüllü eylemlerde kullanılabilir: can kazanma, ekstra XP vb.
 - Çalışma modunda reklam sıklığı kullanıcıyı soru akışından koparmayacak şekilde doğal geçiş noktalarında sınırlandırılacak.
 
+## Doğrulama akışı
+
+- `hmgs-arena` dalındaki proje değişiklikleri HMGS Flutter CI ile doğrulanır.
+- CI sırasıyla `flutter pub get`, `flutter analyze`, `flutter test` ve `flutter build apk --debug` çalıştırır.
+- Başarılı derlemede debug APK artifact olarak üretilir.
+
 ## Mevcut teknik durum
 
 Flutter tabanlı proje çekirdeği `hmgs-arena/` altında tutuluyor. Soru bankası manifest/batch yaklaşımıyla büyütülebilir. Tam deneme yalnızca doğrulanmış 5 seçenekli soru havuzu 120 soruya ulaştığında açılır.
