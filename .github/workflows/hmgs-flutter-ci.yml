@@ -1,0 +1,57 @@
+name: HMGS Flutter CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ hmgs-arena ]
+    paths:
+      - 'hmgs-arena/**'
+      - '.github/workflows/hmgs-flutter-ci.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: hmgs-arena
+
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Java 17 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Flutter kur
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Flutter surumunu yazdir
+        run: flutter --version
+
+      - name: Eksik Android platform dosyalarini gecici olustur
+        run: flutter create . --platforms=android --project-name hmgs_arena
+
+      - name: Paketleri indir
+        run: flutter pub get
+
+      - name: Statik analiz
+        run: flutter analyze
+
+      - name: Testleri calistir
+        run: flutter test
+
+      - name: Debug APK derle
+        run: flutter build apk --debug
+
+      - name: APK artifact yukle
+        uses: actions/upload-artifact@v4
+        with:
+          name: HMGS-Arena-debug-apk
+          path: hmgs-arena/build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
