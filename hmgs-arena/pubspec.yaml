@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.0
   google_mobile_ads: ^6.0.0
   shared_preferences: ^2.5.3
 
@@ -23,3 +24,5 @@ flutter:
   assets:
     - assets/question_manifest.json
     - assets/questions_seed.json
+    - assets/hmgs_arena_icon.svg
+    - assets/zeus_hmgs.svg
