@@ -55,3 +55,5 @@ jobs:
           name: HMGS-Arena-debug-apk
           path: hmgs-arena/build/app/outputs/flutter-apk/app-debug.apk
           if-no-files-found: error
+
+# build trigger: 2026-08-22
