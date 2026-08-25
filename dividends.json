@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-25T05:37:07.067195+00:00",
+  "updatedAt": "2026-08-25T06:17:12.814767+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 72,
+  "count": 71,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,12 +195,12 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "AHGAZ",
-      "name": "AHLATCI DOGALGAZ",
-      "date": "24.08.2026",
-      "grossPerShare": 0.06,
-      "netPerShare": 0.051,
-      "sourceNetPerShare": 0.05,
+      "code": "ENERY",
+      "name": "ENERYA ENERJI",
+      "date": "25.08.2026",
+      "grossPerShare": 0.02,
+      "netPerShare": 0.017,
+      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -211,16 +211,6 @@
       "grossPerShare": 0.3,
       "netPerShare": 0.255,
       "sourceNetPerShare": 0.26,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "ENERY",
-      "name": "ENERYA ENERJI",
-      "date": "25.08.2026",
-      "grossPerShare": 0.02,
-      "netPerShare": 0.017,
-      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -345,22 +335,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "GIPTA",
-      "name": "GIPTA OFIS KIRTASIYE",
-      "date": "22.09.2026",
-      "grossPerShare": 0.01,
-      "netPerShare": 0.0085,
-      "sourceNetPerShare": 0.01,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "MACKO",
       "name": "MACKOLIK INTERNET HIZMETLERI",
       "date": "22.09.2026",
       "grossPerShare": 1.8,
       "netPerShare": 1.53,
       "sourceNetPerShare": 1.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "GIPTA",
+      "name": "GIPTA OFIS KIRTASIYE",
+      "date": "22.09.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -505,22 +495,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "MEDTR",
-      "name": "MEDITERA TIBBI MALZEME",
-      "date": "27.10.2026",
-      "grossPerShare": 0.11,
-      "netPerShare": 0.0935,
-      "sourceNetPerShare": 0.1,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "MERIT",
       "name": "MERIT TURIZM",
       "date": "27.10.2026",
       "grossPerShare": 1.0,
       "netPerShare": 0.85,
       "sourceNetPerShare": 0.85,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "MEDTR",
+      "name": "MEDITERA TIBBI MALZEME",
+      "date": "27.10.2026",
+      "grossPerShare": 0.11,
+      "netPerShare": 0.0935,
+      "sourceNetPerShare": 0.1,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -705,22 +695,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "RGYAS",
-      "name": "RONESANS GAYRIMENKUL YAT.",
-      "date": "31.12.2026",
-      "grossPerShare": 7.82,
-      "netPerShare": 6.647,
-      "sourceNetPerShare": 6.65,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "GLYHO",
       "name": "GLOBAL YAT. HOLDING",
       "date": "31.12.2026",
       "grossPerShare": 0.1,
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "RGYAS",
+      "name": "RONESANS GAYRIMENKUL YAT.",
+      "date": "31.12.2026",
+      "grossPerShare": 7.82,
+      "netPerShare": 6.647,
+      "sourceNetPerShare": 6.65,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
