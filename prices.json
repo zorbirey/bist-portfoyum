@@ -1,447 +1,447 @@
 {
-  "updatedAt": "2026-08-26T09:20:19.979280+00:00",
+  "updatedAt": "2026-08-26T10:07:34.292957+00:00",
   "source": "Mynet Finans",
   "count": 627,
   "prices": {
     "A1CAP": {
       "name": "A1 CAPITAL YATIRIM",
-      "price": 8.33,
-      "changePct": 0.85,
-      "marketTime": "12:04",
+      "price": 8.4,
+      "changePct": 1.69,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "A1YEN": {
       "name": "A1 YENILENEBILIR ENERJI",
-      "price": 2.83,
-      "changePct": -0.0,
-      "marketTime": "12:03",
+      "price": 2.84,
+      "changePct": 0.35,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AAGYO": {
       "name": "AGAOGLU GMYO",
-      "price": 13.09,
-      "changePct": 0.77,
-      "marketTime": "12:03",
+      "price": 13.2,
+      "changePct": 1.62,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ACSEL": {
       "name": "ACIPAYAM SELULOZ",
-      "price": 122.4,
-      "changePct": 1.41,
-      "marketTime": "12:03",
+      "price": 122.0,
+      "changePct": 1.08,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ADEL": {
       "name": "ADEL KALEMCILIK",
-      "price": 36.16,
-      "changePct": -3.32,
-      "marketTime": "12:04",
+      "price": 36.1,
+      "changePct": -3.48,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ADESE": {
       "name": "ADESE GAYRIMENKUL",
-      "price": 0.86,
-      "changePct": 1.18,
-      "marketTime": "12:04",
+      "price": 0.87,
+      "changePct": 2.35,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ADGYO": {
       "name": "ADRA GMYO",
-      "price": 62.05,
-      "changePct": -0.96,
-      "marketTime": "12:00",
+      "price": 62.25,
+      "changePct": -0.64,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "AEFES": {
       "name": "ANADOLU EFES",
       "price": 19.04,
       "changePct": 1.01,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AFYON": {
       "name": "AFYON CIMENTO",
-      "price": 12.76,
-      "changePct": 0.79,
-      "marketTime": "12:04",
+      "price": 12.73,
+      "changePct": 0.55,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AGESA": {
       "name": "AGESA HAYAT EMEKLILIK",
-      "price": 249.7,
-      "changePct": 2.34,
-      "marketTime": "12:03",
+      "price": 251.5,
+      "changePct": 3.07,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AGHOL": {
       "name": "ANADOLU GRUBU HOLDING",
       "price": 31.02,
       "changePct": 0.71,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AGROT": {
       "name": "AGROTECH TEKNOLOJI",
-      "price": 2.2,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 2.21,
+      "changePct": 0.45,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AGYO": {
       "name": "ATAKULE GMYO",
-      "price": 7.44,
-      "changePct": -1.72,
-      "marketTime": "12:02",
+      "price": 7.43,
+      "changePct": -1.85,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "AHGAZ": {
       "name": "AHLATCI DOGALGAZ",
-      "price": 35.38,
-      "changePct": 0.57,
-      "marketTime": "12:03",
+      "price": 35.92,
+      "changePct": 2.1,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AHSGY": {
       "name": "AHES GMYO",
-      "price": 19.08,
-      "changePct": 0.37,
-      "marketTime": "12:02",
+      "price": 19.09,
+      "changePct": 0.42,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "AKBNK": {
       "name": "AKBANK",
-      "price": 74.1,
-      "changePct": 2.92,
-      "marketTime": "12:04",
+      "price": 74.35,
+      "changePct": 3.26,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKCNS": {
       "name": "AKCANSA",
-      "price": 242.8,
-      "changePct": 1.21,
-      "marketTime": "12:04",
+      "price": 244.3,
+      "changePct": 1.83,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKENR": {
       "name": "AKENERJI",
-      "price": 10.52,
-      "changePct": 1.15,
-      "marketTime": "12:04",
+      "price": 10.49,
+      "changePct": 0.87,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "AKFGY": {
       "name": "AKFEN GMYO",
-      "price": 2.7,
-      "changePct": -1.82,
-      "marketTime": "12:04",
+      "price": 2.71,
+      "changePct": -1.45,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKFIS": {
       "name": "AKFEN INSAAT",
-      "price": 18.53,
-      "changePct": 1.37,
-      "marketTime": "12:03",
+      "price": 18.52,
+      "changePct": 1.31,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKFYE": {
       "name": "AKFEN YEN. ENERJI",
-      "price": 23.52,
-      "changePct": -0.42,
-      "marketTime": "12:04",
+      "price": 23.48,
+      "changePct": -0.59,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKGRT": {
       "name": "AKSIGORTA",
       "price": 6.24,
       "changePct": 1.13,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKHAN": {
       "name": "AKHAN UN",
-      "price": 40.28,
-      "changePct": -0.3,
-      "marketTime": "12:04",
+      "price": 40.2,
+      "changePct": -0.5,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKMGY": {
       "name": "AKMERKEZ GMYO",
-      "price": 266.5,
-      "changePct": 0.38,
-      "marketTime": "12:03",
+      "price": 265.5,
+      "changePct": -0.0,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "AKSA": {
       "name": "AKSA",
-      "price": 11.09,
-      "changePct": 0.82,
-      "marketTime": "12:04",
+      "price": 11.1,
+      "changePct": 0.91,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKSEN": {
       "name": "AKSA ENERJI",
       "price": 82.85,
       "changePct": 1.91,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKSGY": {
       "name": "AKIS GMYO",
-      "price": 10.17,
-      "changePct": -0.49,
-      "marketTime": "12:03",
+      "price": 10.18,
+      "changePct": -0.39,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "AKSUE": {
       "name": "AKSU ENERJI",
-      "price": 43.82,
-      "changePct": -0.86,
-      "marketTime": "12:04",
+      "price": 43.84,
+      "changePct": -0.81,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AKYHO": {
       "name": "AKDENIZ YATIRIM HOLDING",
-      "price": 2.26,
-      "changePct": -0.44,
-      "marketTime": "12:02",
+      "price": 2.25,
+      "changePct": -0.88,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "ALARK": {
       "name": "ALARKO HOLDING",
-      "price": 108.6,
-      "changePct": 2.55,
-      "marketTime": "12:04",
+      "price": 108.8,
+      "changePct": 2.74,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALBRK": {
       "name": "ALBARAKA TURK",
-      "price": 9.09,
-      "changePct": 1.91,
-      "marketTime": "12:04",
+      "price": 9.14,
+      "changePct": 2.47,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALBTN": {
       "name": "ALBAYRAK BETON SANAYI",
-      "price": 34.64,
-      "changePct": 0.41,
-      "marketTime": "12:04",
+      "price": 34.4,
+      "changePct": -0.29,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALCAR": {
       "name": "ALARKO CARRIER",
-      "price": 702.0,
-      "changePct": 1.08,
-      "marketTime": "12:03",
+      "price": 702.5,
+      "changePct": 1.15,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALCTL": {
       "name": "ALCATEL LUCENT TELETAS",
-      "price": 123.3,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 123.5,
+      "changePct": 0.16,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALFAS": {
       "name": "ALFA SOLAR ENERJI",
-      "price": 41.86,
-      "changePct": 1.5,
-      "marketTime": "12:04",
+      "price": 41.72,
+      "changePct": 1.16,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ALGYO": {
       "name": "ALARKO GMYO",
       "price": 3.72,
       "changePct": 0.81,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALKA": {
       "name": "ALKIM KAGIT",
-      "price": 8.34,
-      "changePct": 0.36,
-      "marketTime": "12:03",
+      "price": 8.33,
+      "changePct": 0.24,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "ALKIM": {
       "name": "ALKIM KIMYA",
-      "price": 15.73,
-      "changePct": 0.38,
-      "marketTime": "12:04",
+      "price": 15.69,
+      "changePct": 0.13,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALKLC": {
       "name": "ALTINKILIC GIDA VE SUT",
-      "price": 424.0,
-      "changePct": 0.41,
-      "marketTime": "12:04",
+      "price": 423.5,
+      "changePct": 0.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALTINS1": {
       "name": "DARPHANE ALTIN SERTIFIKASI",
-      "price": 78.96,
-      "changePct": -0.3,
-      "marketTime": "12:04",
+      "price": 78.79,
+      "changePct": -0.52,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALTNY": {
       "name": "ALTINAY SAVUNMA",
-      "price": 18.02,
-      "changePct": -3.12,
-      "marketTime": "12:04",
+      "price": 17.98,
+      "changePct": -3.33,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ALVES": {
       "name": "ALVES KABLO",
-      "price": 1.8,
-      "changePct": 0.56,
-      "marketTime": "12:04",
+      "price": 1.79,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ANELE": {
       "name": "ANEL ELEKTRIK",
-      "price": 155.4,
-      "changePct": 0.91,
-      "marketTime": "12:04",
+      "price": 154.4,
+      "changePct": 0.26,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ANGEN": {
       "name": "ANATOLIA TANI VE BIYOTEKNOLOJI",
       "price": 9.29,
       "changePct": 0.54,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ANHYT": {
       "name": "ANADOLU HAYAT EMEK.",
-      "price": 106.7,
-      "changePct": 2.11,
-      "marketTime": "12:04",
+      "price": 106.6,
+      "changePct": 2.01,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ANSGR": {
       "name": "ANADOLU SIGORTA",
-      "price": 28.04,
-      "changePct": 1.15,
-      "marketTime": "12:03",
+      "price": 28.08,
+      "changePct": 1.3,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "ARASE": {
       "name": "DOGU ARAS ENERJI",
-      "price": 124.0,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 123.7,
+      "changePct": -0.24,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ARCLK": {
       "name": "ARCELIK",
-      "price": 93.6,
-      "changePct": 1.41,
-      "marketTime": "12:04",
+      "price": 93.7,
+      "changePct": 1.52,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARDYZ": {
       "name": "ARD BILISIM TEKNOLOJILERI",
-      "price": 91.25,
-      "changePct": -1.93,
-      "marketTime": "12:04",
+      "price": 90.85,
+      "changePct": -2.36,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARENA": {
       "name": "ARENA BILGISAYAR",
-      "price": 21.78,
-      "changePct": 0.83,
-      "marketTime": "12:04",
+      "price": 21.68,
+      "changePct": 0.37,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARFYE": {
       "name": "ARF BIO YENILENEBILIR ENERJI",
-      "price": 21.24,
-      "changePct": 0.09,
-      "marketTime": "12:04",
+      "price": 21.04,
+      "changePct": -0.85,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARMGD": {
       "name": "ARMADA GIDA",
-      "price": 196.8,
-      "changePct": 0.05,
-      "marketTime": "12:04",
+      "price": 197.6,
+      "changePct": 0.46,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARSAN": {
       "name": "ARSAN HOLDING",
-      "price": 4.13,
-      "changePct": -3.28,
-      "marketTime": "12:04",
+      "price": 4.12,
+      "changePct": -3.51,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARTMS": {
       "name": "ARTEMIS HALI",
-      "price": 38.86,
-      "changePct": 0.73,
-      "marketTime": "12:03",
+      "price": 38.92,
+      "changePct": 0.88,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ARZUM": {
       "name": "ARZUM EV ALETLERI",
-      "price": 1.65,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 1.64,
+      "changePct": -0.61,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ASELS": {
       "name": "ASELSAN",
-      "price": 402.75,
-      "changePct": -0.25,
-      "marketTime": "12:04",
+      "price": 403.5,
+      "changePct": -0.06,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ASGYO": {
       "name": "ASCE GMYO",
-      "price": 11.31,
-      "changePct": 0.8,
-      "marketTime": "12:03",
+      "price": 11.3,
+      "changePct": 0.71,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ASTOR": {
       "name": "ASTOR ENERJI",
-      "price": 345.5,
-      "changePct": 1.92,
-      "marketTime": "12:04",
+      "price": 344.75,
+      "changePct": 1.7,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ASUZU": {
       "name": "ANADOLU ISUZU",
-      "price": 49.54,
-      "changePct": 1.23,
-      "marketTime": "12:04",
+      "price": 49.52,
+      "changePct": 1.19,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ATAGY": {
       "name": "ATA GMYO",
       "price": 10.35,
       "changePct": 0.39,
-      "marketTime": "11:58",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ATAKP": {
       "name": "ATAKEY PATATES",
-      "price": 45.88,
-      "changePct": -0.61,
-      "marketTime": "12:02",
+      "price": 46.62,
+      "changePct": 1.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ATATP": {
       "name": "ATP YAZILIM",
-      "price": 346.75,
-      "changePct": 3.51,
-      "marketTime": "12:04",
+      "price": 344.5,
+      "changePct": 2.84,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ATATR": {
       "name": "ATA TURIZM",
-      "price": 15.16,
-      "changePct": -0.26,
-      "marketTime": "12:04",
+      "price": 15.08,
+      "changePct": -0.79,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ATEKS": {
@@ -453,9 +453,9 @@
     },
     "ATLAS": {
       "name": "ATLAS YAT. ORT.",
-      "price": 6.49,
-      "changePct": -1.37,
-      "marketTime": "12:04",
+      "price": 6.52,
+      "changePct": -0.91,
+      "marketTime": "12:43",
       "source": "Mynet Finans"
     },
     "ATSYH": {
@@ -467,58 +467,58 @@
     },
     "AVGYO": {
       "name": "AVRASYA GMYO",
-      "price": 16.01,
-      "changePct": -4.47,
-      "marketTime": "12:03",
+      "price": 15.92,
+      "changePct": -5.01,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AVHOL": {
       "name": "AVRUPA YATIRIM HOLDING",
-      "price": 35.6,
-      "changePct": -1.0,
-      "marketTime": "12:04",
+      "price": 35.56,
+      "changePct": -1.11,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "AVOD": {
       "name": "A.V.O.D GIDA VE TARIM",
       "price": 4.04,
       "changePct": -0.0,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AVPGY": {
       "name": "AVRUPAKENT GMYO",
-      "price": 54.0,
-      "changePct": 2.27,
-      "marketTime": "12:04",
+      "price": 53.95,
+      "changePct": 2.18,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AVTUR": {
       "name": "AVRASYA PETROL VE TUR.",
-      "price": 11.94,
-      "changePct": -0.5,
-      "marketTime": "12:04",
+      "price": 12.0,
+      "changePct": -0.0,
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "AYCES": {
       "name": "ALTINYUNUS CESME",
-      "price": 458.0,
-      "changePct": 5.05,
-      "marketTime": "12:04",
+      "price": 456.5,
+      "changePct": 4.7,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AYDEM": {
       "name": "AYDEM ENERJI",
-      "price": 27.8,
-      "changePct": -0.57,
-      "marketTime": "12:03",
+      "price": 27.66,
+      "changePct": -1.07,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AYEN": {
       "name": "AYEN ENERJI",
-      "price": 32.56,
-      "changePct": 0.18,
-      "marketTime": "12:04",
+      "price": 32.64,
+      "changePct": 0.43,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AYES": {
@@ -530,37 +530,37 @@
     },
     "AYGAZ": {
       "name": "AYGAZ",
-      "price": 318.25,
-      "changePct": -0.24,
-      "marketTime": "12:04",
+      "price": 317.0,
+      "changePct": -0.63,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "AZTEK": {
       "name": "AZTEK TEKNOLOJI",
       "price": 3.84,
       "changePct": -0.26,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BAGFS": {
       "name": "BAGFAS",
-      "price": 26.6,
-      "changePct": 1.6,
-      "marketTime": "12:01",
+      "price": 26.62,
+      "changePct": 1.68,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "BAHKM": {
       "name": "BAHADIR KIMYA",
       "price": 144.6,
       "changePct": 9.96,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BAKAB": {
       "name": "BAK AMBALAJ",
-      "price": 40.88,
-      "changePct": 0.2,
-      "marketTime": "12:02",
+      "price": 40.76,
+      "changePct": -0.1,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BALAT": {
@@ -572,16 +572,16 @@
     },
     "BALSU": {
       "name": "BALSU GIDA",
-      "price": 10.64,
-      "changePct": -0.19,
-      "marketTime": "12:04",
+      "price": 10.63,
+      "changePct": -0.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BANVT": {
       "name": "BANVIT",
-      "price": 157.3,
-      "changePct": 0.51,
-      "marketTime": "12:03",
+      "price": 157.9,
+      "changePct": 0.89,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "BARMA": {
@@ -600,205 +600,205 @@
     },
     "BASGZ": {
       "name": "BASKENT DOGALGAZ GMYO",
-      "price": 44.24,
-      "changePct": -0.41,
-      "marketTime": "12:03",
+      "price": 44.3,
+      "changePct": -0.27,
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "BAYRK": {
       "name": "BAYRAK TABAN SANAYI",
-      "price": 4.34,
-      "changePct": 0.46,
-      "marketTime": "12:03",
+      "price": 4.32,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BEGYO": {
       "name": "BATI EGE GMYO",
       "price": 3.63,
       "changePct": 1.97,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BERA": {
       "name": "BERA HOLDING",
-      "price": 13.59,
-      "changePct": 0.67,
-      "marketTime": "12:04",
+      "price": 13.62,
+      "changePct": 0.89,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BESLR": {
       "name": "BESLER GIDA",
-      "price": 13.17,
-      "changePct": 3.29,
-      "marketTime": "12:04",
+      "price": 13.07,
+      "changePct": 2.51,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "BESTE": {
       "name": "BEST BRANDS ENERJI",
-      "price": 33.5,
-      "changePct": -0.95,
-      "marketTime": "12:04",
+      "price": 33.58,
+      "changePct": -0.71,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BETAE": {
       "name": "BETA ENERJI VE TEKNOLOJI",
-      "price": 99.2,
-      "changePct": 0.51,
-      "marketTime": "12:04",
+      "price": 98.8,
+      "changePct": 0.1,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BEYAZ": {
       "name": "BEYAZ FILO",
-      "price": 23.46,
-      "changePct": 1.12,
-      "marketTime": "12:03",
+      "price": 23.76,
+      "changePct": 2.41,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BFREN": {
       "name": "BOSCH FREN SISTEMLERI",
-      "price": 130.8,
-      "changePct": 1.4,
-      "marketTime": "12:04",
+      "price": 133.1,
+      "changePct": 3.18,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIENY": {
       "name": "BIEN YAPI URUNLERI",
-      "price": 21.96,
-      "changePct": 0.46,
-      "marketTime": "12:03",
+      "price": 21.84,
+      "changePct": -0.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIGCH": {
       "name": "BUYUK SEFLER BIGCHEFS",
-      "price": 6.3,
-      "changePct": 0.96,
-      "marketTime": "12:04",
+      "price": 6.31,
+      "changePct": 1.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIGEN": {
       "name": "BIRLESIM GRUP ENERJI",
-      "price": 163.5,
-      "changePct": 2.25,
-      "marketTime": "12:04",
+      "price": 161.3,
+      "changePct": 0.88,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIGTK": {
       "name": "BIG MEDYA TEKNOLOJI",
-      "price": 362.75,
-      "changePct": -4.6,
-      "marketTime": "12:04",
+      "price": 363.5,
+      "changePct": -4.4,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIMAS": {
       "name": "BIM MAGAZALAR",
       "price": 419.0,
       "changePct": 0.36,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BINBN": {
       "name": "BIN ULASIM TEKNOLOJILERI",
-      "price": 185.2,
-      "changePct": 2.6,
-      "marketTime": "12:04",
+      "price": 183.6,
+      "changePct": 1.72,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BINHO": {
       "name": "1000 YATIRIMLAR HOL.",
-      "price": 11.02,
-      "changePct": -0.45,
-      "marketTime": "12:04",
+      "price": 11.1,
+      "changePct": 0.27,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIOEN": {
       "name": "BIOTREND CEVRE VE ENERJI",
-      "price": 19.55,
-      "changePct": -2.54,
-      "marketTime": "12:04",
+      "price": 19.7,
+      "changePct": -1.79,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BIZIM": {
       "name": "BIZIM MAGAZALARI",
-      "price": 25.2,
-      "changePct": 1.12,
-      "marketTime": "11:59",
+      "price": 25.16,
+      "changePct": 0.96,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "BJKAS": {
       "name": "BESIKTAS FUTBOL YAT.",
-      "price": 2.44,
-      "changePct": -5.06,
-      "marketTime": "12:04",
+      "price": 2.42,
+      "changePct": -5.84,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BLCYT": {
       "name": "BILICI YATIRIM",
-      "price": 21.3,
-      "changePct": 0.95,
-      "marketTime": "12:04",
+      "price": 21.14,
+      "changePct": 0.19,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BLUME": {
       "name": "BLUME METAL KIMYA",
-      "price": 41.38,
-      "changePct": 0.93,
-      "marketTime": "12:04",
+      "price": 41.16,
+      "changePct": 0.39,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BMSCH": {
       "name": "BMS CELIK HASIR",
-      "price": 11.72,
-      "changePct": 0.77,
-      "marketTime": "12:03",
+      "price": 11.71,
+      "changePct": 0.69,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BMSTL": {
       "name": "BMS BIRLESIK METAL",
-      "price": 44.4,
-      "changePct": 0.41,
-      "marketTime": "12:03",
+      "price": 44.5,
+      "changePct": 0.63,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BNTAS": {
       "name": "BANTAS AMBALAJ",
-      "price": 6.4,
-      "changePct": 0.31,
-      "marketTime": "12:04",
+      "price": 6.44,
+      "changePct": 0.94,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BOBET": {
       "name": "BOGAZICI BETON SANAYI",
-      "price": 20.42,
-      "changePct": -1.45,
-      "marketTime": "12:04",
+      "price": 20.52,
+      "changePct": -0.97,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BORLS": {
       "name": "BORLEASE OTOMOTIV",
-      "price": 4.59,
-      "changePct": 1.77,
-      "marketTime": "12:04",
+      "price": 4.58,
+      "changePct": 1.55,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BORSK": {
       "name": "BOR SEKER",
       "price": 6.33,
       "changePct": 0.32,
-      "marketTime": "12:04",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "BOSSA": {
       "name": "BOSSA",
-      "price": 6.67,
-      "changePct": 0.45,
-      "marketTime": "12:04",
+      "price": 6.66,
+      "changePct": 0.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BRISA": {
       "name": "BRISA",
-      "price": 79.2,
-      "changePct": 0.83,
-      "marketTime": "12:03",
+      "price": 79.35,
+      "changePct": 1.02,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "BRKO": {
@@ -810,23 +810,23 @@
     },
     "BRKSN": {
       "name": "BERKOSAN YALITIM",
-      "price": 8.08,
-      "changePct": 0.25,
-      "marketTime": "11:57",
+      "price": 8.1,
+      "changePct": 0.5,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BRKVY": {
       "name": "BIRIKIM VARLIK YONETIM",
-      "price": 84.05,
-      "changePct": 4.09,
-      "marketTime": "12:04",
+      "price": 84.5,
+      "changePct": 4.64,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BRLSM": {
       "name": "BIRLESIM MUHENDISLIK",
-      "price": 21.82,
-      "changePct": 4.0,
-      "marketTime": "12:04",
+      "price": 21.78,
+      "changePct": 3.81,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BRMEN": {
@@ -838,79 +838,79 @@
     },
     "BRSAN": {
       "name": "BORUSAN BORU SANAYI",
-      "price": 716.0,
-      "changePct": -0.83,
-      "marketTime": "12:04",
+      "price": 715.0,
+      "changePct": -0.97,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BRYAT": {
       "name": "BORUSAN YAT. PAZ.",
       "price": 1728.0,
       "changePct": 0.23,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BSOKE": {
       "name": "BATICIM CIMENTO",
-      "price": 32.88,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 32.92,
+      "changePct": 0.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BTCIM": {
       "name": "BATICIM BATI ANADOLU",
-      "price": 4.67,
-      "changePct": 0.86,
-      "marketTime": "12:04",
+      "price": 4.66,
+      "changePct": 0.65,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "BUCIM": {
       "name": "BURSA CIMENTO",
-      "price": 5.58,
-      "changePct": 1.45,
-      "marketTime": "12:03",
+      "price": 5.61,
+      "changePct": 2.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BULGS": {
       "name": "BULLS GSYO",
-      "price": 32.94,
-      "changePct": 0.24,
-      "marketTime": "12:04",
+      "price": 33.02,
+      "changePct": 0.49,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BURCE": {
       "name": "BURCELIK",
-      "price": 38.6,
-      "changePct": 5.81,
-      "marketTime": "12:04",
+      "price": 38.72,
+      "changePct": 6.14,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BURVA": {
       "name": "BURCELIK VANA",
-      "price": 776.5,
-      "changePct": 3.95,
-      "marketTime": "12:03",
+      "price": 778.0,
+      "changePct": 4.15,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BVSAN": {
       "name": "BULBULOGLU VINC",
-      "price": 104.0,
-      "changePct": 0.78,
-      "marketTime": "12:04",
+      "price": 104.3,
+      "changePct": 1.07,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "BYDNR": {
       "name": "BAYDONER RESTORANLARI",
-      "price": 39.0,
-      "changePct": -0.51,
-      "marketTime": "12:02",
+      "price": 38.86,
+      "changePct": -0.87,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CANTE": {
       "name": "CAN2 TERMIK",
       "price": 1.22,
       "changePct": 0.83,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CASA": {
@@ -922,86 +922,86 @@
     },
     "CATES": {
       "name": "CATES ELEKTRIK",
-      "price": 64.05,
-      "changePct": -0.23,
-      "marketTime": "12:04",
+      "price": 64.85,
+      "changePct": 1.01,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "CCOLA": {
       "name": "COCA COLA ICECEK",
-      "price": 78.75,
-      "changePct": 2.01,
-      "marketTime": "12:04",
+      "price": 78.95,
+      "changePct": 2.27,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CELHA": {
       "name": "CELIK HALAT",
-      "price": 25.72,
-      "changePct": -0.08,
-      "marketTime": "12:03",
+      "price": 25.52,
+      "changePct": -0.85,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CEMAS": {
       "name": "CEMAS DOKUM",
-      "price": 4.48,
-      "changePct": -1.1,
-      "marketTime": "12:03",
+      "price": 4.46,
+      "changePct": -1.55,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "CEMTS": {
       "name": "CEMTAS",
       "price": 9.0,
       "changePct": 1.01,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CEMZY": {
       "name": "CEM ZEYTIN",
-      "price": 16.56,
-      "changePct": -3.16,
-      "marketTime": "12:04",
+      "price": 16.46,
+      "changePct": -3.74,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CEOEM": {
       "name": "CEO EVENT MEDYA",
-      "price": 25.2,
-      "changePct": 0.72,
-      "marketTime": "12:03",
+      "price": 25.18,
+      "changePct": 0.64,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "CGCAM": {
       "name": "CAGDAS CAM",
-      "price": 39.04,
-      "changePct": 1.4,
-      "marketTime": "12:02",
+      "price": 39.0,
+      "changePct": 1.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CIMSA": {
       "name": "CIMSA",
-      "price": 47.3,
-      "changePct": 3.1,
-      "marketTime": "12:04",
+      "price": 47.14,
+      "changePct": 2.75,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CITAS": {
       "name": "CITLEKCI MAGAZACILIK GIDA",
-      "price": 114.3,
-      "changePct": 2.05,
-      "marketTime": "12:04",
+      "price": 113.1,
+      "changePct": 0.98,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CLEBI": {
       "name": "CELEBI",
-      "price": 1490.0,
-      "changePct": 1.02,
-      "marketTime": "12:03",
+      "price": 1500.0,
+      "changePct": 1.69,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CMBTN": {
       "name": "CIMBETON",
       "price": 1576.0,
       "changePct": 0.06,
-      "marketTime": "12:03",
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "CMENT": {
@@ -1013,142 +1013,142 @@
     },
     "CONSE": {
       "name": "CONSUS ENERJI",
-      "price": 2.3,
-      "changePct": 1.32,
-      "marketTime": "12:03",
+      "price": 2.29,
+      "changePct": 0.88,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "COSMO": {
       "name": "COSMOS YAT. HOLDING",
-      "price": 145.0,
-      "changePct": 5.15,
-      "marketTime": "12:03",
+      "price": 143.0,
+      "changePct": 3.7,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CRDFA": {
       "name": "CREDITWEST FAKTORING",
-      "price": 26.72,
-      "changePct": 1.21,
-      "marketTime": "12:04",
+      "price": 26.84,
+      "changePct": 1.67,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CRFSA": {
       "name": "CARREFOURSA",
-      "price": 271.0,
-      "changePct": -0.73,
-      "marketTime": "12:04",
+      "price": 271.5,
+      "changePct": -0.55,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CUSAN": {
       "name": "CUHADAROGLU METAL",
-      "price": 24.08,
-      "changePct": 0.67,
-      "marketTime": "12:03",
+      "price": 24.18,
+      "changePct": 1.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CVKMD": {
       "name": "CVK MADEN",
-      "price": 16.14,
-      "changePct": 0.37,
-      "marketTime": "12:04",
+      "price": 16.1,
+      "changePct": 0.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "CWENE": {
       "name": "CW ENERJI",
-      "price": 36.72,
-      "changePct": -0.76,
-      "marketTime": "12:04",
+      "price": 36.64,
+      "changePct": -0.97,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DAGI": {
       "name": "DAGI GIYIM",
-      "price": 10.86,
-      "changePct": 1.02,
-      "marketTime": "12:04",
+      "price": 10.78,
+      "changePct": 0.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DAPGM": {
       "name": "DAP GAYRIMENKUL",
-      "price": 8.57,
-      "changePct": 0.23,
-      "marketTime": "12:04",
+      "price": 8.56,
+      "changePct": 0.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DARDL": {
       "name": "DARDANEL",
       "price": 1.67,
       "changePct": 0.6,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DCTTR": {
       "name": "DCT TRADING DIS TICARET",
-      "price": 6.99,
-      "changePct": 2.49,
-      "marketTime": "12:04",
+      "price": 6.97,
+      "changePct": 2.2,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DENGE": {
       "name": "DENGE HOLDING",
-      "price": 2.43,
-      "changePct": 0.41,
-      "marketTime": "12:02",
+      "price": 2.41,
+      "changePct": -0.41,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DERHL": {
       "name": "DERLUKS YATIRIM HOLDING",
       "price": 2.25,
       "changePct": 0.45,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DERIM": {
       "name": "DERIMOD",
-      "price": 38.48,
-      "changePct": -0.47,
-      "marketTime": "12:01",
+      "price": 38.38,
+      "changePct": -0.72,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DESA": {
       "name": "DESA DERI",
-      "price": 10.2,
-      "changePct": 1.9,
-      "marketTime": "12:04",
+      "price": 10.17,
+      "changePct": 1.6,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DESPC": {
       "name": "DESPEC BILGISAYAR",
-      "price": 41.66,
-      "changePct": -0.67,
-      "marketTime": "12:04",
+      "price": 41.54,
+      "changePct": -0.95,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "DEVA": {
       "name": "DEVA HOLDING",
-      "price": 89.0,
-      "changePct": 0.68,
-      "marketTime": "12:04",
+      "price": 88.75,
+      "changePct": 0.4,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "DGATE": {
       "name": "DATAGATE BILGISAYAR",
       "price": 102.4,
       "changePct": -0.97,
-      "marketTime": "12:01",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DGGYO": {
       "name": "DOGUS GMYO",
-      "price": 33.68,
-      "changePct": -1.0,
-      "marketTime": "12:03",
+      "price": 33.52,
+      "changePct": -1.47,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DGNMO": {
       "name": "DOGANLAR MOBILYA",
-      "price": 8.39,
-      "changePct": -0.71,
-      "marketTime": "12:00",
+      "price": 8.48,
+      "changePct": 0.36,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DIRIT": {
@@ -1160,240 +1160,240 @@
     },
     "DITAS": {
       "name": "DITAS BDY",
-      "price": 26.28,
-      "changePct": -2.67,
-      "marketTime": "12:03",
+      "price": 26.26,
+      "changePct": -2.74,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DMLKTG": {
       "name": "EMLAK KONUT DAMLA KENT GMS",
-      "price": 6.91,
-      "changePct": -0.29,
-      "marketTime": "12:02",
+      "price": 6.89,
+      "changePct": -0.58,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DMRGD": {
       "name": "DMR UNLU MAMULLER",
-      "price": 11.61,
-      "changePct": -0.34,
-      "marketTime": "12:03",
+      "price": 11.83,
+      "changePct": 1.55,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DMSAS": {
       "name": "DEMISAS DOKUM",
       "price": 8.96,
       "changePct": -0.44,
-      "marketTime": "11:59",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DNISI": {
       "name": "DINAMIK ISI MAKINA YALITIM",
       "price": 4.98,
       "changePct": 0.61,
-      "marketTime": "12:03",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "DOAS": {
       "name": "DOGUS OTOMOTIV",
-      "price": 167.7,
-      "changePct": 1.02,
-      "marketTime": "12:04",
+      "price": 167.9,
+      "changePct": 1.14,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DOCO": {
       "name": "DO-CO",
-      "price": 11790.0,
-      "changePct": 0.99,
-      "marketTime": "11:56",
+      "price": 11757.5,
+      "changePct": 0.71,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "DOFER": {
       "name": "DOFER YAPI MALZEMELERI",
-      "price": 29.1,
-      "changePct": 0.76,
-      "marketTime": "12:04",
+      "price": 29.12,
+      "changePct": 0.83,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DOFRB": {
       "name": "DOF ROBOTIK",
-      "price": 133.3,
-      "changePct": -0.45,
-      "marketTime": "12:03",
+      "price": 133.2,
+      "changePct": -0.52,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DOGUB": {
       "name": "DOGUSAN",
-      "price": 70.05,
-      "changePct": -0.5,
-      "marketTime": "12:04",
+      "price": 69.75,
+      "changePct": -0.92,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "DOHOL": {
       "name": "DOGAN HOLDING",
-      "price": 21.3,
-      "changePct": 1.33,
-      "marketTime": "12:04",
+      "price": 21.5,
+      "changePct": 2.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DOKTA": {
       "name": "DOKTAS DOKUMCULUK",
-      "price": 23.42,
-      "changePct": 0.26,
-      "marketTime": "12:03",
+      "price": 23.44,
+      "changePct": 0.34,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DSTKF": {
       "name": "DESTEK FINANS FAKTORING",
-      "price": 2417.0,
-      "changePct": 2.85,
-      "marketTime": "12:04",
+      "price": 2405.0,
+      "changePct": 2.34,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DUNYH": {
       "name": "DUNYA HOLDING",
-      "price": 159.0,
-      "changePct": -0.0,
-      "marketTime": "12:03",
+      "price": 159.3,
+      "changePct": 0.19,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "DURDO": {
       "name": "DURAN DOGAN BASIM",
-      "price": 4.93,
-      "changePct": 0.2,
-      "marketTime": "12:03",
+      "price": 4.92,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DURKN": {
       "name": "DURUKAN SEKERLEME",
-      "price": 23.18,
-      "changePct": -1.95,
-      "marketTime": "12:04",
+      "price": 23.16,
+      "changePct": -2.03,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DYOBY": {
       "name": "DYO BOYA",
-      "price": 13.68,
-      "changePct": 0.22,
-      "marketTime": "12:03",
+      "price": 13.74,
+      "changePct": 0.66,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "DZGYO": {
       "name": "DENIZ GMYO",
-      "price": 7.33,
-      "changePct": 0.55,
-      "marketTime": "12:01",
+      "price": 7.32,
+      "changePct": 0.41,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EBEBK": {
       "name": "EBEBEK MAGAZACILIK",
-      "price": 84.55,
-      "changePct": 0.54,
-      "marketTime": "12:04",
+      "price": 84.05,
+      "changePct": -0.06,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ECILC": {
       "name": "ECZACIBASI ILAC",
-      "price": 77.8,
-      "changePct": -0.06,
-      "marketTime": "12:04",
+      "price": 77.65,
+      "changePct": -0.26,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ECOGR": {
       "name": "ECOGREEN ENERJI",
-      "price": 36.2,
-      "changePct": 0.33,
-      "marketTime": "12:04",
+      "price": 36.16,
+      "changePct": 0.22,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ECZYT": {
       "name": "ECZACIBASI YATIRIM",
-      "price": 324.5,
-      "changePct": 0.31,
-      "marketTime": "12:03",
+      "price": 325.0,
+      "changePct": 0.46,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EDATA": {
       "name": "E-DATA TEKNOLOJI",
-      "price": 19.38,
-      "changePct": 0.36,
-      "marketTime": "12:04",
+      "price": 19.35,
+      "changePct": 0.21,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "EDIP": {
       "name": "EDIP GAYRIMENKUL",
-      "price": 35.46,
-      "changePct": 0.17,
-      "marketTime": "12:02",
+      "price": 35.56,
+      "changePct": 0.45,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "EFOR": {
       "name": "EFOR YATIRIM",
-      "price": 18.58,
-      "changePct": -3.48,
-      "marketTime": "12:04",
+      "price": 18.52,
+      "changePct": -3.79,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EGEEN": {
       "name": "EGE ENDUSTRI",
-      "price": 5172.5,
-      "changePct": 0.39,
-      "marketTime": "12:03",
+      "price": 5177.5,
+      "changePct": 0.49,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "EGEGY": {
       "name": "EGEYAPI AVRUPA GMYO",
-      "price": 31.68,
-      "changePct": 0.19,
-      "marketTime": "12:04",
+      "price": 31.7,
+      "changePct": 0.25,
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "EGEPO": {
       "name": "NASMED EGEPOL",
-      "price": 16.88,
-      "changePct": -1.11,
-      "marketTime": "12:03",
+      "price": 16.73,
+      "changePct": -1.99,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EGGUB": {
       "name": "EGE GUBRE",
-      "price": 112.7,
-      "changePct": 1.53,
-      "marketTime": "12:04",
+      "price": 113.0,
+      "changePct": 1.8,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EGPRO": {
       "name": "EGE PROFIL",
-      "price": 37.5,
-      "changePct": 0.37,
-      "marketTime": "12:04",
+      "price": 37.6,
+      "changePct": 0.64,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EGSER": {
       "name": "EGE SERAMIK",
-      "price": 3.14,
-      "changePct": 2.61,
-      "marketTime": "12:03",
+      "price": 3.09,
+      "changePct": 0.98,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "EKDMR": {
       "name": "EKINCILER DEMIR CELIK",
-      "price": 47.66,
-      "changePct": 0.72,
-      "marketTime": "12:04",
+      "price": 47.74,
+      "changePct": 0.89,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EKGYO": {
       "name": "EMLAK KONUT GMYO",
-      "price": 20.84,
-      "changePct": 3.99,
-      "marketTime": "12:04",
+      "price": 20.76,
+      "changePct": 3.59,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EKIM": {
       "name": "EKIM TURIZM",
-      "price": 19.31,
-      "changePct": 2.6,
-      "marketTime": "12:04",
+      "price": 19.28,
+      "changePct": 2.44,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EKIZ": {
@@ -1405,30 +1405,30 @@
     },
     "EKOS": {
       "name": "EKOS TEKNOLOJI",
-      "price": 5.58,
-      "changePct": 1.45,
-      "marketTime": "12:04",
+      "price": 5.56,
+      "changePct": 1.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EKSUN": {
       "name": "EKSUN GIDA",
-      "price": 6.3,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 6.31,
+      "changePct": 0.16,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ELITE": {
       "name": "ELITE NATUREL ORGANIK GIDA",
       "price": 27.94,
       "changePct": 1.75,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EMKEL": {
       "name": "EMEK ELEKTRIK",
-      "price": 15.46,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 15.44,
+      "changePct": -0.13,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "EMNIS": {
@@ -1440,37 +1440,37 @@
     },
     "EMPAE": {
       "name": "EMPA ELEKTRONIK",
-      "price": 70.2,
-      "changePct": 0.29,
-      "marketTime": "12:04",
+      "price": 70.25,
+      "changePct": 0.36,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ENDAE": {
       "name": "ENDA ENERJI HOLDING",
-      "price": 19.65,
-      "changePct": -0.0,
-      "marketTime": "12:03",
+      "price": 19.7,
+      "changePct": 0.25,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ENERY": {
       "name": "ENERYA ENERJI",
-      "price": 9.28,
-      "changePct": 0.76,
-      "marketTime": "12:04",
+      "price": 9.33,
+      "changePct": 1.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ENJSA": {
       "name": "ENERJISA ENERJI",
-      "price": 113.6,
-      "changePct": 5.09,
-      "marketTime": "12:04",
+      "price": 114.9,
+      "changePct": 6.29,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ENKAI": {
       "name": "ENKA INSAAT",
-      "price": 86.0,
-      "changePct": 2.44,
-      "marketTime": "12:04",
+      "price": 85.55,
+      "changePct": 1.91,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ENPRA": {
@@ -1484,84 +1484,84 @@
       "name": "ENSARI SINAI YATIRIMLAR",
       "price": 5.59,
       "changePct": 9.82,
-      "marketTime": "12:03",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "ENTRA": {
       "name": "IC ENTERRA YEN. ENERJI",
-      "price": 4.54,
-      "changePct": 0.44,
-      "marketTime": "12:03",
+      "price": 4.53,
+      "changePct": 0.22,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EPLAS": {
       "name": "EGEPLAST",
-      "price": 5.82,
-      "changePct": -0.51,
-      "marketTime": "12:04",
+      "price": 5.81,
+      "changePct": -0.68,
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "ERBOS": {
       "name": "ERBOSAN",
-      "price": 154.7,
-      "changePct": 0.85,
-      "marketTime": "12:04",
+      "price": 154.4,
+      "changePct": 0.65,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ERCB": {
       "name": "ERCIYAS CELIK BORU",
-      "price": 47.08,
-      "changePct": -0.21,
-      "marketTime": "12:03",
+      "price": 47.18,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EREGL": {
       "name": "EREGLI DEMIR CELIK",
-      "price": 38.92,
-      "changePct": 1.78,
-      "marketTime": "12:04",
+      "price": 39.02,
+      "changePct": 2.04,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ERSU": {
       "name": "ERSU GIDA",
       "price": 25.38,
       "changePct": -1.32,
-      "marketTime": "12:03",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "ESCAR": {
       "name": "ESCAR FILO",
-      "price": 47.2,
-      "changePct": 0.04,
-      "marketTime": "12:03",
+      "price": 47.08,
+      "changePct": -0.21,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ESCOM": {
       "name": "ESCORT TEKNOLOJI",
-      "price": 5.64,
-      "changePct": 1.26,
-      "marketTime": "12:03",
+      "price": 5.62,
+      "changePct": 0.9,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ESEN": {
       "name": "ESENBOGA ELEKTRIK",
       "price": 3.62,
       "changePct": 2.26,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ETILR": {
       "name": "ETILER GIDA",
-      "price": 6.37,
-      "changePct": -0.47,
-      "marketTime": "12:04",
+      "price": 6.36,
+      "changePct": -0.63,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ETYAT": {
       "name": "EURO TREND YAT. ORT.",
-      "price": 15.1,
-      "changePct": 0.67,
-      "marketTime": "12:02",
+      "price": 15.07,
+      "changePct": 0.47,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "EUHOL": {
@@ -1573,128 +1573,128 @@
     },
     "EUKYO": {
       "name": "EURO KAPITAL YAT. ORT.",
-      "price": 13.31,
-      "changePct": -2.92,
-      "marketTime": "12:02",
+      "price": 13.33,
+      "changePct": -2.77,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EUPWR": {
       "name": "EUROPOWER ENERJI",
-      "price": 98.8,
-      "changePct": 3.67,
-      "marketTime": "12:04",
+      "price": 97.4,
+      "changePct": 2.2,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EUREN": {
       "name": "EUROPEN ENDUSTRI",
       "price": 3.93,
       "changePct": 0.51,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "EUYO": {
       "name": "EURO YAT. ORT.",
-      "price": 4.98,
-      "changePct": 0.61,
-      "marketTime": "12:03",
+      "price": 4.93,
+      "changePct": -0.4,
+      "marketTime": "12:39",
       "source": "Mynet Finans"
     },
     "EYGYO": {
       "name": "EYG GMYO",
-      "price": 2.8,
-      "changePct": 2.19,
-      "marketTime": "12:04",
+      "price": 2.83,
+      "changePct": 3.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FADE": {
       "name": "FADE GIDA",
-      "price": 15.52,
-      "changePct": 0.13,
-      "marketTime": "12:04",
+      "price": 15.53,
+      "changePct": 0.19,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "FENER": {
       "name": "FENERBAHCE FUTBOL",
-      "price": 3.19,
-      "changePct": 1.27,
-      "marketTime": "12:04",
+      "price": 3.22,
+      "changePct": 2.22,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FLAP": {
       "name": "FLAP KONGRE TOPLANTI HIZ.",
-      "price": 10.58,
-      "changePct": 3.12,
-      "marketTime": "12:04",
+      "price": 11.16,
+      "changePct": 8.77,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FMIZP": {
       "name": "F-M IZMIT PISTON",
-      "price": 301.5,
-      "changePct": 1.34,
-      "marketTime": "12:02",
+      "price": 301.75,
+      "changePct": 1.43,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "FONET": {
       "name": "FONET BILGI TEKNOLOJILERI",
       "price": 5.37,
       "changePct": -0.37,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FORMT": {
       "name": "FORMET METAL VE CAM",
       "price": 1.69,
       "changePct": 1.2,
-      "marketTime": "12:03",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "FORTE": {
       "name": "FORTE BILGI ILETISIM",
-      "price": 125.3,
-      "changePct": 3.04,
-      "marketTime": "12:04",
+      "price": 126.8,
+      "changePct": 4.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FRIGO": {
       "name": "FRIGO PAK GIDA",
-      "price": 2.46,
-      "changePct": 2.07,
-      "marketTime": "12:04",
+      "price": 2.45,
+      "changePct": 1.66,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FRMPL": {
       "name": "FORMUL PLASTIK VE METAL",
-      "price": 34.38,
-      "changePct": 1.12,
-      "marketTime": "12:04",
+      "price": 34.52,
+      "changePct": 1.53,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FROTO": {
       "name": "FORD OTOSAN",
       "price": 80.15,
       "changePct": 1.97,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "FZLGY": {
       "name": "FUZUL GMYO",
-      "price": 10.11,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 10.14,
+      "changePct": 0.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GARAN": {
       "name": "GARANTI BANKASI",
-      "price": 135.1,
-      "changePct": 1.89,
-      "marketTime": "12:04",
+      "price": 136.0,
+      "changePct": 2.56,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GARFA": {
       "name": "GARANTI FAKTORING",
-      "price": 26.84,
-      "changePct": 1.21,
-      "marketTime": "12:04",
+      "price": 26.8,
+      "changePct": 1.06,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GATEG": {
@@ -1706,401 +1706,401 @@
     },
     "GEDIK": {
       "name": "GEDIK Y. MEN. DEG.",
-      "price": 6.42,
-      "changePct": 0.78,
-      "marketTime": "12:03",
+      "price": 6.37,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GEDZA": {
       "name": "GEDIZ AMBALAJ",
-      "price": 30.32,
-      "changePct": 0.2,
-      "marketTime": "12:01",
+      "price": 30.16,
+      "changePct": -0.33,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "GENIL": {
       "name": "GEN ILAC",
-      "price": 11.81,
-      "changePct": -0.34,
-      "marketTime": "12:04",
+      "price": 11.92,
+      "changePct": 0.59,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GENKM": {
       "name": "GENTAS KIMYA",
-      "price": 10.41,
-      "changePct": 1.07,
-      "marketTime": "12:04",
+      "price": 10.35,
+      "changePct": 0.49,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GENTS": {
       "name": "GENTAS",
-      "price": 5.45,
-      "changePct": 2.44,
-      "marketTime": "12:03",
+      "price": 5.47,
+      "changePct": 2.82,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "GEREL": {
       "name": "GERSAN ELEKTRIK",
-      "price": 38.78,
-      "changePct": -0.26,
-      "marketTime": "12:04",
+      "price": 38.74,
+      "changePct": -0.36,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GESAN": {
       "name": "GIRISIM ELEKTRIK SANAYI",
-      "price": 90.9,
-      "changePct": 1.91,
-      "marketTime": "12:04",
+      "price": 90.55,
+      "changePct": 1.51,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GIPTA": {
       "name": "GIPTA OFIS KIRTASIYE",
-      "price": 93.2,
-      "changePct": 1.36,
-      "marketTime": "12:04",
+      "price": 92.0,
+      "changePct": 0.05,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GLBMD": {
       "name": "GLOBAL MEN. DEG.",
-      "price": 11.86,
-      "changePct": 0.42,
-      "marketTime": "12:03",
+      "price": 11.91,
+      "changePct": 0.85,
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "GLCVY": {
       "name": "GELECEK VARLIK YONETIMI",
-      "price": 54.05,
-      "changePct": 0.09,
-      "marketTime": "12:03",
+      "price": 54.15,
+      "changePct": 0.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GLRMK": {
       "name": "GULERMAK AGIR SANAYI",
-      "price": 179.1,
-      "changePct": 1.19,
-      "marketTime": "12:04",
+      "price": 179.6,
+      "changePct": 1.47,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GLRYH": {
       "name": "GULER YAT. HOLDING",
       "price": 3.31,
       "changePct": 0.91,
-      "marketTime": "12:02",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GLYHO": {
       "name": "GLOBAL YAT. HOLDING",
-      "price": 16.91,
-      "changePct": 1.26,
-      "marketTime": "12:03",
+      "price": 17.09,
+      "changePct": 2.34,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GMTAS": {
       "name": "GIMAT MAGAZACILIK",
-      "price": 46.12,
-      "changePct": -1.11,
-      "marketTime": "12:04",
+      "price": 46.38,
+      "changePct": -0.56,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GOKNR": {
       "name": "GOKNUR GIDA",
-      "price": 17.86,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 17.87,
+      "changePct": 0.06,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GOLDA": {
       "name": "GOLDA GIDA",
-      "price": 12.85,
-      "changePct": -0.39,
-      "marketTime": "12:04",
+      "price": 12.79,
+      "changePct": -0.85,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GOLTS": {
       "name": "GOLTAS CIMENTO",
-      "price": 314.75,
-      "changePct": 0.56,
-      "marketTime": "12:04",
+      "price": 315.0,
+      "changePct": 0.64,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GOODY": {
       "name": "GOOD-YEAR",
       "price": 2.61,
       "changePct": 0.38,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GOZDE": {
       "name": "GOZDE GIRISIM",
       "price": 22.6,
       "changePct": 0.71,
-      "marketTime": "12:00",
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "GRNYO": {
       "name": "GARANTI YAT. ORT.",
       "price": 13.89,
       "changePct": -0.22,
-      "marketTime": "12:02",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GRSEL": {
       "name": "GUR-SEL TURIZM TASIMACILIK",
-      "price": 319.5,
-      "changePct": 0.63,
-      "marketTime": "12:04",
+      "price": 318.25,
+      "changePct": 0.24,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GRTHO": {
       "name": "GRAINTURK HOLDING",
-      "price": 224.0,
-      "changePct": 0.36,
-      "marketTime": "12:04",
+      "price": 226.3,
+      "changePct": 1.39,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GSDDE": {
       "name": "GSD DENIZCILIK",
-      "price": 14.79,
-      "changePct": 3.5,
-      "marketTime": "12:04",
+      "price": 14.84,
+      "changePct": 3.85,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GSDHO": {
       "name": "GSD HOLDING",
-      "price": 4.9,
-      "changePct": 2.51,
-      "marketTime": "12:04",
+      "price": 4.88,
+      "changePct": 2.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GSRAY": {
       "name": "GALATASARAY SPORTIF",
       "price": 1.13,
       "changePct": 0.89,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GUBRF": {
       "name": "GUBRE FABRIK.",
-      "price": 485.25,
-      "changePct": 0.99,
-      "marketTime": "12:04",
+      "price": 484.0,
+      "changePct": 0.73,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GUNDG": {
       "name": "GUNDOGDU GIDA",
-      "price": 2165.0,
-      "changePct": 0.23,
-      "marketTime": "12:04",
+      "price": 2158.0,
+      "changePct": -0.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GWIND": {
       "name": "GALATA WIND ENERJI",
-      "price": 23.4,
-      "changePct": 1.04,
-      "marketTime": "12:03",
+      "price": 23.34,
+      "changePct": 0.78,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "GZNMI": {
       "name": "GEZINOMI SEYAHAT",
-      "price": 57.45,
-      "changePct": 0.61,
-      "marketTime": "12:04",
+      "price": 57.4,
+      "changePct": 0.53,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HALKB": {
       "name": "T. HALK BANKASI",
       "price": 38.12,
       "changePct": 9.98,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HATEK": {
       "name": "HATAY TEKSTIL",
-      "price": 12.84,
-      "changePct": -2.73,
-      "marketTime": "12:02",
+      "price": 12.78,
+      "changePct": -3.18,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HATSN": {
       "name": "HATSAN GEMI",
-      "price": 79.1,
-      "changePct": 3.81,
-      "marketTime": "12:04",
+      "price": 79.2,
+      "changePct": 3.94,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HDFGS": {
       "name": "HEDEF GIRISIM",
-      "price": 2.51,
-      "changePct": -0.0,
-      "marketTime": "12:04",
+      "price": 2.52,
+      "changePct": 0.4,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HEDEF": {
       "name": "HEDEF HOLDING",
-      "price": 109.8,
-      "changePct": -4.44,
-      "marketTime": "12:04",
+      "price": 114.0,
+      "changePct": -0.78,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HEKTS": {
       "name": "HEKTAS",
-      "price": 2.84,
-      "changePct": -0.35,
-      "marketTime": "12:04",
+      "price": 2.85,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HKTM": {
       "name": "HIDROPAR HAREKET KONTROL",
-      "price": 14.01,
-      "changePct": 0.79,
-      "marketTime": "12:04",
+      "price": 14.44,
+      "changePct": 3.88,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HLGYO": {
       "name": "HALK GMYO",
-      "price": 4.6,
-      "changePct": 2.45,
-      "marketTime": "12:04",
+      "price": 4.59,
+      "changePct": 2.23,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HOROZ": {
       "name": "HOROZ LOJISTIK",
-      "price": 63.3,
-      "changePct": -0.08,
-      "marketTime": "12:03",
+      "price": 63.25,
+      "changePct": -0.16,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HRKET": {
       "name": "HAREKET PROJE TASIMACILIGI",
-      "price": 99.95,
-      "changePct": 1.83,
-      "marketTime": "12:03",
+      "price": 99.7,
+      "changePct": 1.58,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HTTBT": {
       "name": "HITIT BILGISAYAR",
-      "price": 36.92,
-      "changePct": 1.48,
-      "marketTime": "12:04",
+      "price": 37.16,
+      "changePct": 2.14,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HUBVC": {
       "name": "HUB GIRISIM",
-      "price": 2.49,
-      "changePct": -0.4,
-      "marketTime": "12:02",
+      "price": 2.47,
+      "changePct": -1.2,
+      "marketTime": "12:43",
       "source": "Mynet Finans"
     },
     "HUNER": {
       "name": "HUN YENILENEBILIR ENERJI",
-      "price": 3.82,
-      "changePct": -0.52,
-      "marketTime": "12:03",
+      "price": 3.79,
+      "changePct": -1.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "HURGZ": {
       "name": "HURRIYET GZT.",
       "price": 7.87,
       "changePct": 2.21,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ICBCT": {
       "name": "ICBC TURKEY BANK",
-      "price": 20.56,
-      "changePct": 2.39,
-      "marketTime": "12:04",
+      "price": 20.66,
+      "changePct": 2.89,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ICUGS": {
       "name": "ICU GIRISIM",
       "price": 5.64,
       "changePct": 1.08,
-      "marketTime": "12:03",
+      "marketTime": "12:44",
       "source": "Mynet Finans"
     },
     "IDGYO": {
       "name": "IDEALIST GMYO",
-      "price": 3.07,
-      "changePct": -0.0,
-      "marketTime": "11:54",
+      "price": 3.1,
+      "changePct": 0.98,
+      "marketTime": "12:44",
       "source": "Mynet Finans"
     },
     "IEYHO": {
       "name": "ISIKLAR ENERJI YAPI HOL.",
       "price": 190.4,
       "changePct": -0.05,
-      "marketTime": "12:04",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "IHAAS": {
       "name": "IHLAS HABER AJANSI",
-      "price": 64.6,
-      "changePct": 1.73,
-      "marketTime": "12:04",
+      "price": 64.55,
+      "changePct": 1.65,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "IHEVA": {
       "name": "IHLAS EV ALETLERI",
       "price": 1.99,
       "changePct": -0.5,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IHGZT": {
       "name": "IHLAS GAZETECILIK",
       "price": 1.19,
       "changePct": -0.0,
-      "marketTime": "12:02",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IHLAS": {
       "name": "IHLAS HOLDING",
       "price": 1.07,
       "changePct": 0.94,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IHLGM": {
       "name": "IHLAS GAYRIMENKUL",
-      "price": 1.59,
-      "changePct": 1.27,
-      "marketTime": "12:00",
+      "price": 1.58,
+      "changePct": 0.64,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IHYAY": {
       "name": "IHLAS YAYIN HOLDING",
       "price": 1.23,
       "changePct": 0.82,
-      "marketTime": "12:04",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "IMASM": {
       "name": "IMAS MAKINA",
       "price": 2.37,
       "changePct": 1.28,
-      "marketTime": "12:02",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "INDES": {
       "name": "INDEKS BILGISAYAR",
-      "price": 11.94,
-      "changePct": 0.67,
-      "marketTime": "12:03",
+      "price": 11.98,
+      "changePct": 1.01,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "INFO": {
       "name": "INFO YATIRIM",
-      "price": 6.74,
-      "changePct": 1.2,
-      "marketTime": "12:04",
+      "price": 6.71,
+      "changePct": 0.75,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "INGRM": {
       "name": "INGRAM BILISIM",
-      "price": 391.5,
-      "changePct": -0.13,
-      "marketTime": "12:01",
+      "price": 389.25,
+      "changePct": -0.7,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "INTEK": {
@@ -2114,21 +2114,21 @@
       "name": "INTEMA",
       "price": 263.75,
       "changePct": 0.96,
-      "marketTime": "12:03",
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "INVEO": {
       "name": "INVEO YATIRIM HOLDING",
       "price": 6.94,
       "changePct": 1.02,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "INVES": {
       "name": "INVESTCO HOLDING",
-      "price": 846.0,
-      "changePct": -0.65,
-      "marketTime": "12:03",
+      "price": 855.0,
+      "changePct": 0.41,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ISBIR": {
@@ -2147,177 +2147,177 @@
     },
     "ISCTR": {
       "name": "IS BANKASI (C)",
-      "price": 13.06,
-      "changePct": 4.65,
-      "marketTime": "12:04",
+      "price": 13.18,
+      "changePct": 5.61,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISDMR": {
       "name": "ISKENDERUN DEMIR CELIK",
-      "price": 54.0,
-      "changePct": 0.75,
-      "marketTime": "12:04",
+      "price": 53.95,
+      "changePct": 0.65,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ISFIN": {
       "name": "IS FIN.KIR.",
-      "price": 19.84,
-      "changePct": 0.61,
-      "marketTime": "12:03",
+      "price": 20.16,
+      "changePct": 2.23,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISGSY": {
       "name": "IS GIRISIM",
-      "price": 16.85,
-      "changePct": 1.81,
-      "marketTime": "12:03",
+      "price": 16.88,
+      "changePct": 1.99,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISGYO": {
       "name": "IS GMYO",
-      "price": 28.3,
-      "changePct": 2.31,
-      "marketTime": "12:04",
+      "price": 28.32,
+      "changePct": 2.39,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISKPL": {
       "name": "ISIK PLASTIK",
-      "price": 8.39,
-      "changePct": -0.83,
-      "marketTime": "12:04",
+      "price": 8.31,
+      "changePct": -1.77,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISMEN": {
       "name": "IS Y. MEN. DEG.",
-      "price": 33.28,
-      "changePct": 3.1,
-      "marketTime": "12:04",
+      "price": 33.34,
+      "changePct": 3.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISSEN": {
       "name": "ISBIR SENTETIK DOKUMA",
       "price": 6.98,
       "changePct": 1.45,
-      "marketTime": "12:03",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ISVEA": {
       "name": "ISVEA SERAMIK VE BANYO",
       "price": 84.2,
       "changePct": 9.99,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ISYAT": {
       "name": "IS YAT. ORT.",
-      "price": 7.49,
-      "changePct": 0.67,
-      "marketTime": "12:03",
+      "price": 7.54,
+      "changePct": 1.34,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IZENR": {
       "name": "IZDEMIR ENERJI",
-      "price": 8.41,
-      "changePct": 0.48,
-      "marketTime": "12:04",
+      "price": 8.42,
+      "changePct": 0.6,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IZFAS": {
       "name": "IZMIR FIRCA",
-      "price": 57.95,
-      "changePct": 8.22,
-      "marketTime": "12:04",
+      "price": 58.25,
+      "changePct": 8.78,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "IZINV": {
       "name": "IZ YATIRIM HOLDING",
-      "price": 54.3,
-      "changePct": 0.84,
-      "marketTime": "12:02",
+      "price": 54.65,
+      "changePct": 1.49,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "IZMDC": {
       "name": "IZMIR DEMIR CELIK",
       "price": 13.73,
       "changePct": 0.07,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "JANTS": {
       "name": "JANTSA JANT SANAYI",
-      "price": 15.89,
-      "changePct": 1.4,
-      "marketTime": "12:04",
+      "price": 15.87,
+      "changePct": 1.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KAPLM": {
       "name": "KAPLAMIN",
-      "price": 429.0,
-      "changePct": 1.54,
-      "marketTime": "12:04",
+      "price": 429.75,
+      "changePct": 1.72,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "KARCL": {
       "name": "KARDEMIR CELIK",
-      "price": 113.0,
-      "changePct": 4.15,
-      "marketTime": "12:04",
+      "price": 115.8,
+      "changePct": 6.73,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KAREL": {
       "name": "KAREL ELEKTRONIK",
-      "price": 8.86,
-      "changePct": 0.8,
-      "marketTime": "12:03",
+      "price": 8.87,
+      "changePct": 0.91,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KARSN": {
       "name": "KARSAN OTOMOTIV",
-      "price": 9.34,
-      "changePct": 1.08,
-      "marketTime": "12:03",
+      "price": 9.36,
+      "changePct": 1.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KARTN": {
       "name": "KARTONSAN",
-      "price": 163.3,
-      "changePct": -0.12,
-      "marketTime": "12:03",
+      "price": 163.1,
+      "changePct": -0.24,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KATMR": {
       "name": "KATMERCILER EKIPMAN",
-      "price": 2.1,
-      "changePct": 0.48,
-      "marketTime": "12:04",
+      "price": 2.11,
+      "changePct": 0.96,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KAYSE": {
       "name": "KAYSERI SEKER FABRIKASI",
-      "price": 4.07,
-      "changePct": -0.49,
-      "marketTime": "12:04",
+      "price": 4.09,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KBORU": {
       "name": "KUZEY BORU",
-      "price": 23.64,
-      "changePct": -2.31,
-      "marketTime": "12:04",
+      "price": 23.62,
+      "changePct": -2.4,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KCAER": {
       "name": "KOCAER CELIK",
-      "price": 16.36,
-      "changePct": 0.8,
-      "marketTime": "12:04",
+      "price": 16.23,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KCHOL": {
       "name": "KOC HOLDING",
-      "price": 217.8,
-      "changePct": 0.14,
-      "marketTime": "12:04",
+      "price": 217.5,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KENT": {
@@ -2336,44 +2336,44 @@
     },
     "KFEIN": {
       "name": "KAFEIN YAZILIM",
-      "price": 8.22,
-      "changePct": 0.24,
-      "marketTime": "12:04",
+      "price": 8.2,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KGYO": {
       "name": "KORAY GMYO",
-      "price": 12.77,
-      "changePct": -0.78,
-      "marketTime": "12:04",
+      "price": 12.76,
+      "changePct": -0.85,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KIMMR": {
       "name": "KIM MARKET-ERSAN ALISVERIS",
-      "price": 13.8,
-      "changePct": 0.66,
-      "marketTime": "12:02",
+      "price": 13.9,
+      "changePct": 1.39,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KLGYO": {
       "name": "KILER GMYO",
-      "price": 4.81,
-      "changePct": 1.69,
-      "marketTime": "12:04",
+      "price": 4.83,
+      "changePct": 2.11,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KLKIM": {
       "name": "KALEKIM KIMYEVI MADDELER",
-      "price": 28.72,
-      "changePct": 0.14,
-      "marketTime": "12:04",
+      "price": 28.86,
+      "changePct": 0.63,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KLMSN": {
       "name": "KLIMASAN KLIMA",
-      "price": 28.8,
-      "changePct": 0.91,
-      "marketTime": "12:01",
+      "price": 28.9,
+      "changePct": 1.26,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KLNMA": {
@@ -2385,58 +2385,58 @@
     },
     "KLRHO": {
       "name": "KILER HOLDING",
-      "price": 66.3,
-      "changePct": -1.34,
-      "marketTime": "12:04",
+      "price": 66.35,
+      "changePct": -1.26,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KLSER": {
       "name": "KALESERAMIK",
-      "price": 24.9,
-      "changePct": 0.57,
-      "marketTime": "12:03",
+      "price": 24.88,
+      "changePct": 0.48,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KLSYN": {
       "name": "KOLEKSIYON MOBILYA",
-      "price": 15.87,
-      "changePct": 1.67,
-      "marketTime": "12:04",
+      "price": 15.7,
+      "changePct": 0.58,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KLYPV": {
       "name": "KALYON GUNES TEKNOLOJILERI",
-      "price": 63.25,
-      "changePct": -0.86,
-      "marketTime": "12:04",
+      "price": 62.9,
+      "changePct": -1.41,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KMPUR": {
       "name": "KIMTEKS POLIURETAN",
-      "price": 20.16,
-      "changePct": -1.85,
-      "marketTime": "12:04",
+      "price": 20.04,
+      "changePct": -2.43,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KNFRT": {
       "name": "KONFRUT TARIM",
-      "price": 12.64,
-      "changePct": -0.08,
-      "marketTime": "12:03",
+      "price": 12.76,
+      "changePct": 0.87,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KOCMT": {
       "name": "KOC METALURJI",
-      "price": 5.31,
-      "changePct": 3.71,
-      "marketTime": "12:04",
+      "price": 5.29,
+      "changePct": 3.32,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KONKA": {
       "name": "KONYA KAGIT",
-      "price": 11.5,
-      "changePct": -0.0,
-      "marketTime": "12:03",
+      "price": 11.47,
+      "changePct": -0.26,
+      "marketTime": "12:43",
       "source": "Mynet Finans"
     },
     "KONTR": {
@@ -2448,100 +2448,100 @@
     },
     "KONYA": {
       "name": "KONYA CIMENTO",
-      "price": 3900.0,
-      "changePct": 0.71,
-      "marketTime": "12:04",
+      "price": 3882.5,
+      "changePct": 0.26,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KOPOL": {
       "name": "KOZA POLYESTER",
-      "price": 5.96,
-      "changePct": 2.23,
-      "marketTime": "12:04",
+      "price": 5.94,
+      "changePct": 1.89,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KORDS": {
       "name": "KORDSA TEKNIK TEKSTIL",
-      "price": 86.8,
-      "changePct": -1.25,
-      "marketTime": "12:04",
+      "price": 87.4,
+      "changePct": -0.57,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KOTON": {
       "name": "KOTON MAGAZACILIK",
-      "price": 13.14,
-      "changePct": -0.08,
-      "marketTime": "12:04",
+      "price": 13.16,
+      "changePct": 0.08,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KPEKS": {
       "name": "KAPEKS KIMYA",
-      "price": 124.2,
-      "changePct": -0.64,
-      "marketTime": "12:04",
+      "price": 121.1,
+      "changePct": -3.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRDMA": {
       "name": "KARDEMIR (A)",
-      "price": 63.0,
-      "changePct": 5.62,
-      "marketTime": "12:04",
+      "price": 62.35,
+      "changePct": 4.53,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRDMB": {
       "name": "KARDEMIR (B)",
-      "price": 133.3,
-      "changePct": -0.22,
-      "marketTime": "12:03",
+      "price": 133.6,
+      "changePct": -0.0,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KRDMD": {
       "name": "KARDEMIR (D)",
-      "price": 45.72,
-      "changePct": 1.83,
-      "marketTime": "12:04",
+      "price": 46.1,
+      "changePct": 2.67,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRGYO": {
       "name": "KORFEZ GMYO",
-      "price": 3.08,
-      "changePct": 0.98,
-      "marketTime": "12:04",
+      "price": 3.1,
+      "changePct": 1.64,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRONT": {
       "name": "KRON TEKNOLOJI",
-      "price": 25.26,
-      "changePct": 0.4,
-      "marketTime": "12:04",
+      "price": 25.08,
+      "changePct": -0.32,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRPLS": {
       "name": "KOROPLAST TEMIZLIK AMBALAJ",
-      "price": 10.89,
-      "changePct": 2.74,
-      "marketTime": "12:03",
+      "price": 10.85,
+      "changePct": 2.36,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "KRSTL": {
       "name": "KRISTAL KOLA",
-      "price": 9.39,
-      "changePct": 0.54,
-      "marketTime": "12:01",
+      "price": 9.41,
+      "changePct": 0.75,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRTEK": {
       "name": "KARSU TEKSTIL",
       "price": 5.43,
       "changePct": 0.74,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KRVGD": {
       "name": "KERVAN GIDA",
-      "price": 2.28,
-      "changePct": -0.44,
-      "marketTime": "12:04",
+      "price": 2.27,
+      "changePct": -0.87,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KSTUR": {
@@ -2553,135 +2553,135 @@
     },
     "KTLEV": {
       "name": "KATILIMEVIM TAS. FIN.",
-      "price": 62.25,
-      "changePct": 0.4,
-      "marketTime": "12:04",
+      "price": 62.1,
+      "changePct": 0.16,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KTSKR": {
       "name": "KUTAHYA SEKER FABRIKASI",
-      "price": 85.25,
-      "changePct": -0.23,
-      "marketTime": "12:04",
+      "price": 84.9,
+      "changePct": -0.64,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "KUTPO": {
       "name": "KUTAHYA PORSELEN",
-      "price": 82.3,
-      "changePct": 1.17,
-      "marketTime": "12:02",
+      "price": 82.35,
+      "changePct": 1.23,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KUVVA": {
       "name": "KUVVA GIDA",
-      "price": 182.0,
-      "changePct": 0.11,
-      "marketTime": "12:04",
+      "price": 179.3,
+      "changePct": -1.38,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "KUYAS": {
       "name": "KUYAS YATIRIM",
-      "price": 62.65,
-      "changePct": -0.08,
-      "marketTime": "12:04",
+      "price": 62.85,
+      "changePct": 0.24,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KZBGY": {
       "name": "KIZILBUK GYO",
       "price": 2.0,
       "changePct": -0.0,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "KZGYO": {
       "name": "KUZUGRUP GMYO",
-      "price": 19.8,
-      "changePct": 0.81,
-      "marketTime": "12:04",
+      "price": 19.93,
+      "changePct": 1.48,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LIDER": {
       "name": "LDR TURIZM",
-      "price": 31.32,
-      "changePct": -6.73,
-      "marketTime": "12:04",
+      "price": 31.1,
+      "changePct": -7.39,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LIDFA": {
       "name": "LIDER FAKTORING",
       "price": 2.71,
       "changePct": 2.26,
-      "marketTime": "12:04",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "LILAK": {
       "name": "LILA KAGIT",
       "price": 30.8,
       "changePct": -0.13,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LINK": {
       "name": "LINK BILGISAYAR",
-      "price": 5.66,
-      "changePct": 1.25,
-      "marketTime": "12:04",
+      "price": 5.65,
+      "changePct": 1.07,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LKMNH": {
       "name": "LOKMAN HEKIM SAGLIK",
-      "price": 13.75,
-      "changePct": 0.44,
-      "marketTime": "12:01",
+      "price": 13.69,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LMKDC": {
       "name": "LIMAK DOGU ANADOLU",
       "price": 24.76,
       "changePct": 2.23,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LOGO": {
       "name": "LOGO YAZILIM",
-      "price": 138.4,
-      "changePct": 1.02,
-      "marketTime": "12:03",
+      "price": 138.1,
+      "changePct": 0.8,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "LRSHO": {
       "name": "LORAS HOLDING",
       "price": 2.56,
       "changePct": 0.79,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LUKSK": {
       "name": "LUKS KADIFE",
-      "price": 86.35,
-      "changePct": 0.41,
-      "marketTime": "12:00",
+      "price": 86.85,
+      "changePct": 0.99,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LXGYO": {
       "name": "LUXERA GMYO",
-      "price": 11.02,
-      "changePct": 0.55,
-      "marketTime": "12:03",
+      "price": 10.97,
+      "changePct": 0.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "LYDHO": {
       "name": "LYDIA HOLDING",
-      "price": 171.7,
-      "changePct": 0.59,
-      "marketTime": "12:03",
+      "price": 171.3,
+      "changePct": 0.35,
+      "marketTime": "12:40",
       "source": "Mynet Finans"
     },
     "LYDYE": {
       "name": "LYDIA YESIL ENERJI",
-      "price": 12665.0,
-      "changePct": -0.08,
-      "marketTime": "12:02",
+      "price": 12622.5,
+      "changePct": -0.41,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "MAALT": {
@@ -2693,93 +2693,93 @@
     },
     "MACKO": {
       "name": "MACKOLIK INTERNET HIZMETLERI",
-      "price": 35.48,
-      "changePct": -0.89,
-      "marketTime": "12:03",
+      "price": 35.4,
+      "changePct": -1.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MAGEN": {
       "name": "MARGUN ENERJI",
       "price": 32.34,
       "changePct": -2.0,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MAKIM": {
       "name": "MAKIM MAKINE",
-      "price": 16.77,
-      "changePct": 1.02,
-      "marketTime": "12:03",
+      "price": 16.76,
+      "changePct": 0.96,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "MAKTK": {
       "name": "MAKINA TAKIM",
-      "price": 10.76,
-      "changePct": 6.01,
-      "marketTime": "12:04",
+      "price": 10.65,
+      "changePct": 4.93,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MANAS": {
       "name": "MANAS ENERJI YONETIMI",
-      "price": 33.56,
-      "changePct": 0.42,
-      "marketTime": "12:04",
+      "price": 33.42,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MARBL": {
       "name": "TUREKS TURUNC MADENCILIK",
-      "price": 12.91,
-      "changePct": 3.12,
-      "marketTime": "12:03",
+      "price": 12.84,
+      "changePct": 2.56,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MARKA": {
       "name": "US YATIRIM HOLDING",
-      "price": 84.7,
-      "changePct": -1.97,
-      "marketTime": "12:03",
+      "price": 84.4,
+      "changePct": -2.31,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MARMR": {
       "name": "MARMARA HOLDING",
       "price": 2.49,
       "changePct": 0.4,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MARTI": {
       "name": "MARTI OTEL",
       "price": 1.4,
       "changePct": 2.19,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MASFN": {
       "name": "MASFEN ENERJI",
-      "price": 42.8,
-      "changePct": -0.6,
-      "marketTime": "12:04",
+      "price": 42.78,
+      "changePct": -0.65,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MAVI": {
       "name": "MAVI GIYIM",
-      "price": 38.8,
-      "changePct": 0.47,
-      "marketTime": "12:04",
+      "price": 38.7,
+      "changePct": 0.21,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MCARD": {
       "name": "METROPAL KURUMSAL HIZMETLER",
-      "price": 157.9,
-      "changePct": 0.57,
-      "marketTime": "12:04",
+      "price": 158.3,
+      "changePct": 0.83,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MEDTR": {
       "name": "MEDITERA TIBBI MALZEME",
-      "price": 25.58,
-      "changePct": 0.31,
-      "marketTime": "12:03",
+      "price": 25.66,
+      "changePct": 0.63,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MEGAP": {
@@ -2791,86 +2791,86 @@
     },
     "MEGMT": {
       "name": "MEGA METAL",
-      "price": 45.46,
-      "changePct": -3.15,
-      "marketTime": "12:04",
+      "price": 45.26,
+      "changePct": -3.58,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MEKAG": {
       "name": "MEKA GLOBAL MAKINE",
-      "price": 3.06,
-      "changePct": 0.99,
-      "marketTime": "12:03",
+      "price": 3.05,
+      "changePct": 0.66,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MEPET": {
       "name": "METRO PETROL VE TESISLERI",
-      "price": 21.0,
-      "changePct": -0.19,
-      "marketTime": "12:03",
+      "price": 20.62,
+      "changePct": -2.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MERCN": {
       "name": "MERCAN KIMYA",
-      "price": 18.8,
-      "changePct": -0.53,
-      "marketTime": "12:04",
+      "price": 18.77,
+      "changePct": -0.69,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MERIT": {
       "name": "MERIT TURIZM",
-      "price": 15.88,
-      "changePct": 0.63,
-      "marketTime": "12:03",
+      "price": 15.86,
+      "changePct": 0.51,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MERKO": {
       "name": "MERKO GIDA",
       "price": 1.34,
       "changePct": 0.75,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "METEN": {
       "name": "METGUN ENERJI",
-      "price": 23.16,
-      "changePct": -0.6,
-      "marketTime": "12:04",
+      "price": 23.12,
+      "changePct": -0.77,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "METRO": {
       "name": "METRO HOLDING",
-      "price": 8.95,
-      "changePct": 3.23,
-      "marketTime": "12:03",
+      "price": 9.0,
+      "changePct": 3.81,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MEYSU": {
       "name": "MEYSU GIDA",
-      "price": 12.54,
-      "changePct": 0.16,
-      "marketTime": "12:04",
+      "price": 12.55,
+      "changePct": 0.24,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MGROS": {
       "name": "MIGROS TICARET",
       "price": 562.0,
       "changePct": 1.17,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MHRGY": {
       "name": "MHR GMYO",
-      "price": 3.36,
-      "changePct": 0.9,
-      "marketTime": "12:03",
+      "price": 3.34,
+      "changePct": 0.3,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "MIATK": {
       "name": "MIA TEKNOLOJI",
-      "price": 30.16,
-      "changePct": 0.94,
-      "marketTime": "12:04",
+      "price": 30.1,
+      "changePct": 0.74,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MMCAS": {
@@ -2882,205 +2882,205 @@
     },
     "MNDRS": {
       "name": "MENDERES TEKSTIL",
-      "price": 11.7,
-      "changePct": 1.04,
-      "marketTime": "12:04",
+      "price": 11.74,
+      "changePct": 1.38,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "MNDTR": {
       "name": "MONDI TURKEY",
       "price": 5.01,
       "changePct": 0.8,
-      "marketTime": "12:04",
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "MOBTL": {
       "name": "MOBILTEL ILETISIM",
-      "price": 12.67,
-      "changePct": 2.59,
-      "marketTime": "12:04",
+      "price": 12.89,
+      "changePct": 4.37,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MOGAN": {
       "name": "MOGAN ENERJI",
-      "price": 20.76,
-      "changePct": 0.19,
-      "marketTime": "12:04",
+      "price": 20.7,
+      "changePct": -0.1,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MOPAS": {
       "name": "MOPAS MARKETCILIK",
-      "price": 28.16,
-      "changePct": 0.93,
-      "marketTime": "12:04",
+      "price": 28.14,
+      "changePct": 0.86,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MPARK": {
       "name": "MLP SAGLIK",
-      "price": 438.75,
-      "changePct": -0.28,
-      "marketTime": "12:04",
+      "price": 439.25,
+      "changePct": -0.17,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MRGYO": {
       "name": "MARTI GMYO",
       "price": 1.44,
       "changePct": 3.6,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MRSHL": {
       "name": "MARSHALL",
-      "price": 1664.0,
-      "changePct": 0.54,
-      "marketTime": "12:04",
+      "price": 1662.0,
+      "changePct": 0.42,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MSGYO": {
       "name": "MISTRAL GMYO",
-      "price": 5.68,
-      "changePct": 0.53,
-      "marketTime": "12:03",
+      "price": 5.69,
+      "changePct": 0.71,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MTRKS": {
       "name": "MATRIKS FINANSAL TEKNOLOJILER",
-      "price": 34.26,
-      "changePct": 2.15,
-      "marketTime": "12:04",
+      "price": 34.16,
+      "changePct": 1.85,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "MTRYO": {
       "name": "METRO YAT. ORT.",
-      "price": 9.32,
-      "changePct": 1.08,
-      "marketTime": "12:00",
+      "price": 9.27,
+      "changePct": 0.54,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "MZHLD": {
       "name": "MAZHAR ZORLU HOLDING",
-      "price": 5.42,
-      "changePct": 0.37,
-      "marketTime": "12:00",
+      "price": 5.5,
+      "changePct": 1.85,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NATEN": {
       "name": "NATUREL ENERJI",
       "price": 5.63,
       "changePct": 0.9,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NETAS": {
       "name": "NETAS TELEKOM.",
-      "price": 93.2,
-      "changePct": -3.52,
-      "marketTime": "12:04",
+      "price": 91.8,
+      "changePct": -4.97,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NETCD": {
       "name": "NETCAD YAZILIM",
-      "price": 128.0,
-      "changePct": 0.71,
-      "marketTime": "12:04",
+      "price": 128.1,
+      "changePct": 0.79,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NIBAS": {
       "name": "NIGBAS NIGDE BETON",
       "price": 4.53,
       "changePct": 9.95,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NTGAZ": {
       "name": "NATURELGAZ",
-      "price": 11.21,
-      "changePct": -0.18,
-      "marketTime": "12:04",
+      "price": 11.19,
+      "changePct": -0.36,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NTHOL": {
       "name": "NET HOLDING",
-      "price": 44.48,
-      "changePct": 1.04,
-      "marketTime": "12:04",
+      "price": 43.94,
+      "changePct": -0.18,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NUGYO": {
       "name": "NUROL GMYO",
-      "price": 9.3,
-      "changePct": 0.11,
-      "marketTime": "12:01",
+      "price": 9.29,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "NUHCM": {
       "name": "NUH CIMENTO",
       "price": 220.4,
       "changePct": 1.33,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OBAMS": {
       "name": "OBA MAKARNACILIK",
-      "price": 5.59,
-      "changePct": 0.72,
-      "marketTime": "12:04",
+      "price": 5.63,
+      "changePct": 1.44,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OBASE": {
       "name": "OBASE BILGISAYAR",
-      "price": 37.74,
-      "changePct": 1.73,
-      "marketTime": "12:03",
+      "price": 37.56,
+      "changePct": 1.24,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ODAS": {
       "name": "ODAS ELEKTRIK",
-      "price": 7.1,
-      "changePct": 1.43,
-      "marketTime": "12:04",
+      "price": 7.12,
+      "changePct": 1.71,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ODINE": {
       "name": "ODINE TEKNOLOJI",
-      "price": 2028.0,
-      "changePct": 2.94,
-      "marketTime": "12:04",
+      "price": 2029.0,
+      "changePct": 2.99,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OFSYM": {
       "name": "OFIS YEM GIDA",
-      "price": 64.65,
-      "changePct": 1.33,
-      "marketTime": "12:02",
+      "price": 64.8,
+      "changePct": 1.57,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ONCSM": {
       "name": "ONCOSEM ONKOLOJIK SISTEMLER",
-      "price": 264.0,
-      "changePct": 0.67,
-      "marketTime": "12:03",
+      "price": 265.25,
+      "changePct": 1.14,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ONRYT": {
       "name": "ONUR TEKNOLOJI",
       "price": 60.7,
       "changePct": -0.25,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ORCAY": {
       "name": "ORCAY ORTAKOY CAY SANAYI",
       "price": 3.6,
       "changePct": -0.0,
-      "marketTime": "11:58",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ORGE": {
       "name": "ORGE ENERJI ELEKTRIK",
-      "price": 23.32,
-      "changePct": -0.34,
-      "marketTime": "12:04",
+      "price": 23.14,
+      "changePct": -1.11,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ORMA": {
@@ -3092,303 +3092,303 @@
     },
     "ORZAX": {
       "name": "ORZAKS ILAC",
-      "price": 102.3,
-      "changePct": -0.78,
-      "marketTime": "12:04",
+      "price": 102.1,
+      "changePct": -0.97,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OSMEN": {
       "name": "OSMANLI MENKUL",
-      "price": 7.77,
-      "changePct": 0.91,
-      "marketTime": "12:03",
+      "price": 7.78,
+      "changePct": 1.04,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OSTIM": {
       "name": "OSTIM ENDUSTRIYEL YAT",
-      "price": 1.63,
-      "changePct": -0.61,
-      "marketTime": "11:59",
+      "price": 1.64,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OTKAR": {
       "name": "OTOKAR",
-      "price": 336.0,
-      "changePct": 1.05,
-      "marketTime": "12:04",
+      "price": 336.5,
+      "changePct": 1.2,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OTTO": {
       "name": "OTTO HOLDING",
-      "price": 163.0,
-      "changePct": -1.03,
-      "marketTime": "12:04",
+      "price": 162.2,
+      "changePct": -1.52,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OYAKC": {
       "name": "OYAK CIMENTO",
-      "price": 22.96,
-      "changePct": 0.44,
-      "marketTime": "12:04",
+      "price": 22.94,
+      "changePct": 0.35,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OYAYO": {
       "name": "OYAK YAT. ORT.",
-      "price": 42.9,
-      "changePct": 0.47,
-      "marketTime": "12:03",
+      "price": 42.82,
+      "changePct": 0.28,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "OYLUM": {
       "name": "OYLUM SINAI YATIRIMLAR",
-      "price": 7.26,
-      "changePct": -0.41,
-      "marketTime": "11:57",
+      "price": 7.25,
+      "changePct": -0.55,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OYYAT": {
       "name": "OYAK YATIRIM MENKUL",
-      "price": 36.34,
-      "changePct": 1.4,
-      "marketTime": "12:02",
+      "price": 37.04,
+      "changePct": 3.35,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OZATD": {
       "name": "OZATA DENIZCILIK",
       "price": 4412.5,
       "changePct": -1.94,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OZGYO": {
       "name": "OZDERICI GMYO",
-      "price": 2.09,
-      "changePct": -0.0,
-      "marketTime": "12:02",
+      "price": 2.1,
+      "changePct": 0.48,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "OZKGY": {
       "name": "OZAK GMYO",
-      "price": 13.64,
-      "changePct": 0.89,
-      "marketTime": "12:04",
+      "price": 13.66,
+      "changePct": 1.04,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OZRDN": {
       "name": "OZERDEN AMBALAJ",
-      "price": 28.54,
-      "changePct": 3.03,
-      "marketTime": "12:00",
+      "price": 28.26,
+      "changePct": 2.02,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "OZSUB": {
       "name": "OZSU BALIK",
-      "price": 43.88,
-      "changePct": 0.83,
-      "marketTime": "12:04",
+      "price": 43.66,
+      "changePct": 0.32,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "OZYSR": {
       "name": "OZYASAR TEL",
-      "price": 12.72,
-      "changePct": 0.39,
-      "marketTime": "12:04",
+      "price": 12.66,
+      "changePct": -0.08,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PAGYO": {
       "name": "PANORA GMYO",
-      "price": 152.2,
-      "changePct": -1.04,
-      "marketTime": "12:02",
+      "price": 151.8,
+      "changePct": -1.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PAHOL": {
       "name": "PASIFIK HOLDING",
-      "price": 1.34,
-      "changePct": 1.52,
-      "marketTime": "12:04",
+      "price": 1.33,
+      "changePct": 0.76,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PAMEL": {
       "name": "PAMEL ELEKTRIK",
       "price": 77.5,
       "changePct": 0.85,
-      "marketTime": "12:02",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PAPIL": {
       "name": "PAPILON SAVUNMA",
-      "price": 12.95,
-      "changePct": -1.75,
-      "marketTime": "12:04",
+      "price": 12.93,
+      "changePct": -1.9,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PARSN": {
       "name": "PARSAN",
-      "price": 72.6,
-      "changePct": 0.41,
-      "marketTime": "12:04",
+      "price": 72.65,
+      "changePct": 0.48,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PASEU": {
       "name": "PASIFIK EURASIA LOJISTIK",
-      "price": 231.2,
-      "changePct": -0.34,
-      "marketTime": "12:04",
+      "price": 230.6,
+      "changePct": -0.6,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PATEK": {
       "name": "PASIFIK TEKNOLOJI",
-      "price": 22.12,
-      "changePct": 0.09,
-      "marketTime": "12:04",
+      "price": 22.06,
+      "changePct": -0.18,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PCILT": {
       "name": "PC ILETISIM MEDYA",
       "price": 36.2,
       "changePct": 1.12,
-      "marketTime": "12:04",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "PEKGY": {
       "name": "PEKER GMYO",
-      "price": 15.18,
-      "changePct": 0.07,
-      "marketTime": "12:04",
+      "price": 15.14,
+      "changePct": -0.2,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PENGD": {
       "name": "PENGUEN GIDA",
-      "price": 9.28,
-      "changePct": 0.76,
-      "marketTime": "12:04",
+      "price": 9.26,
+      "changePct": 0.54,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "PENTA": {
       "name": "PENTA TEKNOLOJI URUNLERI DAGITIM",
       "price": 13.32,
       "changePct": 0.68,
-      "marketTime": "12:01",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PETKM": {
       "name": "PETKIM",
-      "price": 19.79,
-      "changePct": 0.3,
-      "marketTime": "12:04",
+      "price": 19.81,
+      "changePct": 0.41,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PETUN": {
       "name": "PINAR ET VE UN",
-      "price": 11.3,
-      "changePct": 1.35,
-      "marketTime": "12:03",
+      "price": 11.29,
+      "changePct": 1.26,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PGSUS": {
       "name": "PEGASUS",
-      "price": 154.4,
-      "changePct": 2.86,
-      "marketTime": "12:04",
+      "price": 154.3,
+      "changePct": 2.8,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PINSU": {
       "name": "PINAR SU",
       "price": 10.24,
       "changePct": 0.2,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PKART": {
       "name": "PLASTIKKART",
-      "price": 131.5,
-      "changePct": 1.23,
-      "marketTime": "12:01",
+      "price": 131.6,
+      "changePct": 1.31,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PKENT": {
       "name": "PETROKENT TURIZM",
-      "price": 127.4,
-      "changePct": 0.87,
-      "marketTime": "12:01",
+      "price": 127.3,
+      "changePct": 0.79,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PLTUR": {
       "name": "PLATFORM TURIZM",
-      "price": 21.88,
-      "changePct": -6.66,
-      "marketTime": "12:04",
+      "price": 21.54,
+      "changePct": -8.11,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PNLSN": {
       "name": "PANELSAN CATI CEPHE",
       "price": 44.9,
       "changePct": 3.46,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PNSUT": {
       "name": "PINAR SUT",
-      "price": 10.56,
-      "changePct": 1.05,
-      "marketTime": "12:03",
+      "price": 10.55,
+      "changePct": 0.96,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "POLHO": {
       "name": "POLISAN HOLDING",
-      "price": 22.62,
-      "changePct": 0.8,
-      "marketTime": "12:03",
+      "price": 22.56,
+      "changePct": 0.53,
+      "marketTime": "12:42",
       "source": "Mynet Finans"
     },
     "POLTK": {
       "name": "POLITEKNIK METAL",
-      "price": 4472.5,
-      "changePct": 0.73,
-      "marketTime": "11:59",
+      "price": 4467.5,
+      "changePct": 0.62,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "PRDGS": {
       "name": "PARDUS GIRISIM",
-      "price": 7.94,
-      "changePct": 1.15,
-      "marketTime": "12:04",
+      "price": 7.99,
+      "changePct": 1.78,
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "PRKAB": {
       "name": "TURK PRYSMIAN KABLO",
-      "price": 32.3,
-      "changePct": 0.81,
-      "marketTime": "12:00",
+      "price": 32.38,
+      "changePct": 1.06,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "PRKME": {
       "name": "PARK ELEK.MADENCILIK",
-      "price": 18.1,
-      "changePct": 1.0,
-      "marketTime": "12:04",
+      "price": 18.04,
+      "changePct": 0.67,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PRZMA": {
       "name": "PRIZMA PRESS MATBAACILIK",
-      "price": 77.35,
-      "changePct": -0.19,
-      "marketTime": "12:04",
+      "price": 76.2,
+      "changePct": -1.68,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "PSDTC": {
       "name": "PERGAMON DIS TICARET",
-      "price": 159.0,
-      "changePct": -0.63,
-      "marketTime": "12:04",
+      "price": 157.9,
+      "changePct": -1.31,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "PSGYO": {
       "name": "PASIFIK GMYO",
       "price": 3.41,
       "changePct": 0.29,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "QNBFK": {
@@ -3407,303 +3407,303 @@
     },
     "QUAGR": {
       "name": "QUA GRANITE HAYAL YAPI",
-      "price": 3.41,
-      "changePct": 0.29,
-      "marketTime": "12:03",
+      "price": 3.39,
+      "changePct": -0.29,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "QUICK": {
       "name": "QUICK SIGORTA",
-      "price": 69.75,
-      "changePct": 0.07,
-      "marketTime": "12:04",
+      "price": 69.7,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RALYH": {
       "name": "RAL YATIRIM HOLDING",
       "price": 265.25,
       "changePct": 0.19,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RAYSG": {
       "name": "RAY SIGORTA",
-      "price": 162.9,
-      "changePct": 1.69,
-      "marketTime": "12:04",
+      "price": 162.3,
+      "changePct": 1.31,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "REEDR": {
       "name": "REEDER TEKNOLOJI",
       "price": 5.99,
       "changePct": 0.5,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RGYAS": {
       "name": "RONESANS GAYRIMENKUL YAT.",
-      "price": 211.3,
-      "changePct": 0.86,
-      "marketTime": "12:04",
+      "price": 211.4,
+      "changePct": 0.91,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "RNPOL": {
       "name": "RAINBOW POLIKARBONAT",
-      "price": 2.67,
-      "changePct": -0.37,
-      "marketTime": "12:04",
+      "price": 2.61,
+      "changePct": -2.61,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RODRG": {
       "name": "RODRIGO TEKSTIL",
-      "price": 24.06,
-      "changePct": 0.17,
-      "marketTime": "12:03",
+      "price": 24.22,
+      "changePct": 0.83,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RTALB": {
       "name": "RTA LABORATUVARLARI",
-      "price": 2.94,
-      "changePct": 0.68,
-      "marketTime": "12:04",
+      "price": 2.92,
+      "changePct": -0.0,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "RUBNS": {
       "name": "RUBENIS TEKSTIL",
-      "price": 32.1,
-      "changePct": 2.88,
-      "marketTime": "12:04",
+      "price": 32.0,
+      "changePct": 2.56,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RUZYE": {
       "name": "RUZY MADENCILIK VE ENERJI",
-      "price": 9.56,
-      "changePct": 1.27,
-      "marketTime": "12:04",
+      "price": 9.54,
+      "changePct": 1.06,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     },
     "RYGYO": {
       "name": "REYSAS GMYO",
-      "price": 44.2,
-      "changePct": 0.09,
-      "marketTime": "12:04",
+      "price": 44.3,
+      "changePct": 0.32,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "RYSAS": {
       "name": "REYSAS LOJISTIK",
-      "price": 23.66,
-      "changePct": -0.08,
-      "marketTime": "12:04",
+      "price": 23.78,
+      "changePct": 0.42,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SAFKR": {
       "name": "SAFKAR EGE SOGUTMACILIK",
       "price": 18.66,
       "changePct": -0.16,
-      "marketTime": "12:04",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "SAHOL": {
       "name": "SABANCI HOLDING",
-      "price": 95.9,
-      "changePct": 2.57,
-      "marketTime": "12:04",
+      "price": 95.8,
+      "changePct": 2.46,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SAMAT": {
       "name": "SARAY MATBAACILIK",
-      "price": 5.38,
-      "changePct": -0.92,
-      "marketTime": "12:02",
+      "price": 5.41,
+      "changePct": -0.37,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SANEL": {
       "name": "SANEL MUHENDISLIK",
-      "price": 58.85,
-      "changePct": -0.84,
-      "marketTime": "12:04",
+      "price": 58.1,
+      "changePct": -2.11,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SANFM": {
       "name": "SANIFOAM ENDUSTRI",
-      "price": 10.97,
-      "changePct": 1.57,
-      "marketTime": "12:04",
+      "price": 10.92,
+      "changePct": 1.11,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SANKO": {
       "name": "SANKO PAZARLAMA",
-      "price": 18.92,
-      "changePct": 1.01,
-      "marketTime": "12:03",
+      "price": 19.0,
+      "changePct": 1.44,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "SARAE": {
       "name": "SA-RA ENERJI",
-      "price": 91.8,
-      "changePct": 5.4,
-      "marketTime": "12:04",
+      "price": 90.5,
+      "changePct": 3.9,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SARKY": {
       "name": "SARKUYSAN",
-      "price": 26.16,
-      "changePct": 2.27,
-      "marketTime": "12:04",
+      "price": 26.18,
+      "changePct": 2.35,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SASA": {
       "name": "SASA POLYESTER",
       "price": 2.34,
       "changePct": 1.3,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SAYAS": {
       "name": "SAY YENILENEBILIR ENERJI",
-      "price": 63.15,
-      "changePct": 2.02,
-      "marketTime": "12:04",
+      "price": 63.1,
+      "changePct": 1.94,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SDTTR": {
       "name": "SDT UZAY VE SAVUNMA",
-      "price": 259.0,
-      "changePct": -0.77,
-      "marketTime": "12:03",
+      "price": 259.5,
+      "changePct": -0.57,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SEGMN": {
       "name": "SEGMEN KARDESLER GIDA",
-      "price": 53.8,
-      "changePct": -1.37,
-      "marketTime": "12:04",
+      "price": 53.5,
+      "changePct": -1.92,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SEGYO": {
       "name": "SEKER GMYO",
-      "price": 3.77,
-      "changePct": -0.0,
-      "marketTime": "11:52",
+      "price": 3.78,
+      "changePct": 0.27,
+      "marketTime": "12:41",
       "source": "Mynet Finans"
     },
     "SEKFK": {
       "name": "SEKER FIN. KIR.",
       "price": 4.51,
       "changePct": 0.45,
-      "marketTime": "12:02",
+      "marketTime": "12:45",
       "source": "Mynet Finans"
     },
     "SEKUR": {
       "name": "SEKURO PLASTIK",
-      "price": 10.3,
-      "changePct": -1.34,
-      "marketTime": "12:02",
+      "price": 10.28,
+      "changePct": -1.53,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SELEC": {
       "name": "SELCUK ECZA DEPOSU",
-      "price": 295.25,
-      "changePct": -0.67,
-      "marketTime": "12:04",
+      "price": 296.0,
+      "changePct": -0.42,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SELVA": {
       "name": "SELVA GIDA",
-      "price": 1.72,
-      "changePct": 0.58,
-      "marketTime": "12:04",
+      "price": 1.71,
+      "changePct": -0.0,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SERNT": {
       "name": "SERANIT GRANIT SERAMIK",
-      "price": 8.09,
-      "changePct": 2.41,
-      "marketTime": "12:04",
+      "price": 8.08,
+      "changePct": 2.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SEYKM": {
       "name": "SEYITLER KIMYA",
-      "price": 4.62,
-      "changePct": -0.43,
-      "marketTime": "12:04",
+      "price": 4.61,
+      "changePct": -0.65,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SILVR": {
       "name": "SILVERLINE ENDUSTRI",
       "price": 2.27,
       "changePct": -0.0,
-      "marketTime": "12:01",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "SISE": {
       "name": "SISE CAM",
-      "price": 40.7,
-      "changePct": 2.52,
-      "marketTime": "12:04",
+      "price": 40.74,
+      "changePct": 2.62,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SKBNK": {
       "name": "SEKERBANK",
-      "price": 6.3,
-      "changePct": 1.94,
-      "marketTime": "12:04",
+      "price": 6.32,
+      "changePct": 2.27,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SKTAS": {
       "name": "SOKTAS",
-      "price": 3.27,
-      "changePct": 0.62,
-      "marketTime": "12:01",
+      "price": 3.26,
+      "changePct": 0.31,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "SKYLP": {
       "name": "SKYALP FINANSAL TEKNOLOJILER",
-      "price": 249.0,
-      "changePct": -1.19,
-      "marketTime": "12:01",
+      "price": 247.5,
+      "changePct": -1.79,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "SKYMD": {
       "name": "SEKER YATIRIM",
-      "price": 14.54,
-      "changePct": -0.0,
-      "marketTime": "12:03",
+      "price": 14.57,
+      "changePct": 0.21,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SMART": {
       "name": "SMARTIKS YAZILIM",
       "price": 24.84,
       "changePct": 0.16,
-      "marketTime": "12:04",
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "SMRTG": {
       "name": "SMART GUNES ENERJISI TEK.",
-      "price": 10.07,
-      "changePct": -0.3,
-      "marketTime": "12:04",
+      "price": 10.06,
+      "changePct": -0.4,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SMRVA": {
       "name": "SUMER VARLIK YONETIM",
-      "price": 11.74,
-      "changePct": 2.89,
-      "marketTime": "12:04",
+      "price": 11.79,
+      "changePct": 3.33,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SNGYO": {
       "name": "SINPAS GMYO",
-      "price": 3.43,
-      "changePct": 2.69,
-      "marketTime": "12:03",
+      "price": 3.45,
+      "changePct": 3.29,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SNICA": {
       "name": "SANICA ISI SANAYI",
-      "price": 3.47,
-      "changePct": -1.42,
-      "marketTime": "12:04",
+      "price": 3.46,
+      "changePct": -1.7,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SNPAM": {
@@ -3722,44 +3722,44 @@
     },
     "SOHOE": {
       "name": "SOHO GIYIM VE ENERJI",
-      "price": 11.29,
-      "changePct": 4.54,
-      "marketTime": "12:04",
+      "price": 11.18,
+      "changePct": 3.52,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SOKE": {
       "name": "SOKE DEGIRMENCILIK",
-      "price": 14.04,
-      "changePct": 1.01,
-      "marketTime": "12:02",
+      "price": 14.07,
+      "changePct": 1.22,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SOKM": {
       "name": "SOK MARKETLER TICARET",
-      "price": 58.75,
-      "changePct": 1.12,
-      "marketTime": "12:04",
+      "price": 58.7,
+      "changePct": 1.03,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SONME": {
       "name": "SONMEZ FILAMENT",
-      "price": 141.8,
-      "changePct": -0.84,
-      "marketTime": "12:03",
+      "price": 143.6,
+      "changePct": 0.42,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "SRVGY": {
       "name": "SERVET GMYO",
       "price": 2.6,
       "changePct": 1.17,
-      "marketTime": "12:03",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "SSAAT": {
       "name": "SAAT VE SAAT SANAYI",
-      "price": 37.72,
-      "changePct": 0.32,
-      "marketTime": "12:04",
+      "price": 37.64,
+      "changePct": 0.11,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SUMAS": {
@@ -3771,51 +3771,51 @@
     },
     "SUNTK": {
       "name": "SUN TEKSTIL",
-      "price": 36.94,
-      "changePct": 2.16,
-      "marketTime": "12:04",
+      "price": 36.86,
+      "changePct": 1.94,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SURGY": {
       "name": "SUR TATIL EVLERI GMYO",
-      "price": 33.3,
-      "changePct": -0.6,
-      "marketTime": "12:04",
+      "price": 33.4,
+      "changePct": -0.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SUWEN": {
       "name": "SUWEN TEKSTIL",
       "price": 6.53,
       "changePct": 1.08,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "SVGYO": {
       "name": "SAVUR GMYO",
-      "price": 17.16,
-      "changePct": 1.42,
-      "marketTime": "12:04",
+      "price": 17.36,
+      "changePct": 2.6,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TABGD": {
       "name": "TAB GIDA",
       "price": 253.5,
       "changePct": 1.3,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TARKM": {
       "name": "TARKIM BITKI KORUMA",
       "price": 544.0,
       "changePct": 4.11,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TATEN": {
       "name": "TATLIPINAR ENERJI URETIM",
-      "price": 9.07,
-      "changePct": -0.98,
-      "marketTime": "12:04",
+      "price": 9.01,
+      "changePct": -1.64,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TATGD": {
@@ -3827,170 +3827,170 @@
     },
     "TAVHL": {
       "name": "TAV HAVALIMANLARI",
-      "price": 286.5,
-      "changePct": 0.44,
-      "marketTime": "12:04",
+      "price": 287.25,
+      "changePct": 0.7,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TBORG": {
       "name": "T.TUBORG",
       "price": 159.5,
       "changePct": -2.45,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TCELL": {
       "name": "TURKCELL",
       "price": 104.7,
       "changePct": 1.95,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TCKRC": {
       "name": "KIRAC GALVANIZ",
       "price": 169.2,
       "changePct": -0.18,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TDGYO": {
       "name": "TREND GMYO",
-      "price": 16.73,
-      "changePct": 1.09,
-      "marketTime": "12:04",
+      "price": 16.71,
+      "changePct": 0.97,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "TEHOL": {
       "name": "TERA YATIRIM TEK. HOL.",
       "price": 37.44,
       "changePct": -9.96,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TEKTU": {
       "name": "TEK-ART TURIZM",
-      "price": 7.98,
-      "changePct": 0.13,
-      "marketTime": "12:04",
+      "price": 8.0,
+      "changePct": 0.38,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TERA": {
       "name": "TERA YATIRIM MENKUL DEGERLER",
-      "price": 179.2,
-      "changePct": -0.17,
-      "marketTime": "12:04",
+      "price": 179.4,
+      "changePct": -0.06,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TEZOL": {
       "name": "EUROPAP TEZOL KAGIT",
-      "price": 9.74,
-      "changePct": -0.31,
-      "marketTime": "12:03",
+      "price": 9.73,
+      "changePct": -0.41,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TGSAS": {
       "name": "TGS DIS TICARET",
-      "price": 235.5,
-      "changePct": 6.08,
-      "marketTime": "12:04",
+      "price": 233.2,
+      "changePct": 5.05,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "THYAO": {
       "name": "TURK HAVA YOLLARI",
       "price": 310.0,
       "changePct": 2.48,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TKFEN": {
       "name": "TEKFEN HOLDING",
-      "price": 219.9,
-      "changePct": 0.87,
-      "marketTime": "12:04",
+      "price": 220.1,
+      "changePct": 0.96,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TKNKA": {
       "name": "TEKNIKA PLASTIK",
       "price": 137.2,
       "changePct": 9.94,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TKNSA": {
       "name": "TEKNOSA IC VE DIS TICARET",
-      "price": 20.22,
-      "changePct": 0.5,
-      "marketTime": "12:04",
+      "price": 20.1,
+      "changePct": -0.1,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TLMAN": {
       "name": "TRABZON LIMAN",
-      "price": 82.25,
-      "changePct": 0.37,
-      "marketTime": "12:02",
+      "price": 81.85,
+      "changePct": -0.12,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TMPOL": {
       "name": "TEMAPOL POLIMER PLASTIK",
-      "price": 489.5,
-      "changePct": -3.74,
-      "marketTime": "12:04",
+      "price": 490.5,
+      "changePct": -3.54,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TMSN": {
       "name": "TUMOSAN MOTOR VE TRAKTOR",
-      "price": 75.55,
-      "changePct": 1.27,
-      "marketTime": "12:04",
+      "price": 75.5,
+      "changePct": 1.21,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TNZTP": {
       "name": "TAPDI TINAZTEPE",
-      "price": 28.78,
-      "changePct": -0.14,
-      "marketTime": "12:03",
+      "price": 28.7,
+      "changePct": -0.42,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TOASO": {
       "name": "TOFAS OTO. FAB.",
-      "price": 279.25,
-      "changePct": 1.55,
-      "marketTime": "12:04",
+      "price": 278.5,
+      "changePct": 1.27,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TRALT": {
       "name": "TURK ALTIN ISLETMELERI",
-      "price": 55.3,
-      "changePct": 3.36,
-      "marketTime": "12:04",
+      "price": 54.95,
+      "changePct": 2.71,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TRCAS": {
       "name": "TURCAS HOLDING",
-      "price": 46.92,
-      "changePct": 0.43,
-      "marketTime": "12:04",
+      "price": 46.86,
+      "changePct": 0.3,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TRENJ": {
       "name": "TR DOGAL ENERJI",
-      "price": 106.7,
-      "changePct": 2.11,
-      "marketTime": "12:04",
+      "price": 106.6,
+      "changePct": 2.01,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TRGYO": {
       "name": "TORUNLAR GMYO",
-      "price": 97.25,
-      "changePct": 0.78,
-      "marketTime": "12:04",
+      "price": 97.15,
+      "changePct": 0.67,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TRHOL": {
       "name": "TERA FINANSAL YAT. HOL.",
-      "price": 2580.0,
-      "changePct": -2.27,
-      "marketTime": "12:04",
+      "price": 2590.0,
+      "changePct": -1.89,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TRILC": {
@@ -4004,280 +4004,280 @@
       "name": "TR ANADOLU METAL MADENCILIK",
       "price": 141.6,
       "changePct": 1.94,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TSGYO": {
       "name": "TSKB GMYO",
-      "price": 6.15,
-      "changePct": 7.33,
-      "marketTime": "12:04",
+      "price": 6.19,
+      "changePct": 8.03,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TSKB": {
       "name": "T.S.K.B.",
-      "price": 11.23,
-      "changePct": 2.46,
-      "marketTime": "12:04",
+      "price": 11.27,
+      "changePct": 2.83,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TSPOR": {
       "name": "TRABZONSPOR SPORTIF",
-      "price": 1.19,
-      "changePct": -1.65,
-      "marketTime": "12:04",
+      "price": 1.2,
+      "changePct": -0.83,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TTKOM": {
       "name": "TURK TELEKOM",
-      "price": 53.95,
-      "changePct": 1.22,
-      "marketTime": "12:04",
+      "price": 54.35,
+      "changePct": 1.97,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TTRAK": {
       "name": "TURK TRAKTOR",
-      "price": 435.5,
-      "changePct": 1.28,
-      "marketTime": "12:03",
+      "price": 437.5,
+      "changePct": 1.74,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TUCLK": {
       "name": "TUGCELIK",
-      "price": 4.04,
-      "changePct": -1.7,
-      "marketTime": "12:04",
+      "price": 4.05,
+      "changePct": -1.46,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "TUKAS": {
       "name": "TUKAS",
       "price": 2.02,
       "changePct": 1.0,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TUPRS": {
       "name": "TUPRAS",
-      "price": 376.5,
-      "changePct": 0.74,
-      "marketTime": "12:04",
+      "price": 377.0,
+      "changePct": 0.87,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TUREX": {
       "name": "TUREKS TURIZM TASIMACILIK",
-      "price": 6.72,
-      "changePct": 1.05,
-      "marketTime": "12:04",
+      "price": 6.71,
+      "changePct": 0.9,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TURGG": {
       "name": "TURKER PROJE GAYRIMENKUL",
-      "price": 27.2,
-      "changePct": 0.97,
-      "marketTime": "12:04",
+      "price": 27.06,
+      "changePct": 0.45,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "TURSG": {
       "name": "TURKIYE SIGORTA",
-      "price": 6.26,
-      "changePct": 1.95,
-      "marketTime": "12:04",
+      "price": 6.3,
+      "changePct": 2.61,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "UCAYM": {
       "name": "UCAY MUHENDISLIK",
-      "price": 25.96,
-      "changePct": 0.46,
-      "marketTime": "12:04",
+      "price": 25.94,
+      "changePct": 0.39,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "UFUK": {
       "name": "UFUK YATIRIM",
-      "price": 1776.0,
-      "changePct": -2.42,
-      "marketTime": "12:04",
+      "price": 1768.0,
+      "changePct": -2.86,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ULAS": {
       "name": "ULASLAR TURIZM YAT.",
-      "price": 21.22,
-      "changePct": -0.38,
-      "marketTime": "12:03",
+      "price": 21.24,
+      "changePct": -0.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ULKER": {
       "name": "ULKER BISKUVI",
-      "price": 91.75,
-      "changePct": 1.1,
-      "marketTime": "12:04",
+      "price": 91.65,
+      "changePct": 0.99,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ULUFA": {
       "name": "ULUSAL FAKTORING",
       "price": 1.69,
       "changePct": 1.81,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ULUSE": {
       "name": "ULUSOY ELEKTRIK",
-      "price": 261.0,
-      "changePct": 0.77,
-      "marketTime": "12:04",
+      "price": 260.5,
+      "changePct": 0.58,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "ULUUN": {
       "name": "ULUSOY UN SANAYI",
-      "price": 8.65,
-      "changePct": 3.35,
-      "marketTime": "12:03",
+      "price": 8.64,
+      "changePct": 3.23,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "UNLU": {
       "name": "UNLU YATIRIM HOLDING",
-      "price": 11.22,
-      "changePct": 1.08,
-      "marketTime": "12:01",
+      "price": 11.21,
+      "changePct": 0.99,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "USAK": {
       "name": "USAK SERAMIK",
       "price": 1.25,
       "changePct": 0.81,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VAKBN": {
       "name": "VAKIFLAR BANKASI",
-      "price": 32.9,
-      "changePct": 4.44,
-      "marketTime": "12:04",
+      "price": 32.7,
+      "changePct": 3.81,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VAKFA": {
       "name": "VAKIF FAKTORING",
-      "price": 11.57,
-      "changePct": 0.17,
-      "marketTime": "12:04",
+      "price": 11.5,
+      "changePct": -0.43,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VAKFN": {
       "name": "VAKIF FIN. KIR.",
       "price": 1.2,
       "changePct": 2.56,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VAKKO": {
       "name": "VAKKO TEKSTIL",
-      "price": 67.8,
-      "changePct": -0.07,
-      "marketTime": "11:59",
+      "price": 68.3,
+      "changePct": 0.66,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VANGD": {
       "name": "VANET GIDA",
-      "price": 101.8,
-      "changePct": -1.64,
-      "marketTime": "12:04",
+      "price": 100.1,
+      "changePct": -3.29,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "VBTYZ": {
       "name": "VBT YAZILIM",
-      "price": 39.08,
-      "changePct": -1.31,
-      "marketTime": "12:04",
+      "price": 39.28,
+      "changePct": -0.81,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VERTU": {
       "name": "VERUSATURK GIRISIM",
-      "price": 36.32,
-      "changePct": 0.17,
-      "marketTime": "12:03",
+      "price": 36.34,
+      "changePct": 0.22,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "VERUS": {
       "name": "VERUSA HOLDING",
-      "price": 730.5,
-      "changePct": -0.27,
-      "marketTime": "12:04",
+      "price": 736.5,
+      "changePct": 0.55,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "VESBE": {
       "name": "VESTEL BEYAZ ESYA",
       "price": 5.31,
       "changePct": 0.57,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VESTL": {
       "name": "VESTEL",
-      "price": 22.18,
-      "changePct": 1.28,
-      "marketTime": "12:04",
+      "price": 22.14,
+      "changePct": 1.1,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VEYAS": {
       "name": "TURKER VANGOLU ENERJI",
-      "price": 137.6,
-      "changePct": -1.78,
-      "marketTime": "12:04",
+      "price": 136.9,
+      "changePct": -2.28,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VKFYO": {
       "name": "VAKIF YAT. ORT.",
-      "price": 25.44,
-      "changePct": 1.03,
-      "marketTime": "12:03",
+      "price": 25.4,
+      "changePct": 0.87,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "VKGYO": {
       "name": "VAKIF GMYO",
-      "price": 1.94,
-      "changePct": 0.52,
-      "marketTime": "12:03",
+      "price": 1.96,
+      "changePct": 1.55,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "VKING": {
       "name": "VIKING KAGIT",
-      "price": 22.0,
-      "changePct": 0.36,
-      "marketTime": "12:00",
+      "price": 22.02,
+      "changePct": 0.46,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "VRGYO": {
       "name": "VERA KONSEPT GMYO",
-      "price": 1.8,
-      "changePct": -0.0,
-      "marketTime": "12:02",
+      "price": 1.81,
+      "changePct": 0.56,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "VSNMD": {
       "name": "VISNE MADENCILIK",
-      "price": 47.08,
-      "changePct": 0.17,
-      "marketTime": "12:04",
+      "price": 47.16,
+      "changePct": 0.34,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YAPRK": {
       "name": "YAPRAK SUT VE BESI CIFT.",
-      "price": 10.99,
-      "changePct": 0.18,
-      "marketTime": "12:04",
+      "price": 11.0,
+      "changePct": 0.27,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YATAS": {
       "name": "YATAS",
       "price": 31.34,
       "changePct": 0.71,
-      "marketTime": "12:03",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YAYLA": {
       "name": "YAYLA EN. UR. TUR. VE INS",
-      "price": 22.28,
-      "changePct": 0.18,
-      "marketTime": "12:01",
+      "price": 22.26,
+      "changePct": 0.09,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "YBTAS": {
@@ -4289,44 +4289,44 @@
     },
     "YEOTK": {
       "name": "YEO TEKNOLOJI ENERJI",
-      "price": 35.8,
-      "changePct": 4.37,
-      "marketTime": "12:04",
+      "price": 35.52,
+      "changePct": 3.56,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YESIL": {
       "name": "YESIL YATIRIM HOLDING",
       "price": 1.24,
       "changePct": 0.81,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YGGYO": {
       "name": "YENI GIMAT GMYO",
-      "price": 223.1,
-      "changePct": -0.53,
-      "marketTime": "12:04",
+      "price": 223.5,
+      "changePct": -0.36,
+      "marketTime": "12:47",
       "source": "Mynet Finans"
     },
     "YIGIT": {
       "name": "YIGIT AKU",
-      "price": 22.42,
-      "changePct": 3.8,
-      "marketTime": "12:04",
+      "price": 22.44,
+      "changePct": 3.89,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YKBNK": {
       "name": "YAPI VE KREDI BANK.",
-      "price": 37.66,
-      "changePct": 2.73,
-      "marketTime": "12:04",
+      "price": 37.74,
+      "changePct": 2.95,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YKSLN": {
       "name": "YUKSELEN CELIK",
-      "price": 2.81,
-      "changePct": 0.72,
-      "marketTime": "12:04",
+      "price": 2.82,
+      "changePct": 1.08,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YONGA": {
@@ -4340,7 +4340,7 @@
       "name": "YUNSA",
       "price": 8.39,
       "changePct": 0.48,
-      "marketTime": "12:04",
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "YYAPI": {
@@ -4352,44 +4352,44 @@
     },
     "YYLGD": {
       "name": "YAYLA GIDA",
-      "price": 10.22,
-      "changePct": 0.89,
-      "marketTime": "12:04",
+      "price": 10.24,
+      "changePct": 1.09,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ZEDUR": {
       "name": "ZEDUR ENERJI",
-      "price": 7.93,
-      "changePct": 0.38,
-      "marketTime": "12:04",
+      "price": 7.94,
+      "changePct": 0.51,
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ZERGY": {
       "name": "ZERAY GMYO",
-      "price": 9.94,
-      "changePct": 3.54,
-      "marketTime": "12:04",
+      "price": 10.25,
+      "changePct": 6.77,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ZGYO": {
       "name": "Z GMYO",
-      "price": 31.8,
-      "changePct": -0.06,
-      "marketTime": "12:04",
+      "price": 31.72,
+      "changePct": -0.31,
+      "marketTime": "12:49",
       "source": "Mynet Finans"
     },
     "ZOREN": {
       "name": "ZORLU ENERJI",
       "price": 2.29,
       "changePct": -0.0,
-      "marketTime": "12:03",
+      "marketTime": "12:48",
       "source": "Mynet Finans"
     },
     "ZRGYO": {
       "name": "ZIRAAT GMYO",
-      "price": 19.69,
-      "changePct": 0.1,
-      "marketTime": "12:03",
+      "price": 19.71,
+      "changePct": 0.2,
+      "marketTime": "12:46",
       "source": "Mynet Finans"
     }
   }
