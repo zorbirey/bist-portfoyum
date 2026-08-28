@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-28T01:04:37.476778+00:00",
+  "updatedAt": "2026-08-28T17:16:33.616167+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 69,
+  "count": 68,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "TURSG",
-      "name": "TURKIYE SIGORTA",
-      "date": "27.08.2026",
-      "grossPerShare": 0.15,
-      "netPerShare": 0.1275,
-      "sourceNetPerShare": 0.13,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "SUWEN",
       "name": "SUWEN TEKSTIL",
       "date": "31.08.2026",
@@ -255,22 +245,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "BULGS",
-      "name": "BULLS GSYO",
-      "date": "15.09.2026",
-      "grossPerShare": 0.09,
-      "netPerShare": 0.0765,
-      "sourceNetPerShare": 0.09,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "AKFGY",
       "name": "AKFEN GMYO",
       "date": "15.09.2026",
       "grossPerShare": 0.01,
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "BULGS",
+      "name": "BULLS GSYO",
+      "date": "15.09.2026",
+      "grossPerShare": 0.09,
+      "netPerShare": 0.0765,
+      "sourceNetPerShare": 0.09,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -305,6 +295,16 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
+      "code": "GIPTA",
+      "name": "GIPTA OFIS KIRTASIYE",
+      "date": "22.09.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
       "code": "TAVHL",
       "name": "TAV HAVALIMANLARI",
       "date": "22.09.2026",
@@ -321,16 +321,6 @@
       "grossPerShare": 1.8,
       "netPerShare": 1.53,
       "sourceNetPerShare": 1.53,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "GIPTA",
-      "name": "GIPTA OFIS KIRTASIYE",
-      "date": "22.09.2026",
-      "grossPerShare": 0.01,
-      "netPerShare": 0.0085,
-      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -615,22 +605,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
       "date": "16.12.2026",
       "grossPerShare": 2.5,
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
