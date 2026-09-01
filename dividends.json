@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-08-31T18:09:54.620060+00:00",
+  "updatedAt": "2026-09-01T09:53:06.237579+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 68,
+  "count": 67,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "SUWEN",
-      "name": "SUWEN TEKSTIL",
-      "date": "31.08.2026",
-      "grossPerShare": 0.18,
-      "netPerShare": 0.153,
-      "sourceNetPerShare": 0.15,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "TBORG",
       "name": "T.TUBORG",
       "date": "02.09.2026",
@@ -355,22 +345,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "TUPRS",
-      "name": "TUPRAS",
-      "date": "30.09.2026",
-      "grossPerShare": 6.75,
-      "netPerShare": 5.7375,
-      "sourceNetPerShare": 5.73,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "KIMMR",
       "name": "KIM MARKET-ERSAN ALISVERIS",
       "date": "30.09.2026",
       "grossPerShare": 0.21,
       "netPerShare": 0.1785,
       "sourceNetPerShare": 0.18,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "TUPRS",
+      "name": "TUPRAS",
+      "date": "30.09.2026",
+      "grossPerShare": 6.75,
+      "netPerShare": 5.7375,
+      "sourceNetPerShare": 5.73,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -445,16 +435,6 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "SRVGY",
-      "name": "SERVET GMYO",
-      "date": "26.10.2026",
-      "grossPerShare": 0.08,
-      "netPerShare": 0.068,
-      "sourceNetPerShare": 0.08,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "OSMEN",
       "name": "OSMANLI MENKUL",
       "date": "26.10.2026",
@@ -465,12 +445,12 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "MERIT",
-      "name": "MERIT TURIZM",
-      "date": "27.10.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
+      "code": "SRVGY",
+      "name": "SERVET GMYO",
+      "date": "26.10.2026",
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -481,6 +461,16 @@
       "grossPerShare": 0.11,
       "netPerShare": 0.0935,
       "sourceNetPerShare": 0.1,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "MERIT",
+      "name": "MERIT TURIZM",
+      "date": "27.10.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -605,22 +595,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
       "date": "16.12.2026",
       "grossPerShare": 2.5,
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
