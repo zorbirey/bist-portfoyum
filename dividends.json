@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-02T17:48:51.979587+00:00",
+  "updatedAt": "2026-09-03T09:34:47.458106+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 67,
+  "count": 66,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "TBORG",
-      "name": "T.TUBORG",
-      "date": "02.09.2026",
-      "grossPerShare": 9.52,
-      "netPerShare": 8.092,
-      "sourceNetPerShare": 8.09,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BRKSN",
       "name": "BERKOSAN YALITIM",
       "date": "04.09.2026",
@@ -285,6 +275,16 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
+      "code": "GIPTA",
+      "name": "GIPTA OFIS KIRTASIYE",
+      "date": "22.09.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
       "code": "MACKO",
       "name": "MACKOLIK INTERNET HIZMETLERI",
       "date": "22.09.2026",
@@ -301,16 +301,6 @@
       "grossPerShare": 1.8,
       "netPerShare": 1.53,
       "sourceNetPerShare": 1.53,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "GIPTA",
-      "name": "GIPTA OFIS KIRTASIYE",
-      "date": "22.09.2026",
-      "grossPerShare": 0.01,
-      "netPerShare": 0.0085,
-      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -355,22 +345,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "KIMMR",
-      "name": "KIM MARKET-ERSAN ALISVERIS",
-      "date": "30.09.2026",
-      "grossPerShare": 0.21,
-      "netPerShare": 0.1785,
-      "sourceNetPerShare": 0.18,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "DESA",
       "name": "DESA DERI",
       "date": "30.09.2026",
       "grossPerShare": 0.08,
       "netPerShare": 0.068,
       "sourceNetPerShare": 0.07,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "KIMMR",
+      "name": "KIM MARKET-ERSAN ALISVERIS",
+      "date": "30.09.2026",
+      "grossPerShare": 0.21,
+      "netPerShare": 0.1785,
+      "sourceNetPerShare": 0.18,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -435,22 +425,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "SRVGY",
-      "name": "SERVET GMYO",
-      "date": "26.10.2026",
-      "grossPerShare": 0.08,
-      "netPerShare": 0.068,
-      "sourceNetPerShare": 0.08,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "OSMEN",
       "name": "OSMANLI MENKUL",
       "date": "26.10.2026",
       "grossPerShare": 0.05,
       "netPerShare": 0.0425,
       "sourceNetPerShare": 0.04,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "SRVGY",
+      "name": "SERVET GMYO",
+      "date": "26.10.2026",
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.08,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
