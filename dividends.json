@@ -1,9 +1,79 @@
 {
-  "updatedAt": "2026-09-11T09:28:38.817128+00:00",
+  "updatedAt": "2026-09-11T13:46:39.212504+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 48,
+  "count": 63,
   "dividends": [
+    {
+      "code": "FROTO",
+      "name": "Ford Otosan",
+      "date": "16.03.2026",
+      "grossPerShare": 3.635294,
+      "netPerShare": 3.09,
+      "sourceNetPerShare": 3.09,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "AYGAZ",
+      "name": "Aygaz",
+      "date": "16.03.2026",
+      "grossPerShare": 12.541176,
+      "netPerShare": 10.66,
+      "sourceNetPerShare": 10.66,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "TUPRS",
+      "name": "Tüpraş",
+      "date": "16.03.2026",
+      "grossPerShare": 10.376471,
+      "netPerShare": 8.82,
+      "sourceNetPerShare": 8.82,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "NUHCM",
+      "name": "Nuh Çimento",
+      "date": "17.03.2026",
+      "grossPerShare": 22.494118,
+      "netPerShare": 19.12,
+      "sourceNetPerShare": 19.12,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "TOASO",
+      "name": "Tofaş",
+      "date": "23.03.2026",
+      "grossPerShare": 20.0,
+      "netPerShare": 17.0,
+      "sourceNetPerShare": 17.0,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "KCHOL",
+      "name": "Koç Holding",
+      "date": "25.03.2026",
+      "grossPerShare": 6.823529,
+      "netPerShare": 5.8,
+      "sourceNetPerShare": 5.8,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "AKBNK",
+      "name": "Akbank",
+      "date": "26.03.2026",
+      "grossPerShare": 2.2,
+      "netPerShare": 1.87,
+      "sourceNetPerShare": 1.87,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
     {
       "code": "ISMEN",
       "name": "İŞ YATIRIM MENKUL DEĞERLER",
@@ -33,6 +103,86 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
+    },
+    {
+      "code": "AYEN",
+      "name": "Ayen Enerji",
+      "date": "21.04.2026",
+      "grossPerShare": 0.776471,
+      "netPerShare": 0.66,
+      "sourceNetPerShare": 0.66,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "CLEBI",
+      "name": "Çelebi Hava Servisi",
+      "date": "24.04.2026",
+      "grossPerShare": 103.0,
+      "netPerShare": 87.55,
+      "sourceNetPerShare": 87.55,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "YUNSA",
+      "name": "Yünsa",
+      "date": "27.04.2026",
+      "grossPerShare": 0.364706,
+      "netPerShare": 0.31,
+      "sourceNetPerShare": 0.31,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "MSGYO",
+      "name": "Mistral GYO",
+      "date": "28.04.2026",
+      "grossPerShare": 0.505882,
+      "netPerShare": 0.43,
+      "sourceNetPerShare": 0.43,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "OSMEN",
+      "name": "Osmanlı Yatırım",
+      "date": "28.04.2026",
+      "grossPerShare": 0.047059,
+      "netPerShare": 0.04,
+      "sourceNetPerShare": 0.04,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "NETCD",
+      "name": "Netcad",
+      "date": "30.04.2026",
+      "grossPerShare": 4.376471,
+      "netPerShare": 3.72,
+      "sourceNetPerShare": 3.72,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "SISE",
+      "name": "Şişecam",
+      "date": "01.06.2026",
+      "grossPerShare": 0.588235,
+      "netPerShare": 0.5,
+      "sourceNetPerShare": 0.5,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
+    },
+    {
+      "code": "BIMAS",
+      "name": "BİM",
+      "date": "17.06.2026",
+      "grossPerShare": 4.0,
+      "netPerShare": 3.4,
+      "sourceNetPerShare": 3.4,
+      "withholdingRate": 15,
+      "source": "Temettuhisseleri.net 2026 geçmiş takvimi"
     },
     {
       "code": "DOAS",
