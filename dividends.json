@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-11T17:41:25.625974+00:00",
+  "updatedAt": "2026-09-14T10:29:52.552689+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 63,
+  "count": 64,
   "dividends": [
     {
       "code": "FROTO",
@@ -245,8 +245,8 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "MACKO",
-      "name": "MACKOLIK INTERNET HIZMETLERI",
+      "code": "TAVHL",
+      "name": "TAV HAVALIMANLARI",
       "date": "22.09.2026",
       "grossPerShare": 1.8,
       "netPerShare": 1.53,
@@ -255,8 +255,8 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "TAVHL",
-      "name": "TAV HAVALIMANLARI",
+      "code": "MACKO",
+      "name": "MACKOLIK INTERNET HIZMETLERI",
       "date": "22.09.2026",
       "grossPerShare": 1.8,
       "netPerShare": 1.53,
@@ -355,22 +355,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "ASTOR",
-      "name": "ASTOR ENERJI",
-      "date": "15.10.2026",
-      "grossPerShare": 2.19,
-      "netPerShare": 1.8615,
-      "sourceNetPerShare": 1.86,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "EBEBK",
       "name": "EBEBEK MAGAZACILIK",
       "date": "15.10.2026",
       "grossPerShare": 0.63,
       "netPerShare": 0.5355,
       "sourceNetPerShare": 0.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "ASTOR",
+      "name": "ASTOR ENERJI",
+      "date": "15.10.2026",
+      "grossPerShare": 2.19,
+      "netPerShare": 1.8615,
+      "sourceNetPerShare": 1.86,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -391,6 +391,16 @@
       "grossPerShare": 1.06,
       "netPerShare": 0.901,
       "sourceNetPerShare": 0.9,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "MCARD",
+      "name": "METROPAL KURUMSAL HIZMETLER",
+      "date": "23.10.2026",
+      "grossPerShare": 2.57,
+      "netPerShare": 2.1845,
+      "sourceNetPerShare": 2.19,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -605,6 +615,16 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
+      "code": "GWIND",
+      "name": "GALATA WIND ENERJI",
+      "date": "31.12.2026",
+      "grossPerShare": 0.74,
+      "netPerShare": 0.629,
+      "sourceNetPerShare": 0.63,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
       "code": "GLYHO",
       "name": "GLOBAL YAT. HOLDING",
       "date": "31.12.2026",
@@ -621,16 +641,6 @@
       "grossPerShare": 7.82,
       "netPerShare": 6.647,
       "sourceNetPerShare": 6.65,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "GWIND",
-      "name": "GALATA WIND ENERJI",
-      "date": "31.12.2026",
-      "grossPerShare": 0.74,
-      "netPerShare": 0.629,
-      "sourceNetPerShare": 0.63,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
