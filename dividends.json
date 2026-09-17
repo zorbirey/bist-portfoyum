@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-16T18:47:13.038762+00:00",
+  "updatedAt": "2026-09-17T09:54:53.166645+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 62,
+  "count": 61,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "BIMAS",
-      "name": "BIM MAGAZALAR",
-      "date": "16.09.2026",
-      "grossPerShare": 2.5,
-      "netPerShare": 2.125,
-      "sourceNetPerShare": 2.13,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIGCH",
       "name": "BUYUK SEFLER BIGCHEFS",
       "date": "18.09.2026",
@@ -235,22 +225,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "MACKO",
-      "name": "MACKOLIK INTERNET HIZMETLERI",
-      "date": "22.09.2026",
-      "grossPerShare": 1.8,
-      "netPerShare": 1.53,
-      "sourceNetPerShare": 1.53,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "GIPTA",
       "name": "GIPTA OFIS KIRTASIYE",
       "date": "22.09.2026",
       "grossPerShare": 0.01,
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "MACKO",
+      "name": "MACKOLIK INTERNET HIZMETLERI",
+      "date": "22.09.2026",
+      "grossPerShare": 1.8,
+      "netPerShare": 1.53,
+      "sourceNetPerShare": 1.53,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -285,12 +275,12 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "DESA",
-      "name": "DESA DERI",
+      "code": "KIMMR",
+      "name": "KIM MARKET-ERSAN ALISVERIS",
       "date": "30.09.2026",
-      "grossPerShare": 0.08,
-      "netPerShare": 0.068,
-      "sourceNetPerShare": 0.07,
+      "grossPerShare": 0.21,
+      "netPerShare": 0.1785,
+      "sourceNetPerShare": 0.18,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -305,12 +295,12 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "KIMMR",
-      "name": "KIM MARKET-ERSAN ALISVERIS",
+      "code": "DESA",
+      "name": "DESA DERI",
       "date": "30.09.2026",
-      "grossPerShare": 0.21,
-      "netPerShare": 0.1785,
-      "sourceNetPerShare": 0.18,
+      "grossPerShare": 0.08,
+      "netPerShare": 0.068,
+      "sourceNetPerShare": 0.07,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -335,22 +325,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "ASTOR",
-      "name": "ASTOR ENERJI",
-      "date": "15.10.2026",
-      "grossPerShare": 2.19,
-      "netPerShare": 1.8615,
-      "sourceNetPerShare": 1.86,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "EBEBK",
       "name": "EBEBEK MAGAZACILIK",
       "date": "15.10.2026",
       "grossPerShare": 0.63,
       "netPerShare": 0.5355,
       "sourceNetPerShare": 0.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "ASTOR",
+      "name": "ASTOR ENERJI",
+      "date": "15.10.2026",
+      "grossPerShare": 2.19,
+      "netPerShare": 1.8615,
+      "sourceNetPerShare": 1.86,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -605,22 +595,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "GLYHO",
-      "name": "GLOBAL YAT. HOLDING",
-      "date": "31.12.2026",
-      "grossPerShare": 0.1,
-      "netPerShare": 0.085,
-      "sourceNetPerShare": 0.09,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "RGYAS",
       "name": "RONESANS GAYRIMENKUL YAT.",
       "date": "31.12.2026",
       "grossPerShare": 7.82,
       "netPerShare": 6.647,
       "sourceNetPerShare": 6.65,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "GLYHO",
+      "name": "GLOBAL YAT. HOLDING",
+      "date": "31.12.2026",
+      "grossPerShare": 0.1,
+      "netPerShare": 0.085,
+      "sourceNetPerShare": 0.09,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
