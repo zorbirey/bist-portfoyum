@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-25T19:27:44.046357+00:00",
+  "updatedAt": "2026-09-28T11:35:59.079003+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 56,
+  "count": 55,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "MOPAS",
-      "name": "MOPAS MARKETCILIK",
-      "date": "25.09.2026",
-      "grossPerShare": 0.27,
-      "netPerShare": 0.2295,
-      "sourceNetPerShare": 0.23,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "LKMNH",
       "name": "LOKMAN HEKIM SAGLIK",
       "date": "28.09.2026",
@@ -275,22 +265,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "ASTOR",
-      "name": "ASTOR ENERJI",
-      "date": "15.10.2026",
-      "grossPerShare": 2.19,
-      "netPerShare": 1.8615,
-      "sourceNetPerShare": 1.86,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "EBEBK",
       "name": "EBEBEK MAGAZACILIK",
       "date": "15.10.2026",
       "grossPerShare": 0.63,
       "netPerShare": 0.5355,
       "sourceNetPerShare": 0.53,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "ASTOR",
+      "name": "ASTOR ENERJI",
+      "date": "15.10.2026",
+      "grossPerShare": 2.19,
+      "netPerShare": 1.8615,
+      "sourceNetPerShare": 1.86,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -485,22 +475,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "BIMAS",
-      "name": "BIM MAGAZALAR",
-      "date": "16.12.2026",
-      "grossPerShare": 2.5,
-      "netPerShare": 2.125,
-      "sourceNetPerShare": 2.13,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "NTHOL",
       "name": "NET HOLDING",
       "date": "16.12.2026",
       "grossPerShare": 1.0,
       "netPerShare": 0.85,
       "sourceNetPerShare": 0.85,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "BIMAS",
+      "name": "BIM MAGAZALAR",
+      "date": "16.12.2026",
+      "grossPerShare": 2.5,
+      "netPerShare": 2.125,
+      "sourceNetPerShare": 2.13,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
