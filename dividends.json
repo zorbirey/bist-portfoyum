@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-09-28T18:44:23.394125+00:00",
+  "updatedAt": "2026-09-29T11:14:06.941366+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 55,
+  "count": 54,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "LKMNH",
-      "name": "LOKMAN HEKIM SAGLIK",
-      "date": "28.09.2026",
-      "grossPerShare": 0.23,
-      "netPerShare": 0.1955,
-      "sourceNetPerShare": 0.2,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "DESA",
       "name": "DESA DERI",
       "date": "30.09.2026",
@@ -215,22 +205,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "KIMMR",
-      "name": "KIM MARKET-ERSAN ALISVERIS",
-      "date": "30.09.2026",
-      "grossPerShare": 0.21,
-      "netPerShare": 0.1785,
-      "sourceNetPerShare": 0.18,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "TUPRS",
       "name": "TUPRAS",
       "date": "30.09.2026",
       "grossPerShare": 6.75,
       "netPerShare": 5.7375,
       "sourceNetPerShare": 5.73,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "KIMMR",
+      "name": "KIM MARKET-ERSAN ALISVERIS",
+      "date": "30.09.2026",
+      "grossPerShare": 0.21,
+      "netPerShare": 0.1785,
+      "sourceNetPerShare": 0.18,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -335,22 +325,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "MERIT",
-      "name": "MERIT TURIZM",
-      "date": "27.10.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "MEDTR",
       "name": "MEDITERA TIBBI MALZEME",
       "date": "27.10.2026",
       "grossPerShare": 0.11,
       "netPerShare": 0.0935,
       "sourceNetPerShare": 0.1,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "MERIT",
+      "name": "MERIT TURIZM",
+      "date": "27.10.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -535,22 +525,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "GWIND",
-      "name": "GALATA WIND ENERJI",
-      "date": "31.12.2026",
-      "grossPerShare": 0.74,
-      "netPerShare": 0.629,
-      "sourceNetPerShare": 0.63,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "GLYHO",
       "name": "GLOBAL YAT. HOLDING",
       "date": "31.12.2026",
       "grossPerShare": 0.1,
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "GWIND",
+      "name": "GALATA WIND ENERJI",
+      "date": "31.12.2026",
+      "grossPerShare": 0.74,
+      "netPerShare": 0.629,
+      "sourceNetPerShare": 0.63,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
