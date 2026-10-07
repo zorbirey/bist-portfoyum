@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-06T18:13:07.587071+00:00",
+  "updatedAt": "2026-10-07T11:39:00.176188+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 51,
+  "count": 50,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,16 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "TRALT",
-      "name": "TURK ALTIN ISLETMELERI",
-      "date": "06.10.2026",
-      "grossPerShare": 0.5,
-      "netPerShare": 0.425,
-      "sourceNetPerShare": 0.43,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "KPEKS",
