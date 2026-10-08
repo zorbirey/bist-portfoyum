@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T17:58:14.606691+00:00",
+  "updatedAt": "2026-10-08T11:53:44.362294+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
   "count": 50,
@@ -195,22 +195,22 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "KPEKS",
-      "name": "KAPEKS KIMYA",
-      "date": "07.10.2026",
-      "grossPerShare": 0.6,
-      "netPerShare": 0.51,
-      "sourceNetPerShare": 0.51,
+      "code": "KRVGD",
+      "name": "KERVAN GIDA",
+      "date": "08.10.2026",
+      "grossPerShare": 0.02,
+      "netPerShare": 0.017,
+      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "RGYAS",
-      "name": "RONESANS GAYRIMENKUL YAT.",
-      "date": "07.10.2026",
-      "grossPerShare": 7.82,
-      "netPerShare": 6.647,
-      "sourceNetPerShare": 6.65,
+      "code": "GUBRF",
+      "name": "GUBRE FABRIK.",
+      "date": "14.10.2026",
+      "grossPerShare": 4.49,
+      "netPerShare": 3.8165,
+      "sourceNetPerShare": 3.82,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -265,22 +265,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "OSMEN",
-      "name": "OSMANLI MENKUL",
-      "date": "26.10.2026",
-      "grossPerShare": 0.05,
-      "netPerShare": 0.0425,
-      "sourceNetPerShare": 0.04,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "SRVGY",
       "name": "SERVET GMYO",
       "date": "26.10.2026",
       "grossPerShare": 0.08,
       "netPerShare": 0.068,
       "sourceNetPerShare": 0.08,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "OSMEN",
+      "name": "OSMANLI MENKUL",
+      "date": "26.10.2026",
+      "grossPerShare": 0.05,
+      "netPerShare": 0.0425,
+      "sourceNetPerShare": 0.04,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -435,22 +435,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
       "date": "16.12.2026",
       "grossPerShare": 2.5,
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -485,22 +485,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "GWIND",
-      "name": "GALATA WIND ENERJI",
-      "date": "31.12.2026",
-      "grossPerShare": 0.74,
-      "netPerShare": 0.629,
-      "sourceNetPerShare": 0.63,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "GLYHO",
       "name": "GLOBAL YAT. HOLDING",
       "date": "31.12.2026",
       "grossPerShare": 0.1,
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "GWIND",
+      "name": "GALATA WIND ENERJI",
+      "date": "31.12.2026",
+      "grossPerShare": 0.74,
+      "netPerShare": 0.629,
+      "sourceNetPerShare": 0.63,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
