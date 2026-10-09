@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-08T18:44:20.176925+00:00",
+  "updatedAt": "2026-10-09T11:45:39.753283+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 50,
+  "count": 49,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,16 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "KRVGD",
-      "name": "KERVAN GIDA",
-      "date": "08.10.2026",
-      "grossPerShare": 0.02,
-      "netPerShare": 0.017,
-      "sourceNetPerShare": 0.01,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "GUBRF",
