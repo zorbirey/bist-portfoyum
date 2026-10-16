@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-15T18:34:01.589595+00:00",
+  "updatedAt": "2026-10-16T09:36:43.405851+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 48,
+  "count": 46,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,26 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "ASTOR",
-      "name": "ASTOR ENERJI",
-      "date": "15.10.2026",
-      "grossPerShare": 2.19,
-      "netPerShare": 1.8615,
-      "sourceNetPerShare": 1.86,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "EBEBK",
-      "name": "EBEBEK MAGAZACILIK",
-      "date": "15.10.2026",
-      "grossPerShare": 0.63,
-      "netPerShare": 0.5355,
-      "sourceNetPerShare": 0.53,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BEGYO",
@@ -415,22 +395,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
       "date": "16.12.2026",
       "grossPerShare": 2.5,
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
