@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-20T19:06:19.053534+00:00",
+  "updatedAt": "2026-10-21T09:57:46.852408+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 46,
+  "count": 45,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,16 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "BEGYO",
-      "name": "BATI EGE GMYO",
-      "date": "20.10.2026",
-      "grossPerShare": 0.01,
-      "netPerShare": 0.0085,
-      "sourceNetPerShare": 0.01,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "BASCM",
