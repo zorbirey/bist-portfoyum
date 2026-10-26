@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-23T19:01:07.955508+00:00",
+  "updatedAt": "2026-10-26T10:54:59.524186+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 44,
+  "count": 43,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,16 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "MCARD",
-      "name": "METROPAL KURUMSAL HIZMETLER",
-      "date": "23.10.2026",
-      "grossPerShare": 2.57,
-      "netPerShare": 2.1845,
-      "sourceNetPerShare": 2.19,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "SRVGY",
       "name": "SERVET GMYO",
       "date": "26.10.2026",
@@ -375,22 +365,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
       "date": "16.12.2026",
       "grossPerShare": 2.5,
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
