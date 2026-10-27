@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-26T17:14:14.859613+00:00",
+  "updatedAt": "2026-10-27T10:19:02.738130+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 43,
+  "count": 41,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,26 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "SRVGY",
-      "name": "SERVET GMYO",
-      "date": "26.10.2026",
-      "grossPerShare": 0.08,
-      "netPerShare": 0.068,
-      "sourceNetPerShare": 0.08,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "OSMEN",
-      "name": "OSMANLI MENKUL",
-      "date": "26.10.2026",
-      "grossPerShare": 0.05,
-      "netPerShare": 0.0425,
-      "sourceNetPerShare": 0.04,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "MEDTR",
