@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-27T20:36:24.970404+00:00",
+  "updatedAt": "2026-10-28T11:10:47.441310+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 41,
+  "count": 39,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,26 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "MEDTR",
-      "name": "MEDITERA TIBBI MALZEME",
-      "date": "27.10.2026",
-      "grossPerShare": 0.11,
-      "netPerShare": 0.0935,
-      "sourceNetPerShare": 0.1,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "MERIT",
-      "name": "MERIT TURIZM",
-      "date": "27.10.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "DESA",
