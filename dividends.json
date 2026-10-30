@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T17:30:07.219722+00:00",
+  "updatedAt": "2026-10-30T11:16:11.298716+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
   "count": 39,
@@ -325,22 +325,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "BIMAS",
-      "name": "BIM MAGAZALAR",
-      "date": "16.12.2026",
-      "grossPerShare": 2.5,
-      "netPerShare": 2.125,
-      "sourceNetPerShare": 2.13,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "NTHOL",
       "name": "NET HOLDING",
       "date": "16.12.2026",
       "grossPerShare": 1.0,
       "netPerShare": 0.85,
       "sourceNetPerShare": 0.85,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "BIMAS",
+      "name": "BIM MAGAZALAR",
+      "date": "16.12.2026",
+      "grossPerShare": 2.5,
+      "netPerShare": 2.125,
+      "sourceNetPerShare": 2.13,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
