@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-30T17:06:38.170705+00:00",
+  "updatedAt": "2026-11-02T13:18:27.931403+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 39,
+  "count": 38,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,16 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "DESA",
-      "name": "DESA DERI",
-      "date": "30.10.2026",
-      "grossPerShare": 0.1,
-      "netPerShare": 0.085,
-      "sourceNetPerShare": 0.08,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "LIDER",
