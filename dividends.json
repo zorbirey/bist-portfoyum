@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-09T23:10:56.524638+00:00",
+  "updatedAt": "2026-11-10T13:22:21.816497+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 39,
+  "count": 38,
   "dividends": [
     {
       "code": "FROTO",
@@ -193,16 +193,6 @@
       "sourceNetPerShare": 12.75,
       "withholdingRate": 15,
       "source": "KAP doğrulanmış 2026 temettü kaydı"
-    },
-    {
-      "code": "GOKNR",
-      "name": "GOKNUR GIDA",
-      "date": "09.11.2026",
-      "grossPerShare": 0.31,
-      "netPerShare": 0.2635,
-      "sourceNetPerShare": 0.26,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
     },
     {
       "code": "KBORU",
