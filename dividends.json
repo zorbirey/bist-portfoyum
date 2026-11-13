@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T21:07:38.042556+00:00",
+  "updatedAt": "2026-11-13T12:56:41.907908+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
   "count": 37,
@@ -355,22 +355,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "GWIND",
-      "name": "GALATA WIND ENERJI",
-      "date": "31.12.2026",
-      "grossPerShare": 0.74,
-      "netPerShare": 0.629,
-      "sourceNetPerShare": 0.63,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "GLYHO",
       "name": "GLOBAL YAT. HOLDING",
       "date": "31.12.2026",
       "grossPerShare": 0.1,
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "GWIND",
+      "name": "GALATA WIND ENERJI",
+      "date": "31.12.2026",
+      "grossPerShare": 0.74,
+      "netPerShare": 0.629,
+      "sourceNetPerShare": 0.63,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
