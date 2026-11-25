@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-25T00:08:17.442738+00:00",
+  "updatedAt": "2026-11-25T15:24:28.096751+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 37,
+  "count": 38,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,22 +195,32 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "ASELS",
-      "name": "ASELSAN",
-      "date": "24.11.2026",
-      "grossPerShare": 0.43,
-      "netPerShare": 0.3655,
-      "sourceNetPerShare": 0.36,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "ELITE",
       "name": "ELITE NATUREL ORGANIK GIDA",
       "date": "25.11.2026",
       "grossPerShare": 0.1,
       "netPerShare": 0.085,
       "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "GLYHO",
+      "name": "GLOBAL YAT. HOLDING",
+      "date": "25.11.2026",
+      "grossPerShare": 0.1,
+      "netPerShare": 0.085,
+      "sourceNetPerShare": 0.09,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "SDTTR",
+      "name": "SDT UZAY VE SAVUNMA",
+      "date": "25.11.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -265,6 +275,16 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
+      "code": "BVSAN",
+      "name": "BULBULOGLU VINC",
+      "date": "15.12.2026",
+      "grossPerShare": 0.73,
+      "netPerShare": 0.6205,
+      "sourceNetPerShare": 0.62,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
       "code": "YIGIT",
       "name": "YIGIT AKU",
       "date": "15.12.2026",
@@ -281,16 +301,6 @@
       "grossPerShare": 0.63,
       "netPerShare": 0.5355,
       "sourceNetPerShare": 0.53,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "BVSAN",
-      "name": "BULBULOGLU VINC",
-      "date": "15.12.2026",
-      "grossPerShare": 0.73,
-      "netPerShare": 0.6205,
-      "sourceNetPerShare": 0.62,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -335,6 +345,16 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
+      "code": "SDTTR",
+      "name": "SDT UZAY VE SAVUNMA",
+      "date": "23.12.2026",
+      "grossPerShare": 0.01,
+      "netPerShare": 0.0085,
+      "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
       "code": "SRVGY",
       "name": "SERVET GMYO",
       "date": "25.12.2026",
@@ -361,16 +381,6 @@
       "grossPerShare": 0.74,
       "netPerShare": 0.629,
       "sourceNetPerShare": 0.63,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "GLYHO",
-      "name": "GLOBAL YAT. HOLDING",
-      "date": "31.12.2026",
-      "grossPerShare": 0.1,
-      "netPerShare": 0.085,
-      "sourceNetPerShare": 0.09,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     }
