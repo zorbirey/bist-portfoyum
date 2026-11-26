@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-25T23:44:33.583994+00:00",
+  "updatedAt": "2026-11-26T14:54:13.378980+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
-  "count": 38,
+  "count": 34,
   "dividends": [
     {
       "code": "FROTO",
@@ -195,46 +195,6 @@
       "source": "KAP doğrulanmış 2026 temettü kaydı"
     },
     {
-      "code": "ELITE",
-      "name": "ELITE NATUREL ORGANIK GIDA",
-      "date": "25.11.2026",
-      "grossPerShare": 0.1,
-      "netPerShare": 0.085,
-      "sourceNetPerShare": 0.09,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "GLYHO",
-      "name": "GLOBAL YAT. HOLDING",
-      "date": "25.11.2026",
-      "grossPerShare": 0.1,
-      "netPerShare": 0.085,
-      "sourceNetPerShare": 0.09,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "SDTTR",
-      "name": "SDT UZAY VE SAVUNMA",
-      "date": "25.11.2026",
-      "grossPerShare": 0.01,
-      "netPerShare": 0.0085,
-      "sourceNetPerShare": 0.01,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
-      "code": "OFSYM",
-      "name": "OFIS YEM GIDA",
-      "date": "25.11.2026",
-      "grossPerShare": 0.42,
-      "netPerShare": 0.357,
-      "sourceNetPerShare": 0.36,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "DESA",
       "name": "DESA DERI",
       "date": "30.11.2026",
@@ -245,22 +205,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "OYAKC",
-      "name": "OYAK CIMENTO",
-      "date": "07.12.2026",
-      "grossPerShare": 0.5,
-      "netPerShare": 0.425,
-      "sourceNetPerShare": 0.43,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "SUMAS",
       "name": "SUMAS SUNI TAHTA",
       "date": "07.12.2026",
       "grossPerShare": 2.17,
       "netPerShare": 1.8445,
       "sourceNetPerShare": 1.84,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "OYAKC",
+      "name": "OYAK CIMENTO",
+      "date": "07.12.2026",
+      "grossPerShare": 0.5,
+      "netPerShare": 0.425,
+      "sourceNetPerShare": 0.43,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -305,22 +265,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BIMAS",
       "name": "BIM MAGAZALAR",
       "date": "16.12.2026",
       "grossPerShare": 2.5,
       "netPerShare": 2.125,
       "sourceNetPerShare": 2.13,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
