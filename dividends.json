@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T23:39:10.720660+00:00",
+  "updatedAt": "2026-11-27T14:51:19.166350+00:00",
   "year": 2026,
   "source": "Geçmiş + gelecek + KAP doğrulanmış temettü takvimi",
   "count": 34,
@@ -205,16 +205,6 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "SUMAS",
-      "name": "SUMAS SUNI TAHTA",
-      "date": "07.12.2026",
-      "grossPerShare": 2.17,
-      "netPerShare": 1.8445,
-      "sourceNetPerShare": 1.84,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "OYAKC",
       "name": "OYAK CIMENTO",
       "date": "07.12.2026",
@@ -225,12 +215,32 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
+      "code": "SUMAS",
+      "name": "SUMAS SUNI TAHTA",
+      "date": "07.12.2026",
+      "grossPerShare": 2.17,
+      "netPerShare": 1.8445,
+      "sourceNetPerShare": 1.84,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
       "code": "TCELL",
       "name": "TURKCELL",
       "date": "09.12.2026",
       "grossPerShare": 4.0,
       "netPerShare": 3.4,
       "sourceNetPerShare": 3.4,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "EBEBK",
+      "name": "EBEBEK MAGAZACILIK",
+      "date": "15.12.2026",
+      "grossPerShare": 0.63,
+      "netPerShare": 0.5355,
+      "sourceNetPerShare": 0.53,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -255,12 +265,12 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "EBEBK",
-      "name": "EBEBEK MAGAZACILIK",
-      "date": "15.12.2026",
-      "grossPerShare": 0.63,
-      "netPerShare": 0.5355,
-      "sourceNetPerShare": 0.53,
+      "code": "NTHOL",
+      "name": "NET HOLDING",
+      "date": "16.12.2026",
+      "grossPerShare": 1.0,
+      "netPerShare": 0.85,
+      "sourceNetPerShare": 0.85,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
@@ -275,16 +285,6 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "NTHOL",
-      "name": "NET HOLDING",
-      "date": "16.12.2026",
-      "grossPerShare": 1.0,
-      "netPerShare": 0.85,
-      "sourceNetPerShare": 0.85,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "BEGYO",
       "name": "BATI EGE GMYO",
       "date": "21.12.2026",
@@ -295,22 +295,22 @@
       "source": "Doviz.com temettü takvimi"
     },
     {
-      "code": "AYGAZ",
-      "name": "AYGAZ",
-      "date": "23.12.2026",
-      "grossPerShare": 4.65,
-      "netPerShare": 3.9525,
-      "sourceNetPerShare": 3.95,
-      "withholdingRate": 15,
-      "source": "Doviz.com temettü takvimi"
-    },
-    {
       "code": "SDTTR",
       "name": "SDT UZAY VE SAVUNMA",
       "date": "23.12.2026",
       "grossPerShare": 0.01,
       "netPerShare": 0.0085,
       "sourceNetPerShare": 0.01,
+      "withholdingRate": 15,
+      "source": "Doviz.com temettü takvimi"
+    },
+    {
+      "code": "AYGAZ",
+      "name": "AYGAZ",
+      "date": "23.12.2026",
+      "grossPerShare": 4.65,
+      "netPerShare": 3.9525,
+      "sourceNetPerShare": 3.95,
       "withholdingRate": 15,
       "source": "Doviz.com temettü takvimi"
     },
